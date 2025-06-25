@@ -5,6 +5,41 @@ title: Changelog
 
 # Changelog
 
+## Version 1.6.0 (23 June 2025)
+
+[Added] - Session year and Semester wise manage data in school admin.
+[Added] - Reports :- 
+			- Student Reports
+			    - Attendance
+			    - Offline Exam
+			    - Online Exam
+			    - Fees
+			    - Student Yearly Exam Results
+			- Exam Report :-
+			    - Yearly Wise Results
+			    - Subject Wise Results
+			    - Rank Wise Results
+
+[Added] -  Assign elective subjects to students in school admin.
+[Added] - Contact Inquiry in super admin and school
+[Improvements] - School name display in browser tab
+[Improvements] - Privacy - Policy & Terms & Conditions
+[Improvements] - Add a filter dropdown to show Subjects based on the selected Class and Section.
+[Improvements] - Domain URL appears on school edit screen.
+[Improvements] - Fixed issue with multiple students taking online exam simultaneously.
+[Improvements] - Added 'Account' selection to Fees Installment module.
+[Improvements] - Fixed notification issue for attachments in chat (images/documents)
+[Improvements] - Auto-scroll to active sidebar item added for web panels.
+[Improvements] - School Admins can now enable and manage 2FA from their profile setting.
+[Improvements] - School Admin offline marks upload bug fixed.
+[Improvements] - Fixed subject selection in Online Exam.
+[Improvements] - Previously only staff showed — now both teachers and staff can be selected for ID Cards and Certificates.
+[Improvements] - Chat history now filters by both sender and receiver in Apps chat.
+[Improvements] - Fixed school logo duplication in landing page carouse.
+[Improvements] - Added standard ID card dimension messages (width: 100–105mm, height: 150–155mm).
+[Improvements] - Users can now drag events into the calendar. System also checks subject type compatibility to avoid conflicts with electives.
+[Improvements] - School website UI improvements.
+
 ## Version 1.5.5 (12 May 2025)
 
 - **[Improvements]** Subscriptions Module Improvements
