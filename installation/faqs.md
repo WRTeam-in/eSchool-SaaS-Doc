@@ -93,5 +93,88 @@ Addon validity is always tied to the school's current subscription plan expiry d
 
 </details>
 
+<details>
+<summary><strong>6. Where can I find the School Code?</strong></summary>
+
+The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
+
+🔹 <strong>From the Super Admin Panel:</strong>
+
+- Navigate to: <code>Schools → Manage Schools</code>
+- Click the column selector icon (top-right of the table)
+- Enable the "Code" column by checking it
+- You'll now see the School Code in the table listing
+
+<!-- ![e-School SaaS](../../static/images/installation/admin/2.png) -->
+![e-School SaaS](../static/images/installation/school-code-super-admin.png)
+<!-- ![School Code in Super Admin Panel](static/images/installation/school-code-super-admin.png) -->
+
+🔹 <strong>From the School Admin Panel:</strong>
+
+- Go to: <code>System Settings → General Settings</code>
+- Look for the School Code field on the right side of the form
+
+![e-School SaaS](../static/images/installation/school-code-school-admin.png)
+<!-- ![School Code in School Admin Panel](static/images/installation/school-code-school-admin.png) -->
+
+</details>
+
+
+## 🏫 School admin panel
+
+<details>
+<summary><strong>7. How do Classes and Sections work in the system?</strong></summary>
+
+In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
+
+Each Class can have multiple Sections. A Section is essentially a sub-division of a class, created to manage students efficiently when the number of enrolled students exceeds the capacity of a single classroom.
+
+**Why Sections Are Needed:**
+
+Let's take an example:
+- Suppose your classroom capacity is 30 students.
+- For Grade 1, if 90 students apply for admission, it's not feasible to place them all in one classroom.
+- In such a case, the system allows you to create multiple Sections under the same Class — such as Grade 1 - A, Grade 1 - B, and Grade 1 - C.
+- Each section can then accommodate up to 30 students, depending on classroom size or academic management preferences.
+
+**How It Works in the System:**
+1. Create a Class (e.g., Grade 1)
+2. Create Sections (e.g., A, B, C)
+3. Assign Students to Sections — This can be done manually or based on performance, alphabetical order, or admission order.
+4. The system ensures students are evenly distributed according to section capacity, and each section can be managed individually.
+
+**Benefits:**
+- Better classroom and resource management
+- Improved teacher-to-student ratio
+- Easier tracking of student progress within smaller groups
+
+</details>
+
+
+## 📱 Mobile application
+
+<details>
+<summary><strong>8. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+
+![e-School SaaS](../static/images/installation/app-img-1.png)
+
+This issue usually occurs when the API headers are not correctly formatted, specifically the school-code field.
+
+In the api.dart file inside the headers() method, make sure the key is written as:
+```dart
+"school-code": schoolCode ✅ Correct
+```
+![e-School SaaS](../static/images/installation/api-dart.png)
+
+
+⚠️ **Do not use an underscore (_) like this:**
+```dart
+"school_code": schoolCode  ❌ Incorrect
+```
+
+Using school_code with an underscore causes the backend to reject the request due to a mismatch in expected header keys, leading to the "Something went wrong" error on the app screen.
+
+</details>
+
 ---
 
