@@ -39,7 +39,7 @@ The first screen you'll see when starting the installation process.
 Configure your database connection settings.
 
 📝 **Getting Database Credentials:**
-- Follow our guide on [Database Access Setup](http://localhost:3000/eSchool-SaaS-Doc/installation/admin-panel-setup/vps-server-setup/#-database-access) to create and obtain your database credentials
+- Follow our guide on [Database Access Setup](https://wrteam-in.github.io/eSchool-SaaS-Doc/installation/admin-panel-setup/vps-server-setup/#9%EF%B8%8F%E2%83%A3-get-mysql-root-credentials) to create and obtain your database credentials
 - You'll need the following information:
   - Database Name
   - Database Username 
