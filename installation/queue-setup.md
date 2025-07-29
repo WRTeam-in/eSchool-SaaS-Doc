@@ -30,31 +30,14 @@ The school creation process in e-School SaaS involves several time-consuming ope
 
 ## 🔧 Setup Instructions
 
-### 1️⃣ Database Setup
-
-Add status column to schools table:
-```bash
-php artisan migrate
-```
-
-### 2️⃣ Queue Configuration
+### 1️⃣ Queue Configuration
 
 Update `.env` file with queue driver:
 ```env
 QUEUE_CONNECTION=database
-# or
-QUEUE_CONNECTION=redis
 ```
 
-### 3️⃣ Database Queue Tables
-
-If using database driver:
-```bash
-php artisan queue:table
-php artisan migrate
-```
-
-### 4️⃣ Queue Worker Setup
+### 2️⃣ Queue Worker Setup
 
 Start processing jobs:
 ```bash
