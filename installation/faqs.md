@@ -23,10 +23,47 @@ This error typically occurs when the database user does not have permission to c
 
 </details>
 
+<details>
+<summary><strong>2. If School not created then how to setup Laravel Queue?</strong></summary>
+
+You can find detailed instructions for setting up the queue in our documentation here:  
+[Queue Setup Guide](../queue-setup)
+
+</details>
+
+<details>
+<summary><strong>3. What are the default login credentials for different Users?</strong></summary>
+
+Different user types have different default login credentials in the system:
+
+🎓 **For Students:**
+- Username: GR Number (General Register Number)
+- Password: Date of Birth in DDMMYYYY format
+- Example:
+  ```
+  Username: 2025000001
+  Password: 01012010 (for DOB: 1st Jan 2010)
+  School Code : SCH20251
+  ```
+
+👥 **For Parents, Teachers, and Staff:**
+- Username: Email Address
+- Password: Mobile Number
+- Example:
+  ```
+  Username: teacher@school.com
+  Password: 9876543210
+  School Code : SCH20251
+  ```
+
+**Note:** For security reasons, it's recommended to change these default passwords after first login.
+
+</details>
+
 ## 🌐 Domain & SSL Configuration
 
 <details>
-<summary><strong>2. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
+<summary><strong>4. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
 
@@ -41,7 +78,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 </details>
 
 <details>
-<summary><strong>3. How do I create a wildcard SSL certificate?</strong></summary>
+<summary><strong>5. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
 
@@ -57,7 +94,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 ## 💳 Subscription & Package Management
 
 <details>
-<summary><strong>4. What happens if the Super Admin updates an existing subscription package?</strong></summary>
+<summary><strong>6. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
 
@@ -75,7 +112,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 </details>
 
 <details>
-<summary><strong>5. How is the addon validity calculated?</strong></summary>
+<summary><strong>7. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
 
@@ -94,7 +131,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 </details>
 
 <details>
-<summary><strong>6. Where can I find the School Code?</strong></summary>
+<summary><strong>8. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
 
@@ -123,7 +160,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 ## 🏫 School admin panel
 
 <details>
-<summary><strong>7. How do Classes and Sections work in the system?</strong></summary>
+<summary><strong>9. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
 
@@ -154,7 +191,7 @@ Let's take an example:
 ## 📱 Mobile application
 
 <details>
-<summary><strong>8. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+<summary><strong>10. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
 

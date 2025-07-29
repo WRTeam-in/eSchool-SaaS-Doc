@@ -5,6 +5,63 @@ title: Changelog
 
 # Changelog
 
+## Version 1.7.0
+
+<details>
+<summary><strong>Added</strong></summary>
+
+- **Online Exam System & MCQs Management**
+  ![e-School SaaS](../static/images/changelog/bulk-mcq-question.png)
+  ![e-School SaaS](../static/images/changelog/randomquestion.png)
+  - Multiple question types support
+  - Real-time exam monitoring
+  - Bulk MCQs upload functionality
+  - Random question assignment
+  - Question difficulty levels (Easy, Medium, Hard)
+  - Enhanced question bank organization
+
+- **Assignment Submission Improvements**
+  ![e-School SaaS](../static/images/changelog/bulk-assignment-sub.png)
+  - Streamlined submission process
+  - Better file management
+  - Enhanced tracking system
+  - Improved feedback mechanism
+
+- **Multilingual Website Support**
+  ![e-School SaaS](../static/images/changelog/multilanguage.png)
+  - Multiple language support
+  - Easy language switching
+  - Customizable content per language
+  - Improved accessibility
+
+- **Fees Management Enhancement**
+  ![e-School SaaS](../static/images/changelog/optionalfeesfilter.png)
+  - Optional fees filter
+  - Improved fee structure
+  - Better tracking system
+  - Enhanced reporting
+
+</details>
+
+<details>
+<summary><strong>Improvements</strong></summary>
+
+- **Exam Reports**
+  - Refactored for better performance
+  - Enhanced data visualization
+
+- **Performance & Security**
+  - Performance optimizations
+  - Enhanced security measures
+  - Bug fixes and stability improvements
+  - System-wide performance enhancements
+
+- **Other Enhancements**
+  - General UI/UX improvements
+  - System stability enhancements
+
+</details>
+
 ## Version 1.6.0 (23 June 2025)
 
 - **[Added]** - Session year and Semester wise manage data in school admin.

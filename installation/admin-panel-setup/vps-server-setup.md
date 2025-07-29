@@ -194,6 +194,9 @@ Your WebSocket URL will be:
 ws://your_server_ip:8090
 ```
 
+### 🔟 Set Queue for School Creation
+
+### [Queue Setup Guide](/installation/queue-setup.md)
 ---
 
 > 🎉 **Congratulations!** Your server is now ready for the e-School SaaS installation. Proceed to the next section to install the application.
