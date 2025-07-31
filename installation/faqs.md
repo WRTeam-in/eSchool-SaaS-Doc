@@ -213,5 +213,32 @@ Using school_code with an underscore causes the backend to reject the request du
 
 </details>
 
+<details>
+<summary><strong>11. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
+
+To set up Firebase using the Firebase CLI for eSchool SaaS:
+
+1. **Prerequisites:**
+   - Make sure you have Node.js installed on your system
+
+2. **Install Firebase CLI:**
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+3. **Log in to Firebase:**
+   
+   firebase login
+   
+   This will open a browser window where you can authenticate with your Google account.
+
+4. **Video Guide:** Watch this quick video guide for a visual walkthrough.
+
+📹 **[Watch Video Tutorial](https://drive.google.com/file/d/1Rriv3MzkixJKQETU9BuwEI9l8p4CgQlH/view?usp=sharing)**
+
+*Click the link above to watch the Firebase CLI setup tutorial video.*
+
+</details>
+
 ---
 

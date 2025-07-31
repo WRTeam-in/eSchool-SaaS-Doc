@@ -5,7 +5,7 @@ title: Changelog
 
 # Changelog
 
-## Version 1.7.0
+## Version 1.7.0 (30 July 2025)
 
 <details>
 <summary><strong>Added</strong></summary>
