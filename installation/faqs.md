@@ -60,10 +60,70 @@ Different user types have different default login credentials in the system:
 
 </details>
 
+<details>
+<summary><strong>4. How to Update the System (Admin Panel and App Code)?</strong></summary>
+
+### 🔄 **Admin Panel Update**
+
+**Step-by-Step Guide:**
+
+1. **Login as Super Admin**
+   - Use your Super Admin credentials to log in to the system.
+
+2. **Go to System Update**
+   - In the left-side menu, scroll to the bottom and click on the "System Update" option.
+
+3. **Enter Purchase Code and Upload File**
+   - In the "Purchase Code" field, enter your valid purchase code.
+   - In the "Files" section, click on "Choose File" and upload the nearest version update file.
+
+4. **Important Note About Versioning**
+   - You must update the system step-by-step.
+   - For example, if your current Admin Panel version is v1.5.5, then you should upload the v1.5.6 update file.
+   - Do not directly upload a higher version like v1.7.0, or the update may fail.
+
+5. **Submit and Wait**
+   - Click the "Submit" button and wait for a few moments.
+   - The system will process the update, and your Admin Panel will be upgraded.
+
+<!-- https://drive.google.com/file/d/1wD7iixqXpHM0K3VKLO1EpF8y2CTRzLkk/view?usp=sharing -->
+📹 **[Video Tutorial Available:](https://drive.google.com/file/d/1wD7iixqXpHM0K3VKLO1EpF8y2CTRzLkk/view?usp=sharing)**
+A detailed video tutorial is available below the update section to guide you visually through the process.
+
+### 📱 **App Code Update**
+
+There are two methods available for updating your App Code:
+
+#### **Option 1: Manual Update (Recommended for Non-Technical Users)**
+
+1. When an update is released, you will receive the updated app source code via email.
+2. Inside the update package, you will find a file called `change_log.txt` or similar.
+3. This file contains:
+   - A list of files that were modified.
+   - A list of new files that were added.
+4. Open the latest version code and manually copy the updated and new files into your existing project as per the change log.
+5. After copying and replacing the required files, your app will be successfully updated.
+
+#### **Option 2: Full Reskin Method (Recommended for Developers / Technical Persons)**
+
+This method is faster and preferred by technical users who are familiar with Flutter and Firebase.
+
+**Steps:**
+1. Download the Latest Full App Code (from the update mail or portal).
+2. Perform the following changes in the new code:
+   - Change the App Name (for both Android and iOS).
+   - Change the Package Name (bundle identifier).
+   - Replace the Firebase configuration using firebase_cli or manually add the updated Firebase project.
+   - In the `constants.dart` file, update the Base URL to match your backend server.
+   - Replace the App Icon and other branding assets you used in the previous version.
+3. After completing these steps, build and run the new app code. It will function the same as your previous version but with the latest updates applied.
+
+</details>
+
 ## 🌐 Domain & SSL Configuration
 
 <details>
-<summary><strong>4. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
+<summary><strong>5. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
 
@@ -78,7 +138,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 </details>
 
 <details>
-<summary><strong>5. How do I create a wildcard SSL certificate?</strong></summary>
+<summary><strong>6. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
 
@@ -94,7 +154,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 ## 💳 Subscription & Package Management
 
 <details>
-<summary><strong>6. What happens if the Super Admin updates an existing subscription package?</strong></summary>
+<summary><strong>7. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
 
@@ -112,7 +172,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 </details>
 
 <details>
-<summary><strong>7. How is the addon validity calculated?</strong></summary>
+<summary><strong>8. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
 
@@ -131,7 +191,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 </details>
 
 <details>
-<summary><strong>8. Where can I find the School Code?</strong></summary>
+<summary><strong>9. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
 
@@ -160,7 +220,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 ## 🏫 School admin panel
 
 <details>
-<summary><strong>9. How do Classes and Sections work in the system?</strong></summary>
+<summary><strong>10. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
 
@@ -191,7 +251,7 @@ Let's take an example:
 ## 📱 Mobile application
 
 <details>
-<summary><strong>10. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+<summary><strong>11. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
 
@@ -214,7 +274,7 @@ Using school_code with an underscore causes the backend to reject the request du
 </details>
 
 <details>
-<summary><strong>11. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
+<summary><strong>12. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
 
 To set up Firebase using the Firebase CLI for eSchool SaaS:
 
