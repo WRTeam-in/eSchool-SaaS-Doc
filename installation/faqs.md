@@ -63,7 +63,7 @@ Different user types have different default login credentials in the system:
 <details>
 <summary><strong>4. How to Update the System (Admin Panel and App Code)?</strong></summary>
 
-### 🔄 **Admin Panel Update**
+#### 🔄 **Admin Panel Update**
 
 **Step-by-Step Guide:**
 
@@ -90,7 +90,7 @@ Different user types have different default login credentials in the system:
 📹 **[Video Tutorial Available:](https://drive.google.com/file/d/1wD7iixqXpHM0K3VKLO1EpF8y2CTRzLkk/view?usp=sharing)**
 A detailed video tutorial is available below the update section to guide you visually through the process.
 
-### 📱 **App Code Update**
+#### 📱 **App Code Update**
 
 There are two methods available for updating your App Code:
 
@@ -120,10 +120,25 @@ This method is faster and preferred by technical users who are familiar with Flu
 
 </details>
 
+<details>
+<summary><strong>5. Why are database root user credentials required for this system?</strong></summary>
+
+This system is a SaaS platform, where each school has its own separate database. The root database user has the necessary permissions to create and drop databases. These permissions are required when a new school is added, as the system needs to:
+
+**Required Actions:**
+- **Create a new database** for the school
+- **Run migrations** to generate all required tables
+- **Set up default configurations**
+
+**Alternative Solution:**
+If you do not want to use the root account, you can provide a database user with equivalent permissions (CREATE, DROP, and other required privileges) so the system can perform these actions automatically.
+
+</details>
+
 ## 🌐 Domain & SSL Configuration
 
 <details>
-<summary><strong>5. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
+<summary><strong>6. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
 
@@ -138,7 +153,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 </details>
 
 <details>
-<summary><strong>6. How do I create a wildcard SSL certificate?</strong></summary>
+<summary><strong>7. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
 
@@ -154,7 +169,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 ## 💳 Subscription & Package Management
 
 <details>
-<summary><strong>7. What happens if the Super Admin updates an existing subscription package?</strong></summary>
+<summary><strong>8. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
 
@@ -172,7 +187,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 </details>
 
 <details>
-<summary><strong>8. How is the addon validity calculated?</strong></summary>
+<summary><strong>9. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
 
@@ -191,7 +206,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 </details>
 
 <details>
-<summary><strong>9. Where can I find the School Code?</strong></summary>
+<summary><strong>10. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
 
@@ -220,7 +235,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 ## 🏫 School admin panel
 
 <details>
-<summary><strong>10. How do Classes and Sections work in the system?</strong></summary>
+<summary><strong>11. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
 
@@ -251,7 +266,7 @@ Let's take an example:
 ## 📱 Mobile application
 
 <details>
-<summary><strong>11. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+<summary><strong>12. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
 
@@ -274,7 +289,7 @@ Using school_code with an underscore causes the backend to reject the request du
 </details>
 
 <details>
-<summary><strong>12. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
+<summary><strong>13. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
 
 To set up Firebase using the Firebase CLI for eSchool SaaS:
 

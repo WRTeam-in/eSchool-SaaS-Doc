@@ -145,6 +145,10 @@ Upload your source code to the domain directory and ensure the web path points t
 
 ### 9️⃣ Get MySQL Root Credentials
 
+<!-- Add FAQs link here Why root credential is required -->
+
+#### <small>:information_source: [Why are database root user credentials required for this system?](/installation/faqs.md)</small>
+
 To get MySQL root credentials, run this command in the terminal:
 
 ```bash
