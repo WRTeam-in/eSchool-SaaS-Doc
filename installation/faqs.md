@@ -24,10 +24,12 @@ This error typically occurs when the database user does not have permission to c
 </details>
 
 <details>
-<summary><strong>2. If School not created then how to setup Laravel Queue?</strong></summary>
+<summary><strong>2. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
 
 You can find detailed instructions for setting up the queue in our documentation here:  
-[Queue Setup Guide](../queue-setup)
+![e-School SaaS](../static/images/superadmin/missing-queue.png)
+
+👉 [Queue Setup Guide](../queue-setup)
 
 </details>
 
@@ -135,10 +137,28 @@ If you do not want to use the root account, you can provide a database user with
 
 </details>
 
+<details>
+<summary><strong>6. How many payment gateways are available in the system?</strong></summary>
+
+Currently, we support **four payment gateways** in the system:
+
+**Available Payment Gateways:**
+- **Stripe**
+- **Razorpay**
+- **Paystack**
+- **Flutterwave**
+
+**Note:** Each payment gateway can be configured individually in the system settings, allowing super admin and schools to choose the most suitable option for their region and requirements.
+
+</details>
+
+
+
+
 ## 🌐 Domain & SSL Configuration
 
 <details>
-<summary><strong>6. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
+<summary><strong>7. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
 
@@ -153,7 +173,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 </details>
 
 <details>
-<summary><strong>7. How do I create a wildcard SSL certificate?</strong></summary>
+<summary><strong>8. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
 
@@ -169,7 +189,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 ## 💳 Subscription & Package Management
 
 <details>
-<summary><strong>8. What happens if the Super Admin updates an existing subscription package?</strong></summary>
+<summary><strong>9. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
 
@@ -187,7 +207,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 </details>
 
 <details>
-<summary><strong>9. How is the addon validity calculated?</strong></summary>
+<summary><strong>10. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
 
@@ -206,7 +226,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 </details>
 
 <details>
-<summary><strong>10. Where can I find the School Code?</strong></summary>
+<summary><strong>11. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
 
@@ -235,7 +255,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 ## 🏫 School admin panel
 
 <details>
-<summary><strong>11. How do Classes and Sections work in the system?</strong></summary>
+<summary><strong>12. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
 
@@ -266,7 +286,7 @@ Let's take an example:
 ## 📱 Mobile application
 
 <details>
-<summary><strong>12. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+<summary><strong>13. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
 
@@ -289,7 +309,7 @@ Using school_code with an underscore causes the backend to reject the request du
 </details>
 
 <details>
-<summary><strong>13. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
+<summary><strong>14. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
 
 To set up Firebase using the Firebase CLI for eSchool SaaS:
 
