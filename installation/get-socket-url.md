@@ -7,6 +7,36 @@ sidebar_position: 5
 ## 📋 Overview
 Learn how to set up WebSocket server and get your Socket URL for real-time communication in e-School SaaS.
 
+## 🎯 Option 1: aapanel Control Panel (Recommended)
+
+If you are using **aapanel control panel**, you can directly install supervisor from the app store and configure Laravel WebSocket from there. This is our **recommended option** for aapanel users.
+
+#### 📱 Install Supervisor from App Store
+1. Open your aapanel control panel
+2. Navigate to the **App Store** section
+3. Search for **Supervisor**
+4. Click **Install** to add it to your system
+
+![Install Supervisor from App Store](../static/images/installation/supervisor.png)
+
+#### ⚙️ Configure WebSocket Service
+After installing supervisor, configure your WebSocket service:
+
+![Configure WebSocket Service](../static/images/installation/set_websocket.png)
+
+#### ✅ Benefits of aapanel Method
+- 🚀 **Easy Installation**: One-click installation from app store
+- 🎛️ **User-Friendly Interface**: Graphical configuration options
+- 🔧 **Integrated Management**: Centralized control panel access
+- 📊 **Real-time Monitoring**: Built-in status monitoring
+- 🛠️ **Simplified Configuration**: No manual command line setup required
+
+---
+
+## 🖥️ Option 2: Manual Installation (Traditional Method)
+
+If you prefer manual installation or are not using aapanel, follow the traditional setup method below.
+
 ### 1️⃣ Install Required Packages
 Open the Terminal from an SSH Connection:
 
@@ -70,4 +100,4 @@ laravel-websockets   RUNNING   pid 12345, uptime 0:03:21
 - Replace `/path/to/your/laravel/` with your actual Laravel project path
 - Replace `username` with your server username
 - Ensure port 8090 is open in your firewall
-- Test the WebSocket connection after setup 
+- Test the WebSocket connection after setup

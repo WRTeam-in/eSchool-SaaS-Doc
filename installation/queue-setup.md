@@ -30,6 +30,36 @@ The school creation process in e-School SaaS involves several time-consuming ope
 
 ## 🔧 Setup Instructions
 
+### 🎯 Option 1: aapanel Control Panel (Recommended)
+
+If you are using **aapanel control panel**, you can directly install supervisor from the app store and configure Laravel queue from there. This is our **recommended option** for aapanel users.
+
+#### 📱 Install Supervisor from App Store
+1. Open your aapanel control panel
+2. Navigate to the **App Store** section
+3. Search for **Supervisor**
+4. Click **Install** to add it to your system
+
+![Install Supervisor from App Store](../static/images/installation/supervisor.png)
+
+#### ⚙️ Configure Laravel Queue Worker
+After installing supervisor, configure your Laravel queue worker:
+
+![Configure Laravel Queue Worker](../static/images/installation/set_worker.png)
+
+#### ✅ Benefits of aapanel Method
+- 🚀 **Easy Installation**: One-click installation from app store
+- 🎛️ **User-Friendly Interface**: Graphical configuration options
+- 🔧 **Integrated Management**: Centralized control panel access
+- 📊 **Real-time Monitoring**: Built-in status monitoring
+- 🛠️ **Simplified Configuration**: No manual command line setup required
+
+---
+
+### 🖥️ Option 2: Manual Installation (Traditional Method)
+
+If you prefer manual installation or are not using aapanel, follow the traditional setup method below.
+
 ### 1️⃣ Queue Configuration
 
 Update `.env` file with queue driver:
@@ -83,7 +113,7 @@ Add the following content to the configuration file:
 ```ini
 [program:laravel-worker]
 process_name=%(program_name)s_%(process_num)02d
-command=php /path/to/your/project/artisan queue:work --sleep=3 --tries=3 --max-time=3600
+command=php /path/to/your/project/artisan queue:work
 autostart=true
 autorestart=true
 stopasgroup=true
