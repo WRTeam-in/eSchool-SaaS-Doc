@@ -1,10 +1,14 @@
 ---
 id: student-diary
-sidebar_position: 2
+sidebar_position: 1
 sidebar_label: Student Diary
 ---
 
-# Student Diary
+# 📔 Student Diary ✨ NEW FEATURE
+
+:::info NEW FEATURE
+This is a newly added feature in the latest version of eSchool SaaS. It provides a comprehensive digital diary system to enhance communication between teachers, students, and parents.
+:::
 
 The Student Diary feature is a comprehensive digital diary system designed to enhance communication between teachers, students, and parents. This feature allows teachers and school administrators to create diary entries for students, categorize them, and enable parents to view and filter these entries through the mobile application.
 
@@ -43,18 +47,18 @@ Before creating diary entries, you must first set up diary categories in the adm
 ### Category Examples
 
 **Positive Categories:**
-- Outstanding Performance
-- Good Behavior
-- Homework Completed
-- Extra Curricular Achievement
-- Improved Performance
+- 🌟 Outstanding Performance
+- 👍 Good Behavior
+- ✅ Homework Completed
+- 🏆 Extra Curricular Achievement
+- 📈 Improved Performance
 
 **Negative Categories:**
-- Homework Not Submitted
-- Behavioral Issues
-- Attendance Concern
-- Incomplete Assignment
-- Needs Improvement
+- ⚠️ Homework Not Submitted
+- 🚫 Behavioral Issues
+- 📅 Attendance Concern
+- ❌ Incomplete Assignment
+- 📊 Needs Improvement
 
 ---
 
@@ -90,11 +94,11 @@ Once categories are set up, teachers and admins can create diary entries for stu
 
 ### Best Practices
 
-- Use clear and concise titles
-- Provide specific details in the description
-- Choose the appropriate category (positive/negative)
-- Be professional and constructive in your communication
-- Update diary entries regularly to keep parents informed
+- 📝 Use clear and concise titles
+- 📋 Provide specific details in the description
+- 🎯 Choose the appropriate category (positive/negative)
+- 💼 Be professional and constructive in your communication
+- 🔄 Update diary entries regularly to keep parents informed
 
 ---
 
@@ -138,25 +142,25 @@ Organize diary entries based on preference:
 
 ## User Roles and Permissions
 
-### School Admin
+### 👨‍💼 School Admin
 - Create and manage all diary categories
 - Create diary entries for any student in any class
 - View all diary entries across the school
 - Edit or delete diary entries
 
-### Teacher Admin
+### 👩‍🏫 Teacher Admin
 - View all diary categories
 - Create diary entries only for assigned classes
 - Edit or delete their own diary entries
-- modify diary categories
+- Cannot modify diary categories
 
-### Teacher App
+### 📱 Teacher App
 - View all diary categories
 - Create diary entries only for assigned classes
 - Edit or delete their own diary entries
-- modify diary categories
+- Cannot modify diary categories
 
-### Parents/Students (Mobile App)
+### 👪 Parents/Students (Mobile App)
 - View diary entries assigned to the student
 - Filter and sort diary entries
 - Cannot create, edit, or delete entries
@@ -189,7 +193,7 @@ Organize diary entries based on preference:
 
 ---
 
-## Tips for Effective Usage
+## 💡 Tips for Effective Usage
 
 1. **Set Clear Categories** - Create categories that align with your school's communication needs
 2. **Be Consistent** - Update diary entries regularly to maintain effective communication
@@ -201,4 +205,14 @@ Organize diary entries based on preference:
 
 ---
 
-*This feature helps build a strong school-parent communication bridge, ensuring students receive the support they need both at school and at home.*
+## 🔧 Settings
+
+To configure Student Diary settings, navigate to **System Settings > Student Diary Settings** where you can:
+- Enable or disable the diary feature
+- Set notification preferences
+- Configure default categories
+- Manage diary permissions
+
+---
+
+*This feature helps build a strong school-parent communication bridge, ensuring students receive the support they need both at school and at home.* 🏫💙

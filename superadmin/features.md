@@ -14,7 +14,7 @@ sidebar_position: 2
 | Lesson Management | Assignment Management | Announcement Management |
 | Staff Management | Expense Management | Staff Leave Management |
 | Fees Management | School Gallery Management | ID Card - Certificate Generation |
-| Website Management | Chat Module | |
+| Website Management | Chat Module | Transportation Module |
 
 There are 20 features in this system. Out of these 16 features will be use for package building.
 

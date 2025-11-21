@@ -5,7 +5,7 @@ title: Changelog
 
 # Changelog
 
-## Version 1.8.0 (29 October 2025)
+## Version 1.8.0 (30 October 2025)
 
 + **[Added]** Transportation module for managing school transport logistics  
 + **[Added]** Student diary module to track daily academic and behavioral notes  

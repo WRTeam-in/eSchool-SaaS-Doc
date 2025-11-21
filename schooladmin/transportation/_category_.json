@@ -1,0 +1,8 @@
+{
+    "label": "🚌 Transportation (NEW)",
+    "position": 19,
+    "link": {
+        "type": "generated-index",
+        "description": "✨ NEW FEATURE - Comprehensive transportation management system for vehicles, routes, drivers, and student transportation requests"
+    }
+}
