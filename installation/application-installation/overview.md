@@ -27,7 +27,7 @@ For detailed version compatibility information, visit the
 #### Core Requirements
 
 - **Android Studio**: Version 2025.1.1 (Narwhal)
-- **Flutter**: Version 3.32.x
+- **Flutter**: [View Compatible Versions](./version-compatibility.md)
 - **Java**: Version 21
 
 #### macOS Requirements
