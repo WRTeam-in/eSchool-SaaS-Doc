@@ -1,8 +1,20 @@
 ---
-sidebar_position: 10
+sidebar_position: 99
 ---
 
-# ❓ FAQs
+# ❓ Frequently Asked Questions (FAQs)
+
+Welcome to the FAQs section! This comprehensive guide addresses common questions and issues you might encounter during the installation, setup, and operation of eSchool SaaS.
+
+## 📖 Quick Navigation
+
+- [Installation & Setup Issues](#-installation--setup-issues)
+- [Domain & SSL Configuration](#-domain--ssl-configuration)
+- [Subscription & Package Management](#-subscription--package-management)
+- [School Admin Panel](#-school-admin-panel)
+- [Mobile Application](#-mobile-application)
+
+---
 
 This section addresses common questions and issues you might encounter during the installation and setup process of eSchool SaaS.
 
@@ -26,10 +38,10 @@ This error typically occurs when the database user does not have permission to c
 <details>
 <summary><strong>2. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
 
-You can find detailed instructions for setting up the queue in our documentation here:  
+You can find detailed instructions for setting up the queue in our documentation here:
 ![e-School SaaS](../static/images/superadmin/missing-queue.png)
 
-👉 [Queue Setup Guide](../queue-setup)
+👉 [Queue Setup Guide](admin-panel-installation/queue-setup.md)
 
 </details>
 

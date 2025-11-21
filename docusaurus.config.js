@@ -70,6 +70,15 @@ const config = {
         sidebarItemsGenerator: async () => [],
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'newfeatures',
+        path: 'newfeatures',
+        routeBasePath: 'newfeatures',
+        sidebarPath: require.resolve('./newfeaturesSidebar.js'),
+      },
+    ],
   ],
 
   presets: [
@@ -99,11 +108,33 @@ const config = {
         },
         items: [
           {
+            type: 'doc',
+            docsPluginId: 'installation',
+            docId: 'intro',
+            position: 'left',
+            label: 'Introduction',
+          },
+          {
             docsPluginId: 'installation',
             type: 'docSidebar',
-            sidebarId: 'installationSidebar',
+            sidebarId: 'adminPanelSidebar',
             position: 'left',
-            label: 'Installation',
+            label: 'Admin Installation',
+          },
+
+          {
+            docsPluginId: 'installation',
+            type: 'docSidebar',
+            sidebarId: 'appInstallationSidebar',
+            position: 'left',
+            label: 'App Installation',
+          },
+          {
+            docsPluginId: 'newfeatures',
+            type: 'docSidebar',
+            sidebarId: 'newfeaturesSidebar',
+            position: 'left',
+            label: 'New Features',
           },
           {
             docsPluginId: 'superadmin',
@@ -118,6 +149,20 @@ const config = {
             sidebarId: 'schooladminSidebar',
             position: 'left',
             label: 'School Admin',
+          },
+          {
+            type: 'doc',
+            docsPluginId: 'installation',
+            docId: 'faqs',
+            position: 'left',
+            label: 'FAQs',
+          },
+          {
+            type: 'doc',
+            docsPluginId: 'installation',
+            docId: 'help-and-support',
+            position: 'left',
+            label: 'Support',
           },
           {
             docId: 'index',
@@ -157,8 +202,8 @@ const config = {
 
       ({
         hashed: true,
-        docsRouteBasePath: ["installation", "superadmin", "schooladmin"],
-        docsDir: ["installation", "superadmin", "schooladmin"],
+        docsRouteBasePath: ["installation", "superadmin", "schooladmin", "newfeatures"],
+        docsDir: ["installation", "superadmin", "schooladmin", "newfeatures"],
         docsPluginIdForPreferredVersion: "installation",
       }),
     ],

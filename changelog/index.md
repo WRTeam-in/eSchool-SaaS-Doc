@@ -5,6 +5,27 @@ title: Changelog
 
 # Changelog
 
+## Version 1.8.0 (29 October 2025)
+
++ **[Added]** Transportation module for managing school transport logistics  
++ **[Added]** Student diary module to track daily academic and behavioral notes  
++ **[Added]** server configuration settings in super admin dashboard with checkbox toggles  
++ **[Added]** optional sections while creating classes for flexible setup  
++ **[Improved]** option to delete and regenerate school subscription invoices  
++ **[Improved]** student report structure with refactored layout and data flow  
++ **[Improved]** ability to delete paid salaries for correction or audit  
++ **[Improved]** elective subject display grouped by category in school admin panel  
++ **[Improved]** delete school option now available if not installed  
++ **[Improved]** 2FA disabled by default; school admin can toggle on/off as needed  
++ **[Fixed]** date format inconsistencies across modules  
++ **[Fixed]** error message on first-time login for school admin when user is not activated  
++ **[Fixed]** Bugs fixes and other improvements
+
+
+## Version 1.7.1 (24 October 2025)
+
+- **[Added]** - Android 16KB page size support.
+
 ## Version 1.7.0 (30 July 2025)
 
 <details>
