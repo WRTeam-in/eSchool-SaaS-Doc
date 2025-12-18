@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunke_school_saa_s_documentation=globalThis.webpackChunke_school_saa_s_documentation||[]).push([[4770],{99824(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"superadmin"}')}}]);

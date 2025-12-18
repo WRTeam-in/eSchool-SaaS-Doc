@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunke_school_saa_s_documentation=self.webpackChunke_school_saa_s_documentation||[]).push([[4921],{41597:s=>{s.exports=JSON.parse('{"name":"@easyops-cn/docusaurus-search-local","id":"default"}')}}]);
