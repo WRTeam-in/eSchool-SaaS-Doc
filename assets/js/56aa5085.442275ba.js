@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunke_school_saa_s_documentation=globalThis.webpackChunke_school_saa_s_documentation||[]).push([[3410],{34215(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"studentweb"}')}}]);
