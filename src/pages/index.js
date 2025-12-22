@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
 import logo from "../../static/images/logo/logo.png";
-
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -24,7 +23,9 @@ function HomepageHeader() {
       const size = Math.random() * 6 + 14; // Random size between 14-20px
 
       el.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="${getIconPath(randomIcon)}" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <path d="${getIconPath(
+          randomIcon
+        )}" stroke="currentColor" stroke-width="1.2" fill="none"/>
       </svg>`;
 
       // Calculate position with velocity influence
@@ -35,13 +36,13 @@ function HomepageHeader() {
 
       el.style.left = `${x + offsetX}px`;
       el.style.top = `${y + offsetY}px`;
-      el.style.position = 'fixed';
-      el.style.pointerEvents = 'none';
-      el.style.color = 'rgba(255, 255, 255, 0.85)';
-      el.style.transform = 'scale(0) rotate(0deg)';
-      el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-      el.style.filter = 'blur(0px)';
-      el.style.opacity = '0';
+      el.style.position = "fixed";
+      el.style.pointerEvents = "none";
+      el.style.color = "rgba(255, 255, 255, 0.85)";
+      el.style.transform = "scale(0) rotate(0deg)";
+      el.style.transition = "all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+      el.style.filter = "blur(0px)";
+      el.style.opacity = "0";
 
       document.body.appendChild(el);
 
@@ -53,8 +54,8 @@ function HomepageHeader() {
       // Trigger animation
       requestAnimationFrame(() => {
         el.style.transform = `scale(1) rotate(${rotation}deg) translate(${moveX}px, ${moveY}px)`;
-        el.style.opacity = '1';
-        el.style.filter = 'blur(0.5px)'; // Less blur
+        el.style.opacity = "1";
+        el.style.filter = "blur(0.5px)"; // Less blur
       });
 
       // Remove after animation
@@ -69,24 +70,32 @@ function HomepageHeader() {
       const currentY = e.clientY;
       velocity.current = {
         x: currentX - lastMousePos.current.x,
-        y: currentY - lastMousePos.current.y
+        y: currentY - lastMousePos.current.y,
       };
       lastMousePos.current = { x: currentX, y: currentY };
 
       // Create icons based on velocity
-      const speed = Math.sqrt(velocity.current.x ** 2 + velocity.current.y ** 2);
+      const speed = Math.sqrt(
+        velocity.current.x ** 2 + velocity.current.y ** 2
+      );
       const numIcons = Math.min(Math.floor(speed / 8), 3); // Fewer icons, higher speed threshold
 
       for (let i = 0; i < numIcons; i++) {
         setTimeout(() => {
-          createIcon(currentX, currentY, velocity.current.x, velocity.current.y);
+          createIcon(
+            currentX,
+            currentY,
+            velocity.current.x,
+            velocity.current.y
+          );
         }, i * 40);
       }
     };
 
     const handleMouseEnter = (e) => {
       // Create initial burst of icons
-      for (let i = 0; i < 8; i++) { // Fewer initial icons
+      for (let i = 0; i < 8; i++) {
+        // Fewer initial icons
         setTimeout(() => {
           createIcon(e.clientX, e.clientY);
         }, i * 40);
@@ -117,7 +126,10 @@ function HomepageHeader() {
   };
 
   return (
-    <header ref={headerRef} className={clsx("hero hero--primary", styles.heroBanner)}>
+    <header
+      ref={headerRef}
+      className={clsx("hero hero--primary", styles.heroBanner)}
+    >
       <div className="container">
         <div className={styles.logoContainer}>
           <img
@@ -147,6 +159,7 @@ function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        {/* First row with 4 cards */}
         <div className="row">
           <div className="col col--3">
             <div className="card margin-bottom--lg">
@@ -167,7 +180,8 @@ function HomepageFeatures() {
               </div>
               <div className="card__body">
                 <p>
-                  Complete guide for installing and configuring the eSchool SaaS Admin Panel on your VPS server.
+                  Complete guide for installing and configuring the eSchool SaaS
+                  Admin Panel on your VPS server.
                 </p>
               </div>
               <div className="card__footer">
@@ -199,7 +213,8 @@ function HomepageFeatures() {
               </div>
               <div className="card__body">
                 <p>
-                  Step-by-step instructions for setting up and customizing the eSchool SaaS mobile application.
+                  Step-by-step instructions for setting up and customizing the
+                  eSchool SaaS mobile application.
                 </p>
               </div>
               <div className="card__footer">
@@ -230,7 +245,8 @@ function HomepageFeatures() {
               </div>
               <div className="card__body">
                 <p>
-                  Explore all the powerful features available in the eSchool SaaS Super Admin Panel.
+                  Explore all the powerful features available in the eSchool
+                  SaaS Super Admin Panel.
                 </p>
               </div>
               <div className="card__footer">
@@ -252,22 +268,25 @@ function HomepageFeatures() {
                     width="38"
                     height="38"
                     viewBox="0 0 100 100"
-                    fill="currentColor">
-
+                    fill="currentColor"
+                  >
                     <path d="M68,49.1c0,1.1-0.9,2-2,2H47.4c-1.1,0-2-0.9-2-2v-3c0-1.1,0.9-2,2-2H66c1.1,0,2,0.9,2,2V49.1z" />
                     <path d="M39.4,49.1c0,1.1-0.9,2-2,2H34c-1.1,0-2-0.9-2-2v-3c0-1.1,0.9-2,2-2h3.4c1.1,0,2,0.9,2,2V49.1z" />
-                    <path d="M73.8,20H26.2c-3.4,0-6.2,2.8-6.2,6.2v47.6c0,3.4,2.8,6.2,6.2,6.2h47.6c3.4,0,6.2-2.8,6.2-6.2V26.2
+                    <path
+                      d="M73.8,20H26.2c-3.4,0-6.2,2.8-6.2,6.2v47.6c0,3.4,2.8,6.2,6.2,6.2h47.6c3.4,0,6.2-2.8,6.2-6.2V26.2
 	C80,22.8,77.2,20,73.8,20z M47.4,27.4c0-0.8,0.8-1.4,1.6-1.4h23.4c0.8,0,1.4,0.8,1.4,1.6v3c0,0.8-0.8,1.4-1.6,1.4H48.8
 	c-0.8,0-1.4-0.8-1.4-1.6V27.4z M39.4,26c1.7,0,3,1.3,3,3c0,1.7-1.3,3-3,3s-3-1.3-3-3C36.4,27.3,37.7,26,39.4,26z M29,26
 	c1.7,0,3,1.3,3,3c0,1.7-1.3,3-3,3s-3-1.3-3-3C26,27.3,27.3,26,29,26z M74,72.6c0,0.8-0.8,1.4-1.6,1.4H68V59.1c0-1.1-0.9-2-2-2H34
-	c-1.1,0-2,0.9-2,2V74h-4.6c-0.8,0-1.4-0.8-1.4-1.6v-33c0-0.8,0.8-1.4,1.6-1.4h45c0.8,0,1.4,0.8,1.4,1.6V72.6z"/>
+	c-1.1,0-2,0.9-2,2V74h-4.6c-0.8,0-1.4-0.8-1.4-1.6v-33c0-0.8,0.8-1.4,1.6-1.4h45c0.8,0,1.4,0.8,1.4,1.6V72.6z"
+                    />
                   </svg>
                 </div>
                 <h3>School Admin</h3>
               </div>
               <div className="card__body">
                 <p>
-                  Discover the tools and functionalities available to School Admins in eSchool SaaS.
+                  Discover the tools and functionalities available to School
+                  Admins in eSchool SaaS.
                 </p>
               </div>
               <div className="card__footer">
@@ -276,6 +295,42 @@ function HomepageFeatures() {
                   to="/schooladmin/intro"
                 >
                   View School Admin Features
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Second row with Student Web card */}
+        <div className="row margin-top--lg">
+          <div className="col col--3">
+            <div className="card margin-bottom--lg">
+              <div className="card__header">
+                <div className={styles.cardIcon}>
+                  {/* Student Web Portal icon - Laptop/Browser icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 512"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                  >
+                    <path d="M128 32C92.7 32 64 60.7 64 96V352h64V96H512V352h64V96c0-35.3-28.7-64-64-64H128zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480H563.2c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2H19.2z" />
+                  </svg>
+                </div>
+                <h3>Student Web Portal</h3>
+              </div>
+              <div className="card__body">
+                <p>
+                  Complete guide for setting up and deploying the web-based
+                  Student Portal application.
+                </p>
+              </div>
+              <div className="card__footer">
+                <Link
+                  className="button button--outline button--primary"
+                  to="/studentweb/intro"
+                >
+                  Setup Student Web
                 </Link>
               </div>
             </div>
@@ -301,7 +356,10 @@ function SupportSection() {
           >
             Support
           </Link>
-          <Link className="button button--secondary button--lg" to="/installation/help-and-support">
+          <Link
+            className="button button--secondary button--lg"
+            to="/installation/help-and-support"
+          >
             Contact Us
           </Link>
         </div>
