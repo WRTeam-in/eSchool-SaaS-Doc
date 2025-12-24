@@ -139,6 +139,13 @@ const config = {
             label: "App Installation",
           },
           {
+            docsPluginId: "studentweb",
+            type: "docSidebar",
+            sidebarId: "studentwebSidebar",
+            position: "left",
+            label: "Student Web",
+          },
+          {
             docsPluginId: "newfeatures",
             type: "docSidebar",
             sidebarId: "newfeaturesSidebar",
@@ -158,13 +165,6 @@ const config = {
             sidebarId: "schooladminSidebar",
             position: "left",
             label: "School Admin",
-          },
-          {
-            docsPluginId: "studentweb",
-            type: "docSidebar",
-            sidebarId: "studentwebSidebar",
-            position: "left",
-            label: "Student Web",
           },
           {
             type: "doc",

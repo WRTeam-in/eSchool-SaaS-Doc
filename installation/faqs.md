@@ -334,9 +334,9 @@ To set up Firebase using the Firebase CLI for eSchool SaaS:
    ```
 
 3. **Log in to Firebase:**
-   
+
    firebase login
-   
+
    This will open a browser window where you can authenticate with your Google account.
 
 4. **Video Guide:** Watch this quick video guide for a visual walkthrough.
@@ -347,5 +347,105 @@ To set up Firebase using the Firebase CLI for eSchool SaaS:
 
 </details>
 
----
+<details>
+<summary><strong>15. How can I control whether default login credentials are displayed on the Student App and Staff App login screens?</strong></summary>
 
+The eSchool SaaS mobile applications provide a convenient feature that allows you to control the visibility of default login credentials on the login screens. This can be helpful for demonstration purposes or to guide users during initial login, but you may want to hide them in production for security reasons.
+
+**Location of Configuration:**
+
+The configuration is located in the `constants.dart` file of your Flutter application code.
+
+**Available Configuration Variables:**
+
+There are two separate boolean variables that control default credential visibility for each app:
+
+### 📱 **For Student App:**
+
+```dart
+showDefaultCredentialInStudentApp = true;  // Shows default credentials
+showDefaultCredentialInStudentApp = false; // Hides default credentials
+```
+
+**When set to `true`:**
+- The Student App login screen will display example/default credentials including:
+  - **GR Number** (General Register Number) example
+  - **Password** (Date of Birth format) example
+  - **School Code** example
+- This helps students understand what information they need to enter
+
+**When set to `false`:**
+- The default credentials will not be shown on the login screen
+- Users will see empty input fields without any placeholder examples
+
+![Student App Default Credentials Configuration](../static/images/installation/app/faq/defult_studentapp.png)
+
+### 👥 **For Staff/Teacher App:**
+
+```dart
+showDefaultCredentialInTeacherApp = true;  // Shows default credentials
+showDefaultCredentialInTeacherApp = false; // Hides default credentials
+```
+
+**When set to `true`:**
+- The Teacher/Staff App login screen will display example/default credentials including:
+  - **Email** address example
+  - **Password** (Mobile number) example
+  - **School Code** example
+- This helps staff members understand the login format
+
+**When set to `false`:**
+- The default credentials will not be shown on the login screen
+- Users will see empty input fields without any placeholder examples
+
+![Staff App Default Credentials Configuration](../static/images/installation/app/faq/defult_staffapp.png)
+
+### 🔧 **How to Configure:**
+
+1. **Open the Flutter Project:**
+   - Navigate to your Student App or Staff App source code
+
+2. **Locate the constants.dart file:**
+   - The file is typically located in the `lib/utils/` or `lib/constants/` directory
+
+3. **Find the Configuration Variables:**
+   - For Student App: Look for `showDefaultCredentialInStudentApp`
+   - For Staff App: Look for `showDefaultCredentialInTeacherApp`
+
+4. **Set the Value:**
+   - Set to `true` if you want to display default credentials
+   - Set to `false` if you want to hide them
+
+5. **Rebuild the Application:**
+   - After making changes, rebuild and deploy your application
+   - The changes will take effect in the new build
+
+### ⚙️ **Best Practices:**
+
+**✅ When to Show Default Credentials (`true`):**
+- During testing and development phase
+- For demo or presentation purposes
+- When onboarding new users who need guidance
+- In training or educational environments
+
+**❌ When to Hide Default Credentials (`false`):**
+- In production environments (recommended for security)
+- When users are familiar with the login process
+- To maintain a professional appearance
+- To prevent confusion about actual credentials
+
+### 📝 **Important Notes:**
+
+- These settings are independent for each app (Student and Staff)
+- The default credentials shown are examples only and do not provide actual access
+- Users must still enter their valid credentials to log in
+- This feature only controls the visibility of example text on the login screen
+- Changes require rebuilding the application to take effect
+
+### 🔒 **Security Recommendation:**
+
+For production environments, it is strongly recommended to set both variables to `false` to maintain a clean and professional login interface without displaying any example credentials.
+
+</details>
+
+---

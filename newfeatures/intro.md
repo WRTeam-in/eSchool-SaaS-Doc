@@ -14,6 +14,9 @@ Our team continuously works on developing innovative features to make eSchool Sa
 
 ## Available Features
 
+### Staff Attendance
+A complete staff attendance management system with leave integration, automatic absence tracking, and payroll synchronization.
+
 ### Student Diary
 A comprehensive digital diary system for tracking student activities, assignments, and communications.
 
