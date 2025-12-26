@@ -5,6 +5,18 @@ title: Changelog
 
 # Changelog
 
+## Version 1.8.1 (26 Dec 2025)
+
++ **[Added]** Transportation report
++ **[Added]** Staff attendance
++ **[Added]** Teacher report
++ **[Added]** Student report added Transportation Details
++ **[Improvement]** Online Exam create class wise questions and UI improved
++ **[Improvement]** Notification redirection
++ **[Improvement]** Semester added start and end date
++ **[Improvement]** Elective subject UI improved
++ **[Improvement]** Web Settings UI improved
+
 ## Version 1.8.0 (30 October 2025)
 
 + **[Added]** Transportation module for managing school transport logistics  
