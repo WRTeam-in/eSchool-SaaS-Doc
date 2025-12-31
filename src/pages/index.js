@@ -300,13 +300,12 @@ function HomepageFeatures() {
             </div>
           </div>
         </div>
-        {/* Second row with Student Web card */}
+        {/* Student Web Portal - Commented out until launch
         <div className="row margin-top--lg">
           <div className="col col--3">
             <div className="card margin-bottom--lg">
               <div className="card__header">
                 <div className={styles.cardIcon}>
-                  {/* Student Web Portal icon - Laptop/Browser icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 640 512"
@@ -336,6 +335,7 @@ function HomepageFeatures() {
             </div>
           </div>
         </div>
+        */}
       </div>
     </section>
   );

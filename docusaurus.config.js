@@ -79,15 +79,16 @@ const config = {
         sidebarPath: require.resolve("./newfeaturesSidebar.js"),
       },
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "studentweb",
-        path: "studentweb",
-        routeBasePath: "studentweb",
-        sidebarPath: require.resolve("./studentwebSidebar.js"),
-      },
-    ],
+    // Student Web Portal - Commented out until launch
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "studentweb",
+    //     path: "studentweb",
+    //     routeBasePath: "studentweb",
+    //     sidebarPath: require.resolve("./studentwebSidebar.js"),
+    //   },
+    // ],
   ],
 
   presets: [
@@ -138,13 +139,14 @@ const config = {
             position: "left",
             label: "App Installation",
           },
-          {
-            docsPluginId: "studentweb",
-            type: "docSidebar",
-            sidebarId: "studentwebSidebar",
-            position: "left",
-            label: "Student Web",
-          },
+          // Student Web Portal - Commented out until launch
+          // {
+          //   docsPluginId: "studentweb",
+          //   type: "docSidebar",
+          //   sidebarId: "studentwebSidebar",
+          //   position: "left",
+          //   label: "Student Web",
+          // },
           {
             docsPluginId: "newfeatures",
             type: "docSidebar",
@@ -223,14 +225,14 @@ const config = {
           "superadmin",
           "schooladmin",
           "newfeatures",
-          "studentweb",
+          // "studentweb", // Commented out until launch
         ],
         docsDir: [
           "installation",
           "superadmin",
           "schooladmin",
           "newfeatures",
-          "studentweb",
+          // "studentweb", // Commented out until launch
         ],
         docsPluginIdForPreferredVersion: "installation",
       },
