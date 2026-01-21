@@ -1,7 +1,9 @@
 ---
 sidebar_position: 100
 ---
+import DocBanner from '@site/src/components/DocBanner/DocBanner';
 
+<DocBanner />
 # 🆘 Help & Support
 
 This section provides information on how to get support, provide feedback, and contact the WRTeam for assistance with e-School SaaS.

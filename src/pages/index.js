@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
 import logo from "../../static/images/logo/logo.png";
+import DocBanner from "../components/DocBanner/DocBanner";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -376,6 +377,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
         <SupportSection />
+        <DocBanner />
       </main>
     </Layout>
   );

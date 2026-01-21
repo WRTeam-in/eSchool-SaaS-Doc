@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
 ---
+import DocBanner from '@site/src/components/DocBanner/DocBanner';
 
+<DocBanner />
 # 🖥️ Admin Panel Installation
 
 Welcome to the **Admin Panel Installation Guide** for e-School SaaS! This section will guide you through the complete setup process for deploying and configuring the admin panel on your VPS server.

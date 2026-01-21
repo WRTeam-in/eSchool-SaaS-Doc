@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
 ---
+import DocBanner from '@site/src/components/DocBanner/DocBanner';
 
+<DocBanner />
 # Student Web Portal
 
 Welcome to the Student Web Portal documentation. This section covers the setup, installation, and deployment of the eSchool SaaS Student Web Portal.

@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
 ---
+import DocBanner from '@site/src/components/DocBanner/DocBanner';
 
+<DocBanner />
 # Super Admin Guide
 
 ## Documentation
