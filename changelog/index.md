@@ -5,6 +5,13 @@ title: Changelog
 
 # Changelog
 
+## Version 1.8.2 (22 Jan 2025)
+
++ **[Added]** Support for multiple-device FCM tokens with an enhanced notification system
++ **[Added]** Bulk upload (Teacher/Staff/Student) feature with email queue–based notification service
++ **[Improved]** Sidebar menu and overall navigation experience
++ **[Improved]** General performance enhancements and improvements
+
 ## Version 1.8.1 (26 Dec 2025)
 
 + **[Added]** Transportation report
