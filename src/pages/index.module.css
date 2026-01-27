@@ -533,6 +533,100 @@ html[data-theme="light"] .cardIcon {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Video Demo Section */
+.videoDemoWrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.videoDemoLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.9) 0%, rgba(34, 197, 94, 0.9) 100%);
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 4px 15px rgba(34, 197, 94, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: labelGlow 2s ease-in-out infinite;
+}
+
+@keyframes labelGlow {
+  0%, 100% {
+    box-shadow:
+      0 4px 15px rgba(34, 197, 94, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 4px 25px rgba(34, 197, 94, 0.6),
+      0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  background: linear-gradient(135deg, rgba(120, 180, 230, 0.25) 0%, rgba(100, 160, 220, 0.15) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.videoContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%);
+  border-radius: 50%;
+}
+
+.videoContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40px;
+  background: radial-gradient(ellipse at center,
+    rgba(0, 200, 255, 0.3) 0%,
+    transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.videoFrame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+}
+
 /* Feature chips container */
 .comingSoonFeatures {
   display: flex;
@@ -646,6 +740,20 @@ html[data-theme="light"] .cardIcon {
     padding: 0 1rem;
   }
 
+  .videoDemoWrapper {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .videoContainer {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .videoFrame {
+    border-radius: 10px;
+  }
+
   .featureRow {
     gap: 0.75rem;
   }
@@ -666,5 +774,19 @@ html[data-theme="light"] .cardIcon {
   .featureChip {
     width: 100%;
     justify-content: center;
+  }
+
+  .videoDemoLabel {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .videoContainer {
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .videoFrame {
+    border-radius: 8px;
   }
 }

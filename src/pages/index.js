@@ -401,63 +401,25 @@ function ComingSoonSection() {
           from any web browser.
         </p>
 
-        {/* Feature Chips - Row 1 */}
-        <div className={styles.comingSoonFeatures}>
-          <div className={styles.featureRow}>
-            {/* Online Assignments */}
-            <div className={styles.featureChip}>
-              <span className={styles.chipIconLeft}>
-                <svg className={styles.checkIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              Online Assignments
-            </div>
-
-            {/* Transport Tracking */}
-            <div className={styles.featureChip}>
-              <span className={styles.chipIconLeft}>
-                <svg className={styles.busIcon} width="20" height="20" viewBox="0 0 24 24" fill="#4ade80">
-                  <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" />
-                </svg>
-              </span>
-              Transport Tracking
-            </div>
-
-            {/* Progress Tracking */}
-            <div className={styles.featureChip}>
-              <span className={styles.chipIconLeft}>
-                <svg className={styles.chartIcon} width="18" height="18" viewBox="0 0 24 24" fill="#4ade80">
-                  <path d="M3 13h2v8H3v-8zm6-6h2v14H9V7zm6 3h2v11h-2V10zm6-7h2v18h-2V3z" />
-                </svg>
-              </span>
-              Progress Tracking
-              <span className={styles.chipIconRight}>
-                <svg className={styles.bookIcon} width="18" height="18" viewBox="0 0 24 24" fill="rgba(150,200,255,0.8)">
-                  <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z" />
-                </svg>
-              </span>
-            </div>
+        {/* Video Demo Section */}
+        <div className={styles.videoDemoWrapper}>
+          <div className={styles.videoDemoLabel}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Watch Demo
           </div>
-
-          {/* Feature Chips - Row 2 */}
-          <div className={styles.featureRow}>
-            {/* Resource Library */}
-            <div className={styles.featureChip}>
-              <span className={styles.chipIconLeft}>
-                <svg className={styles.checkIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              Resource Library
-              <span className={styles.chipIconRight}>
-                <svg className={styles.bookIcon} width="18" height="18" viewBox="0 0 24 24" fill="rgba(150,200,255,0.8)">
-                  <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" />
-                </svg>
-              </span>
-            </div>
+          <div className={styles.videoContainer}>
+            <iframe
+              src="https://drive.google.com/file/d/1iFA--Ih2Jx6NMrMjY4rpj2I0jC8mWK12/preview"
+              title="Student Web Portal Demo"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className={styles.videoFrame}
+            ></iframe>
           </div>
         </div>
+
       </div>
     </section>
   );
