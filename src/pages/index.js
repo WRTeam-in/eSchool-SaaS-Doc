@@ -160,9 +160,9 @@ function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        {/* First row with 4 cards */}
+        {/* First row with 3 cards */}
         <div className="row">
-          <div className="col col--3">
+          <div className="col col--4">
             <div className="card margin-bottom--lg">
               <div className="card__header">
                 <div className={styles.cardIcon}>
@@ -195,7 +195,7 @@ function HomepageFeatures() {
               </div>
             </div>
           </div>
-          <div className="col col--3">
+          <div className="col col--4">
             <div className="card margin-bottom--lg">
               <div className="card__header">
                 <div className={styles.cardIcon}>
@@ -228,7 +228,7 @@ function HomepageFeatures() {
               </div>
             </div>
           </div>
-          <div className="col col--3">
+          <div className="col col--4">
             <div className="card margin-bottom--lg">
               <div className="card__header">
                 <div className={styles.cardIcon}>
@@ -260,7 +260,11 @@ function HomepageFeatures() {
               </div>
             </div>
           </div>
-          <div className="col col--3">
+        </div>
+        
+        {/* Second row with 2 cards */}
+        <div className={clsx("row margin-top--lg", styles.centeredRow)}>
+          <div className="col col--4">
             <div className="card margin-bottom--lg">
               <div className="card__header">
                 <div className={styles.cardIcon}>
@@ -300,10 +304,7 @@ function HomepageFeatures() {
               </div>
             </div>
           </div>
-        </div>
-        {
-        <div className="row margin-top--lg">
-          <div className="col col--3">
+          <div className="col col--4">
             <div className="card margin-bottom--lg">
               <div className="card__header">
                 <div className={styles.cardIcon}>
@@ -336,15 +337,14 @@ function HomepageFeatures() {
             </div>
           </div>
         </div>
-        }
       </div>
     </section>
   );
 }
 
-function ComingSoonSection() {
+function AvailableNowSection() {
   return (
-    <section className={styles.comingSoonSection}>
+    <section className={styles.availableNowSection}>
       {/* Floating particles */}
       <div className={styles.particlesContainer}>
         <div className={styles.particle}></div>
@@ -361,16 +361,16 @@ function ComingSoonSection() {
         <div className={styles.particle}></div>
       </div>
 
-      <div className={styles.comingSoonContainer}>
+      <div className={styles.availableNowContainer}>
         {/* Header with Badge and Icon */}
-        <div className={styles.comingSoonHeader}>
-          <div className={styles.comingSoonBadge}>
+        <div className={styles.availableNowHeader}>
+          <div className={styles.availableNowBadge}>
             <span className={styles.badgeDot}></span>
-            COMING SOON
+            AVAILABLE NOW
           </div>
-          <div className={styles.comingSoonIconWrapper}>
+          <div className={styles.availableNowIconWrapper}>
             <svg
-              className={styles.comingSoonIcon}
+              className={styles.availableNowIcon}
               width="36"
               height="36"
               viewBox="0 0 24 24"
@@ -390,16 +390,24 @@ function ComingSoonSection() {
         </div>
 
         {/* Content */}
-        <h2 className={styles.comingSoonTitle}>Student Web Portal</h2>
-        <p className={styles.comingSoonSubtitle}>
+        <h2 className={styles.availableNowTitle}>Student Web Portal</h2>
+        <p className={styles.availableNowSubtitle}>
           A New Way to Learn & Engage
         </p>
-        <p className={styles.comingSoonDescription}>
-          We're excited to announce the upcoming launch of our Student Web Portal!
-          This powerful new addition will provide students with seamless access to
-          their academic resources, assignments, and progress tracking directly
-          from any web browser.
+        <p className={styles.availableNowDescription}>
+          We're thrilled to announce that our Student Web Portal is officially live!
+          Students can now enjoy seamless access to academic resources, 
+          track assignments, and monitor their progress—all from any web browser.
         </p>
+
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/studentweb/intro"
+          >
+            Get Started with Student Web
+          </Link>
+        </div>
 
         {/* Video Demo Section */}
         <div className={styles.videoDemoWrapper}>
@@ -459,7 +467,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <ComingSoonSection />
+        <AvailableNowSection />
         <SupportSection />
         <DocBanner />
       </main>

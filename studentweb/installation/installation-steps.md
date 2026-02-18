@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Installation Steps
@@ -13,18 +13,15 @@ Before you begin, ensure you have the following:
 ### Required Tools
 
 1. **VS Code Editor** - Download from [https://code.visualstudio.com/](https://code.visualstudio.com/)
-
    - Free, lightweight code editor from Microsoft
    - Recommended for editing the project files
 
 2. **Node.js (Version 20)** - Download from [https://nodejs.org/en/download/prebuilt-installer](https://nodejs.org/en/download/prebuilt-installer)
-
    - Required to build the project
    - Choose the LTS (Long Term Support) version 20
    - Includes npm (Node Package Manager) automatically
 
 3. **Firebase Account** - Create account at [https://console.firebase.google.com/](https://console.firebase.google.com/)
-
    - Required for push notifications
    - Free tier is sufficient for most use cases
 
@@ -79,41 +76,33 @@ npm --version
 
 ### Step 4: Configure Environment Variables
 
-Open the `.env.local` file in the project root directory.
+The Student Web Portal uses environment variables to configure API connections and branding details. These variables are stored in a `.env.local` file in the project root.
 
-1. In VS Code, locate `.env.local` file in the root folder
-2. Open the file for editing
+1. In VS Code, locate the `.env.local` file in the root folder.
+2. If it doesn't exist, create a new file named `.env.local`.
+3. Open the file for editing and configure your **Admin Panel URL**:
 
-### Step 5: Configure Basic Settings
-
-Add your Admin Panel URL and contact information in the `.env.local` file.
-
-Update the following variables with your actual details:
+![Admin URL Setup](./images/admin-url.png)
 
 ```env
 # Admin Panel API URL
 NEXT_PUBLIC_STUDENT_API_URL=https://your-admin-panel-domain.com
+```
 
-# Contact Information (displayed in the portal)
-NEXT_PUBLIC_ADDRESS=Your School Address
+4. Add your school's **Contact Information** (this appears in the portal footer):
+
+```env
+# Contact Information
+NEXT_PUBLIC_ADDRESS=123 Learning Avenue, Greenfield District
 NEXT_PUBLIC_PHONE=+91 12345 67890
 NEXT_PUBLIC_EMAIL=info@yourschool.com
 ```
 
-**Example:**
-
-```env
-NEXT_PUBLIC_STUDENT_API_URL=https://admin.eschool.com
-NEXT_PUBLIC_ADDRESS=123 Learning Avenue, Greenfield District
-NEXT_PUBLIC_PHONE=+91 98765 43210
-NEXT_PUBLIC_EMAIL=contact@eschool.com
-```
-
 **Important Notes:**
 
-- The API URL should be your Admin Panel domain (without `/api/v1` at the end)
-- Contact information will be displayed in the Student Web Portal
-- Make sure your Admin Panel is running and accessible before proceeding
+- Ensure the API URL does **not** end with `/api/v1`.
+- Contact information changes will be reflected immediately in the portal.
+- All variables must be prefixed with `NEXT_PUBLIC_`.
 
 ### Step 6: Open Firebase Console
 
@@ -129,7 +118,7 @@ Open Firebase Console to set up push notifications.
 
 Follow the Firebase setup documentation to get your configuration details.
 
-Refer to the Firebase documentation section for detailed steps:
+Refer to the **[Firebase Setup](./firebase-setup.md)** section for detailed, step-by-step instructions on:
 
 - Creating a Firebase project
 - Enabling Firebase Cloud Messaging (FCM)
@@ -138,14 +127,22 @@ Refer to the Firebase documentation section for detailed steps:
 
 ### Step 8: Add Firebase Details to Environment File
 
-Add all Firebase configuration details to the `.env.local` file.
+Add all Firebase configuration details to the `.env.local` file. This is crucial for enabling push notifications.
 
-Update these variables in `.env.local` with your Firebase project credentials:
+For a detailed setup guide, refer to the **[Firebase Setup](./firebase-setup.md)** section.
+
+1. Locate your **VAPID Key** in the Firebase Console and add it to `.env.local`:
+
+![Firebase VAPID Key](./images/vapid.png)
 
 ```env
 # Firebase VAPID Key (for push notifications)
 NEXT_PUBLIC_FIREBASE_VAPID_KEY=your-vapid-key
+```
 
+2. Add your **Firebase Project Configuration** keys:
+
+```env
 # Firebase Configuration
 NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
@@ -156,26 +153,10 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your-measurement-id
 ```
 
-**Complete Example:**
-
-```env
-# Vapid key
-NEXT_PUBLIC_FIREBASE_VAPID_KEY=BFsH54ZcY7gOKuIDujsteR2rYsya3PP2PIMFcKc2Ug0DJonOy0sU5PInNXZ5_bOCoKJ5bd4zeOvctuNWVFOMQSw
-
-# Firebase Config
-NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyCtM88OLdXBBRo2cAmTqnuAIMoezZpYY
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-app.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-app.firebasestorage.app
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=539033120705
-NEXT_PUBLIC_FIREBASE_APP_ID=1:539033120705:web:2e8d60c833a0a0add8c940
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-X0BBVFTD0Q
-```
-
 **Where to find these values:**
 
-1. **Firebase Configuration Keys**: Firebase Console → Project Settings → General → Your apps → Web app
-2. **VAPID Key**: Firebase Console → Project Settings → Cloud Messaging → Web Push certificates → Generate key pair
+1. **Firebase Configuration Keys**: Go to Firebase Console → Project Settings → General → Your apps → Web app.
+2. **VAPID Key**: Go to Firebase Console → Project Settings → Cloud Messaging → Web Push certificates.
 
 **Complete `.env.local` File Structure:**
 
