@@ -17,73 +17,7 @@ Before deployment, ensure:
 
 ## Deployment Options
 
-### Option 1: Deploy on Shared Hosting (cPanel)
-
-#### Step 1: Build the Application
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-This creates an `out/` folder with optimized files.
-
-#### Step 2: Upload Files
-
-1. Login to your cPanel
-2. Navigate to File Manager
-3. Go to `public_html` (or your domain directory)
-4. Upload all files from the `out/` folder
-5. Ensure `index.html` is in the root
-
-#### Step 3: Configure .htaccess
-
-Create/edit `.htaccess` file for proper routing:
-
-```apache
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # Disable directory listing
-  Options -Indexes
-
-  # Deep Link Support for Auth Page
-  # Ensure /student/auth/* maps to the auth page HTML, not the root index.html
-  RewriteCond %{REQUEST_URI} ^/student/auth/
-  RewriteRule ^student/auth/.*$ /student/auth.html [L]
-
-  # Handle Directory/File Conflict (e.g., /student/chats/ vs /student/chats.html)
-  # If request is a directory (or has trailing slash)
-  # AND a corresponding .html file exists, serve the .html file
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteCond %{REQUEST_URI} ^(.+)/$
-  RewriteCond %{DOCUMENT_ROOT}%1.html -f
-  RewriteRule ^ %1.html [L]
-
-  # Serve resources from the out directory if they exist (extensionless to .html)
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
-
-  # Clean URLs: redirect .html to extensionless
-  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html\s [NC]
-  RewriteRule ^ /%1 [R=301,L]
-
-  # Force trailing slash removal for consistency?
-  # RewriteRule ^(.*)/$ /$1 [L,R=301]
-
-  # SPA Fallback: If no file/dir match, render index.html
-  # But be careful not to loop.
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-```
-
-### Option 2: Deploy on Vercel
+### Option 1: Deploy on Vercel
 
 #### Step 1: Prepare for Vercel
 
@@ -101,6 +35,166 @@ Create/edit `.htaccess` file for proper routing:
 4. Import your repository.
 5. Vercel will auto-detect Next.js. Click **Deploy**.
 6. Your site will be live in minutes!
+
+### Option 2: Deploy on VPS Server
+
+#### Web Automatic Deployment
+
+Upload your web code to your server, open the terminal, navigate to your web code directory, and run the **./install.sh** command.
+
+#### Web Manually Deployment
+
+:::warning
+
+- Deployment of the Next JS needs a bit of knowledge about `node js` `npm` `pm2` technologies. We have assumed that you are using a `debian` based OS, apt is your package manager. If you are using any other linux distro then apt will be replaced with the respective package manager of the OS
+
+- We do not recommend deploying on shared hosting as it may not support all Node.js features. If you do not have a VPS server, you can proceed with this method, but we cannot provide support for any issues that arise.
+
+:::
+
+Before starting the project deployment, you must upload your project to the server. Project can be upload to the server using [FileZila](https://filezilla-project.org/download.php) or in other ways.
+
+##### Installing NodeJS
+
+NodeJS can be installed using NVM by which multi Node version can be controlled easily.
+
+```bash
+sudo apt install curl
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+nvm install node 20.*
+```
+
+Check if node js is installed correctly using this command:
+
+```bash
+node -v
+```
+
+:::info
+
+For more information, use [official documentation](https://nodejs.org/docs/latest/api/)
+
+:::
+
+##### Installing PM2 Server
+
+By running the following command, PM2 server can be installed globally:
+
+```bash
+npm install pm2 -g
+```
+
+##### Set Port
+
+Before setting the port, check available ports with this command:
+
+```bash
+sudo lsof -i -P -n | grep 8003
+```
+
+![Port Occupied](./images/localserver.png)
+
+If you get a response like this it means this port is occupied with another project, so try another port (e.g. 8000, 8001, 8002, 8003, 8004, etc.)
+
+![Port Available](./images/localserver2.png)
+
+If you get a response like this it means this port is available and you can use it.
+
+Now add the available port to your `package.json` file:
+
+![Package JSON](./images/packega.png)
+
+##### Configure .htaccess
+
+Add the following configuration to your `.htaccess` file. Make sure to replace `8004` with the port you set in your `package.json`:
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteRule ^/.well-known/acme-challenge/(.*) /.well-known/acme-challenge/$1 [L]
+
+    RewriteRule ^_next/(.*) /.next/$1 [L]
+    # Allow access to static files with specific extensions
+    RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|png|gif|ico|woff2)$
+    RewriteRule ^ - [L]
+
+    RewriteRule ^index.html http://127.0.0.1:8004/$1 [P]
+    RewriteRule ^index.php http://127.0.0.1:8004/$1 [P]
+    RewriteRule ^/?(.*)$ http://127.0.0.1:8004/$1 [P]
+</IfModule>
+```
+
+##### Setup the Project
+
+:::note
+
+Make sure you have `node_modules` installed in your directory.
+
+:::
+
+For installing packages, run the following command:
+
+```bash
+npm install
+```
+
+The above command will install all the **node modules** in your directory.
+
+After that, the project must be built. Run the following command, which will build the production application in the **.next** folder:
+
+```bash
+npm run build
+```
+
+##### Run the PM2 Server
+
+Go to the project root and run the following command:
+
+```bash
+pm2 start "npm start" -n "YOUR_PROJECT_NAME"
+```
+
+Check if the PM2 process is running OK:
+
+```bash
+pm2 ls
+```
+
+When you run `pm2 ls` you will see 2 types of output:
+
+1. **Error** — If you are getting errors in the PM2 process, then run `pm2 logs` and send us a screenshot of the error so that we can guide you to resolve the issues.
+
+2. **Success** — If successful, set up a startup script for your operating system to ensure PM2 restarts automatically after a system reboot:
+
+   ```bash
+   pm2 startup
+   ```
+
+   After setting up PM2 with the startup command, save the current process list:
+
+   ```bash
+   pm2 save
+   ```
+
+   If you want to restart your PM2 process, run:
+
+   ```bash
+   pm2 restart id  # Replace id with your process id
+   ```
+
+For deleting a previous project running in the PM2 server, use the following command:
+
+```bash
+pm2 delete "YOUR_PROJECT_NAME"
+```
+
+:::info
+
+For more information, use [official documentation](https://pm2.keymetrics.io/docs/usage/quick-start/)
+
+:::
 
 ## Troubleshooting
 
