@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
+sidebar_label: Intro
 ---
+
 import DocBanner from '@site/src/components/DocBanner/DocBanner';
 
 <DocBanner />
