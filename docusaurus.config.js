@@ -79,7 +79,7 @@ const config = {
         sidebarPath: require.resolve("./newfeaturesSidebar.js"),
       },
     ],
-    // Student Web Portal - Commented out until launch
+   // Student Web Portal - Commented out until launch
     // [
     //   "@docusaurus/plugin-content-docs",
     //   {
@@ -139,7 +139,7 @@ const config = {
             position: "left",
             label: "App Installation",
           },
-          // Student Web Portal - Commented out until launch
+        // Student Web Portal - Commented out until launch
           // {
           //   docsPluginId: "studentweb",
           //   type: "docSidebar",
@@ -225,14 +225,14 @@ const config = {
           "superadmin",
           "schooladmin",
           "newfeatures",
-          // "studentweb", // Commented out until launch
+          // "studentweb",
         ],
         docsDir: [
           "installation",
           "superadmin",
           "schooladmin",
           "newfeatures",
-          // "studentweb", // Commented out until launch
+          // "studentweb",
         ],
         docsPluginIdForPreferredVersion: "installation",
       },

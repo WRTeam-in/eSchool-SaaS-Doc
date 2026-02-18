@@ -1,120 +1,57 @@
 ---
 sidebar_position: 2
+sidebar_label: 🛠️ Environment Setup
 ---
 
 # 🛠️ Environment Setup
 
-## 📋 Introduction
+## 📋 Overview
 
-This guide will walk you through setting up Flutter for the **eSchool SaaS** mobile application development.
+Before you can build, run, or customize the **eSchool SaaS** mobile application, your development machine must have a properly configured Flutter environment. This includes installing the Flutter SDK, Java JDK, configuring your IDE, and setting up platform-specific tools for Android and iOS.
 
-## 🔧 Setup
+We have published a **comprehensive, step-by-step environment setup guide** that covers everything you need — from scratch to a fully working Flutter development environment.
 
-### 1️⃣ Download Flutter SDK
+---
 
-1. Download Flutter SDK from [flutter.dev](https://docs.flutter.dev/get-started)
-2. Extract the downloaded zip file in a location of your choice (avoid paths with special characters or spaces)
-3. Add Flutter to your PATH environment variable
+## 📖 Follow the Complete Setup Guide
 
-> 💡 **Video Tutorial**: If you prefer video tutorials, we recommend this playlist for the full installation process: [https://www.youtube.com/playlist?list=PLSzsOkUDsvdtl3Pw48-R8lcK2oYkk40cm](https://www.youtube.com/playlist?list=PLSzsOkUDsvdtl3Pw48-R8lcK2oYkk40cm)
+👉 **[Flutter & Java JDK Environment Setup Guide](https://wrteam-in.github.io/common_app_doc/GeneralSettings/basicsetup)**
 
-### 2️⃣ Verify Installation
+This guide covers all the essential setup steps required before working with the eSchool SaaS mobile application:
 
-Open a terminal/command prompt and run the following command to verify the installation:
+| Step | What's Covered |
+|------|----------------|
+| **1. Flutter SDK** | Download, extract, and configure Flutter on Windows / macOS / Linux |
+| **2. Java JDK** | Install JDK, set `JAVA_HOME`, and verify with `java -version` |
+| **3. IDE Setup** | Configure Android Studio or VS Code with Flutter & Dart plugins |
+| **4. Android SDK** | Set up Android SDK, emulator, or physical device |
+| **5. iOS Tools** | Install Xcode and configure iOS simulator *(macOS only)* |
+| **6. Verification** | Run `flutter doctor --verbose` to confirm everything is working |
+
+---
+
+## ✅ Before You Proceed
+
+Once you have completed the setup guide linked above, verify your environment by running:
 
 ```bash
 flutter doctor -v
 ```
 
-This command checks your environment and displays a report of the status of your Flutter installation.
+All required checks should show a green ✓. Only then proceed to the next step in this documentation.
 
-![Flutter Doctor](../../static/images/installation/app/flutter_doctor-e3ed2ce8c0f6d85c1d201ec9caccd8f4.png)
+:::warning Important
+Do **not** skip or partially complete the environment setup. An incomplete setup is the most common cause of build failures, dependency errors, and runtime issues when working with the eSchool SaaS app.
+:::
 
-**Flutter Doctor** will show you:
-- Flutter installation status
-- Android toolchain status
-- iOS toolchain status (macOS only)
-- IDE setup status
-- Connected devices
+:::info Support Scope
+Assistance for system-level setup — including Flutter installation, Android Studio configuration, JDK setup, and macOS-specific tooling — is **not included** in our support services. Please follow the linked guide and refer to the official Flutter documentation for environment-related issues.
+:::
 
-## 💻 Setting Up an IDE
+---
 
-You can use any of the following IDEs for Flutter development:
+## 🔗 Additional Resources
 
-### Android Studio / IntelliJ IDEA (Recommended)
-
-1. Install Android Studio from [developer.android.com](https://developer.android.com/studio)
-2. Install the **Flutter** and **Dart** plugins from the marketplace:
-   - Go to `File > Settings > Plugins` (or `IntelliJ IDEA > Preferences > Plugins` on macOS)
-   - Search for "Flutter" and install it (this will also install the Dart plugin)
-   - Restart the IDE
-
-### Visual Studio Code
-
-1. Install VS Code from [code.visualstudio.com](https://code.visualstudio.com)
-2. Install the **Flutter** and **Dart** extensions from the marketplace:
-   - Open VS Code
-   - Go to Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
-   - Search for "Flutter" and install it (this will also install the Dart extension)
-   - Restart VS Code
-
-## 🤖 Setting Up Android SDK
-
-1. Open **Android Studio**
-2. Go to **SDK Manager** (`Tools > SDK Manager` or `Android Studio > Settings > Appearance & Behavior > System Settings > Android SDK`)
-3. Install the latest **Android SDK**
-4. Install **Android Emulator** or connect a physical device:
-   - Go to `Tools > Device Manager`
-   - Create a new virtual device or connect your physical device via USB
-
-## 🍎 Setting Up iOS Development (Mac Only)
-
-1. Install **Xcode** from the App Store
-2. Install the **Xcode Command Line Tools**:
-   ```bash
-   xcode-select --install
-   ```
-3. Set up an iOS simulator or connect a physical iOS device:
-   - Open Xcode
-   - Go to `Xcode > Settings > Platforms` to download iOS simulators
-   - Or connect your physical iOS device via USB
-
-## 🚀 Running the App
-
-After setting up your development environment, **without making any changes to the code**, simply try to run the app.
-
-This ensures your setup is correct and the app runs as expected. Later on, if you encounter issues, you can be confident the problem is not with the app code, but with your environment or configuration.
-
-### Steps to Run
-
-1. **Open a terminal/command prompt** and navigate to the project directory
-2. **Get all dependencies**:
-   ```bash
-   flutter pub get
-   ```
-3. **Connect a device** or start an emulator/simulator:
-   - For Android: Start an emulator from Android Studio or connect a physical device
-   - For iOS: Start a simulator from Xcode or connect a physical device
-4. **Run the project**:
-   ```bash
-   flutter run
-   ```
-
-The app should now be running on your device or emulator/simulator.
-
-## 🔍 Troubleshooting Flutter Setup
-
-If you encounter any issues during the Flutter setup, try the following:
-
-1. **Run `flutter doctor -v`** for more detailed information
-2. **Follow the recommendations** provided by the Flutter doctor
-3. **Make sure your Android SDK and iOS development tools** are properly set up
-4. **Check your PATH environment variable** to ensure Flutter is accessible
-5. **Restart your computer** after installation
-
-If you still face issues, please refer to the [Flutter documentation](https://docs.flutter.dev/get-started/install).
-
-### Additional Resources
-
-- **Official Flutter Installation Guide**: [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
-- **Video Tutorial Playlist**: [https://www.youtube.com/playlist?list=PLSzsOkUDsvdtl3Pw48-R8lcK2oYkk40cm](https://www.youtube.com/playlist?list=PLSzsOkUDsvdtl3Pw48-R8lcK2oYkk40cm)
+- **Official Flutter Docs**: [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
+- **Android Studio Download**: [https://developer.android.com/studio](https://developer.android.com/studio)
+- **Flutter & JDK Setup Guide**: [https://wrteam-in.github.io/common_app_doc/GeneralSettings/basicsetup](https://wrteam-in.github.io/common_app_doc/GeneralSettings/basicsetup)

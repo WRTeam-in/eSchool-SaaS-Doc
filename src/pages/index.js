@@ -301,7 +301,7 @@ function HomepageFeatures() {
             </div>
           </div>
         </div>
-        {/* Student Web Portal - Commented out until launch
+        {
         <div className="row margin-top--lg">
           <div className="col col--3">
             <div className="card margin-bottom--lg">
@@ -336,7 +336,7 @@ function HomepageFeatures() {
             </div>
           </div>
         </div>
-        */}
+        }
       </div>
     </section>
   );

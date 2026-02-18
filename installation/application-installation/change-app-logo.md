@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 
@@ -28,42 +28,26 @@ Optional illustrations like `noInternet.svg`, `fileNotFound.svg`, etc., can also
 
 ![Logo replacement reference](../../static/images/installation/app/changeicon_1.png)
 
-## 🔄 Steps to Change App icon
+## 🔄 Steps to Change App Icon
 
-## ⚡ Quick Method: Auto‑Generate Launcher Icons
+The app icon is the first visual element users see on their device's home screen, app drawer, and the Play Store / App Store listing. It must be correctly configured for both **Android** and **iOS** to ensure a professional and consistent brand appearance.
 
-Once you've replaced the two logo files with your own (keeping the same names and formats), run:
+We have a dedicated guide that covers the complete app icon setup process — including automated generation, `pubspec.yaml` configuration, adaptive icon setup for Android, and manual replacement steps for both platforms.
 
-```bash
-dart run flutter_launcher_icons
-```
+👉 **[App Icon Setup Guide](https://wrteam-in.github.io/common_app_doc/GeneralSettings/appicon)**
 
-This command auto‑generates the required icon assets for both Android and iOS using the configuration already present in `pubspec.yaml`. No need to edit `pubspec.yaml` it's ready to go.
+### What's Covered in the Guide
 
-![Launcher icons generated](../../static/images/installation/app/changeicon_2.png)
+| Method / Platform | Details |
+|-------------------|---------|
+| **Automated (Recommended)** | Use `flutter_launcher_icons` package — configure once in `pubspec.yaml` and run a single command |
+| **Android Adaptive Icons** | Set foreground, background, monochrome, and inset options for modern Android devices |
+| **iOS Icons** | Auto-generate or manually replace icons in `AppIcon.appiconset/` with alpha layer removed for App Store compliance |
+| **Manual Method** | Directly replace icon files in platform-specific `res/mipmap-*` and `xcassets` directories |
 
-
-## 🛠️ Manually Add Launcher Icon (Optional)
-
-### Android
-
-If you prefer to skip the automatic command, you can generate launcher icons using any online generator and manually add them to your Android and iOS resource folders.
-
-![Manual icon placement](../../static/images/installation/app/changeicon_3.png)
-
-
-### iOS
-- Replace icons in:
-  - `ios/Runner/Assets.xcassets/AppIcon.appiconset/`
-- Ensure all required sizes are present or regenerate using Xcode's asset tools
-
-After placing all files manually, rebuild the project:
-
-```bash
-flutter clean
-flutter pub get
-flutter run
-```
+:::tip Use a 512×512 Source Image
+Always start with a **512×512 px** high-resolution PNG as your source icon. The `flutter_launcher_icons` package will automatically generate all required sizes for both platforms from this single file.
+:::
 
 ---
 

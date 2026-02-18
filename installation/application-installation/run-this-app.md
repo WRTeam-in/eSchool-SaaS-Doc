@@ -1,8 +1,9 @@
 ---
-sidebar_position: 7
+sidebar_position: 12
+sidebar_label: ▶️ Run This App
 ---
 
-# 🚀 Run This App
+# ▶️ Run This App
 
 This guide will help you run the eSchool mobile application in both debug and release modes.
 

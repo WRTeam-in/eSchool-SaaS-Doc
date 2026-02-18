@@ -4,7 +4,7 @@
 /* CSS Variables for colors and fonts */
 
 .bannerContainer {
-  --primary-color: var(--ifm-color-primary);
+  --primary-color: #22577A;
   --text-gray: #808693;
   --bg-white: #FFFFFF;
   --font-family: "DM Sans", sans-serif;

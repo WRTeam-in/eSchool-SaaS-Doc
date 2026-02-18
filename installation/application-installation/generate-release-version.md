@@ -1,4 +1,9 @@
-# 🚀 Generate Release Version
+---
+sidebar_position: 13
+sidebar_label: 🏗️ Generate Release Version
+---
+
+# 🏗️ Generate Release Version
 
 ## Create and add Key Store file for Android:
 

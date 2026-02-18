@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
+sidebar_label: 📋 App Prerequisites
 ---
 import DocBanner from '@site/src/components/DocBanner/DocBanner';
 
 <DocBanner />
-# 🧭 Overview
+# 📋 App Prerequisites
 
 ## 📋 Introduction
 
@@ -16,20 +17,12 @@ Follow this documentation step-by-step to configure the project properly on your
 Before you begin, ensure your development environment meets the following specifications.  
 Using different versions may cause unexpected compatibility issues.
 
-### ⚙️ Version Compatibility
-
-We have tested the project with the software versions listed below.  
-If you use newer or different versions, you will be responsible for resolving any compatibility problems.
-
-For detailed version compatibility information, visit the  
-👉 **[Version Compatibility](./version-compatibility.md)** page.
-
 ### 🖥️ Required Software
 
 #### Core Requirements
 
 - **Android Studio**: Version 2025.1.1 (Narwhal)
-- **Flutter**: [View Compatible Versions](./version-compatibility.md)
+- **Flutter**: [View Compatible Versions](#-version-compatibility)
 - **Java**: Version 21
 
 #### macOS Requirements
@@ -62,3 +55,29 @@ Launching the eSchool SaaS app involves the following stages:
 7. **Deployment** – Creating production-ready builds for Play Store and App Store.
 
 Follow the next sections for detailed instructions for each step.
+
+## 📋 Version Compatibility
+
+This table shows the compatibility between different versions of the eSchool SaaS mobile application and their required dependencies.
+
+| Product Version | Flutter Version | Kotlin Version | distributionUrl (gradle) | JDK Version |
+|----------------|-----------------|----------------|-------------------------|-------------|
+| 1.9.0 | 3.41.1 | 2.0.10 | 8.7 | 21 |
+| 1.8.2 | 3.38.5 | 2.0.10 | 8.7 | 21 |
+| 1.8.1 | 3.38.5 | 2.0.10 | 8.7 | 21 |
+| 1.8.0 | 3.38.1 | 2.0.10 | 8.7 | 21 |
+| 1.7.1 | 3.32.7 | 2.0.10 | 8.7 | 21 |
+| 1.7.0 | 3.32.7 | 2.0.10 | 8.7 | 21 |
+| 1.6.1 | 3.32.0 | 2.0.10 | 8.7 | 17 |
+| 1.6.0 | 3.29.0 | 1.8.22 | 8.4 | 17 |
+| 1.5.4 | 3.27.1 | 1.8.22 | 8.4 | 17 |
+| 1.5.0 | 3.27.1 | 1.8.22 | 8.4 | 17 |
+
+### Important Notes
+
+- **Flutter Version**: The Flutter SDK version required for building the mobile application
+- **Kotlin Version**: The Kotlin version used for Android development
+- **distributionUrl (gradle)**: The Gradle wrapper version for Android builds
+- **JDK Version**: The Java Development Kit version required for Android development
+
+Make sure to use the exact versions specified in the table to avoid compatibility issues during development and deployment.
