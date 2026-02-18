@@ -120,4 +120,3 @@ If you encounter issues while running the app:
 4. **Check README**: Refer to the project's README.md for specific fixes
 5. **Update Flutter**: Ensure you're using a compatible Flutter version
 
-For version compatibility details, see the [Version Compatibility](./version-compatibility.md) section.
