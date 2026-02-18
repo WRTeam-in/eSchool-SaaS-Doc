@@ -20,6 +20,7 @@ This documentation includes:
 
 - **File Structure**: Understanding the project organization
 - **Installation**: Step-by-step setup guide
+- **Firebase Setup**: Configuring push notifications in `public/firebase-messaging-sw.js` and `.env.local`
 - **Deployment**: How to deploy the Student Web Portal
 
 ## Key Features
@@ -32,6 +33,7 @@ This documentation includes:
 - Download study materials
 - Communication with teachers
 - Fee payment information
+- Real-time push notifications
 
 ## Prerequisites
 
@@ -83,6 +85,7 @@ brew install node
 ### Other Requirements:
 
 - npm or yarn package manager (included with Node.js)
+- Firebase Project: Update credentials in `public/firebase-messaging-sw.js` and `.env.local`
 - Admin Panel API running
 - Basic knowledge of web development
 
