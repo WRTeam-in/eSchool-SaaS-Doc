@@ -23,6 +23,8 @@ A comprehensive digital diary system for tracking student activities, assignment
 ### Transportation Module
 Advanced transportation management system for tracking school buses, routes, and student transportation.
 
+### Student Web Portal
+A browser-based portal giving students and parents instant access to academics, assignments, attendance, exam results, and more — no app installation required. [Live Portal →](https://eschool-saas.student-web.wrteam.me/student/auth)
 
 ---
 

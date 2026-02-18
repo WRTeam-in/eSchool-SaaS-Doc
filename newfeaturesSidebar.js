@@ -17,6 +17,7 @@
 const sidebars = {
   newfeaturesSidebar: [
     'intro',
+    'student-web-portal',
     'staff-attendance',
     'student-diary',
     'transportation-module',

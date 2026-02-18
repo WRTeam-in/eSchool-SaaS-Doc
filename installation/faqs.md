@@ -13,6 +13,7 @@ Welcome to the FAQs section! This comprehensive guide addresses common questions
 - [Subscription & Package Management](#-subscription--package-management)
 - [School Admin Panel](#-school-admin-panel)
 - [Mobile Application](#-mobile-application)
+- [Student Web Portal](#-student-web-portal)
 
 ---
 
@@ -445,6 +446,31 @@ showDefaultCredentialInTeacherApp = false; // Hides default credentials
 ### 🔒 **Security Recommendation:**
 
 For production environments, it is strongly recommended to set both variables to `false` to maintain a clean and professional login interface without displaying any example credentials.
+
+</details>
+
+## 🌐 Student Web Portal
+
+<details>
+<summary><strong>16. Does the Student Web Portal work on Shared Hosting?</strong></summary>
+
+**Yes — the Student Web Portal is fully compatible with Shared Hosting.**
+
+The Student Web Portal is a **Next.js-based frontend application**. When built for production, it generates a set of static and server-compatible files that can be deployed on a wide range of hosting environments, including shared hosting plans.
+
+---
+
+#### ✅ Supported Hosting Environments
+
+| Hosting Type | Support |
+|---|---|
+| Shared Hosting (cPanel / DirectAdmin) | ✅ Supported |
+| VPS / Dedicated Server | ✅ Supported |
+| Vercel | ✅ Supported (Recommended) |
+| Netlify | ✅ Supported |
+| Any Static / Node-compatible Host | ✅ Supported |
+
+---
 
 </details>
 
