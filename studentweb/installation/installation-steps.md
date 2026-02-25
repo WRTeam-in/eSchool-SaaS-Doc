@@ -231,19 +231,6 @@ const firebaseConfig = {
 - Do not use `NEXT_PUBLIC_` prefix in this file (it's a service worker, not environment variables)
 - Use regular JavaScript object format without quotes around keys
 
-**Example with actual values:**
-
-```javascript
-const firebaseConfig = {
-  apiKey: "XXXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "XXXXXXXXXXXXXXXXXXXXXX",
-  projectId: "XXXXXXXXXXXXXXXXXXXXXX",
-  storageBucket: "XXXXXXXXXXXXXXXXXXXXXX",
-  messagingSenderId: "XXXXXXXXXXXXXXXXXXXXXX",
-  appId: "XXXXXXXXXXXXXXXXXXXXXX",
-  measurementId: "XXXXXXXXXXXXXXXXXXXXXX",
-};
-```
 
 **What this file does:**
 
