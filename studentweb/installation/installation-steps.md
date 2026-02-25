@@ -199,13 +199,13 @@ Find this section in the file:
 ```javascript
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCtM88OLdXBBRo2cAmTqnuAIMoezZpYY",
-  authDomain: "e-school-saas.firebaseapp.com",
-  projectId: "e-school-saas",
-  storageBucket: "e-school-saas.firebasestorage.app",
-  messagingSenderId: "539033120705",
-  appId: "1:539033120705:web:2e8d60c833a0a0add8c940",
-  measurementId: "G-X0BBVFTD0Q",
+  apiKey: "XXXXXXXXXXXXXXXXXXXXXX",
+  authDomain: "XXXXXXXXXXXXXXXXXXXXXX",
+  projectId: "XXXXXXXXXXXXXXXXXXXXXX",
+  storageBucket: "XXXXXXXXXXXXXXXXXXXXXX",
+  messagingSenderId: "XXXXXXXXXXXXXXXXXXXXXX",
+  appId: "XXXXXXXXXXXXXXXXXXXXXX",
+  measurementId: "XXXXXXXXXXXXXXXXXXXXXX",
 };
 ```
 
@@ -235,13 +235,13 @@ const firebaseConfig = {
 
 ```javascript
 const firebaseConfig = {
-  apiKey: "AIzaSyCtM88OLdXBBRo2cAmTqnuAIMoezZpYY",
-  authDomain: "e-school-saas.firebaseapp.com",
-  projectId: "e-school-saas",
-  storageBucket: "e-school-saas.firebasestorage.app",
-  messagingSenderId: "539033120705",
-  appId: "1:539033120705:web:2e8d60c833a0a0add8c940",
-  measurementId: "G-X0BBVFTD0Q",
+  apiKey: "XXXXXXXXXXXXXXXXXXXXXX",
+  authDomain: "XXXXXXXXXXXXXXXXXXXXXX",
+  projectId: "XXXXXXXXXXXXXXXXXXXXXX",
+  storageBucket: "XXXXXXXXXXXXXXXXXXXXXX",
+  messagingSenderId: "XXXXXXXXXXXXXXXXXXXXXX",
+  appId: "XXXXXXXXXXXXXXXXXXXXXX",
+  measurementId: "XXXXXXXXXXXXXXXXXXXXXX",
 };
 ```
 
@@ -399,14 +399,14 @@ After completing the installation, verify that everything is working correctly:
 
 ```env
 NEXT_PUBLIC_STUDENT_API_URL=https://example.com
-NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyCtM88OLdXBBRo2cAmTqnuAIMoezZpYY
+NEXT_PUBLIC_FIREBASE_API_KEY=XXXXXXXXXXXXXXXXXXXXXX
 ```
 
 **Incorrect format:**
 
 ```env
 NEXT_PUBLIC_STUDENT_API_URL = "https://example.com"
-NEXT_PUBLIC_FIREBASE_API_KEY = AIzaSyCtM88OLdXBBRo2cAmTqnuAIMoezZpYY
+NEXT_PUBLIC_FIREBASE_API_KEY = XXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ### Issue 5: Build Folder Not Created
