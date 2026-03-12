@@ -9,7 +9,7 @@ import DocBanner from '@site/src/components/DocBanner/DocBanner';
 ## Documentation
 
 **By:** WRTeam  
-**Email:** [wrteam.mahesh@gmail.com](mailto:wrteam.priyansh@gmail.com)
+**Email:** [wrteam.mahesh@gmail.com](mailto:wrteam.mahesh@gmail.com)
 
 Thank you for using **e-School SaaS**.
 In this document you will get to know more about super admin features and how the features

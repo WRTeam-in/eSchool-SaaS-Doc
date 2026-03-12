@@ -15,7 +15,8 @@ sidebar_position: 2
 | Staff Management | Expense Management | Staff Leave Management |
 | Fees Management | School Gallery Management | ID Card - Certificate Generation |
 | Website Management | Chat Module | Transportation Module |
+| Staff Attendance Management |
 
-There are 20 features in this system. Out of these 16 features will be use for package building.
+There are 22 features in this system. Out of these 18 features will be use for package building.
 
 Default 4 features are following: Student management, Academics management, Teacher management, Session year management.

@@ -92,7 +92,8 @@ Configure subscription and billing settings for your schools.
 | Fees Management | Attendance Management | Announcement Management |
 | School Gallery Management | Timetable Management | Chat Module |
 | ID Card & Certificate Generation | Academics Management | Holiday Management |
-| Session Year Management | Slider Management | |
+| Session Year Management | Slider Management | Staff Attendance Management |
+| | | Transportation Module |
 
 ![e-School SaaS](../../static/images/installation/admin/subscription.png)
 

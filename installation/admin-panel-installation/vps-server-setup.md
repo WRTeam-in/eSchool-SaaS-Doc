@@ -16,7 +16,7 @@ Before installing e-School SaaS, you need to properly configure your VPS server.
 | **Storage** | 80GB SSD | Expandable |
 | **CPU** | 2 vCores | 4 vCores |
 | **Bandwidth** | 1TB monthly | - |
-| **PHP Version** | 8.1.0+ | 8.3+ |
+| **PHP Version** | 8.2.0+ | 8.3+ |
 | **Laravel Version** | 10.0 | Latest |
 
 ### ⚙️ Technical Requirements
@@ -93,11 +93,13 @@ Log in to aaPanel using the provided URL and credentials, then install:
 
 ![e-School SaaS](../../static/images/installation/admin/24.png)
 
-> ⚠️ **Important:** Go to PHP Disabled Functions and remove `symlink` from the list.
+![e-School SaaS](../../static/images/installation/admin/php-disabled-function.png)
+
+> ⚠️ **Important:** Go to PHP Disabled Functions and remove `symlink`, `exec` and `shell_exec` from the list.
 
 Restart PHP services after making these changes.
 
-![e-School SaaS](../../static/images/installation/admin/25.png)
+<!-- ![e-School SaaS](../../static/images/installation/admin/25.png) -->
 
 ### 4️⃣ Add Website in aaPanel
 

@@ -1,15 +1,15 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# 🔌 How to Get Socket URL
+# 🔌 How to setup Laravel reverb
 
 ## 📋 Overview
-Learn how to set up WebSocket server and get your Socket URL for real-time communication in e-School SaaS.
+Learn how to set up laravel reverb server for real-time communication in e-School SaaS.
 
 ## 🎯 Option 1: aapanel Control Panel (Recommended)
 
-If you are using **aapanel control panel**, you can directly install supervisor from the app store and configure Laravel WebSocket from there. This is our **recommended option** for aapanel users.
+If you are using **aapanel control panel**, you can directly install supervisor from the app store and configure Laravel reverb from there. This is our **recommended option** for aapanel users.
 
 #### 📱 Install Supervisor from App Store
 1. Open your aapanel control panel
@@ -19,10 +19,10 @@ If you are using **aapanel control panel**, you can directly install supervisor 
 
 ![Install Supervisor from App Store](../../static/images/installation/supervisor.png)
 
-#### ⚙️ Configure WebSocket Service
-After installing supervisor, configure your WebSocket service:
+#### ⚙️ Configure Laravel Reverb Service
+After installing supervisor, configure your Laravel Reverb service:
 
-![Configure WebSocket Service](../../static/images/installation/set_websocket.png)
+![Configure Laravel Reverb Service](../../static/images/installation/admin/laravel-reverb.png)
 
 #### ✅ Benefits of aapanel Method
 - 🚀 **Easy Installation**: One-click installation from app store
@@ -50,22 +50,22 @@ sudo apt-get install supervisor
 
 ### 2️⃣ Create Configuration File
 ```bash
-sudo nano /etc/supervisor/conf.d/your-laravel-websockets.conf
+sudo nano /etc/supervisor/conf.d/laravel-reverb.conf
 ```
 
 ### 3️⃣ Add Configuration
 Add the following content to the configuration file:
 
 ```ini
-[program:laravel-websockets]
+[program:laravel-reverb]
 process_name=%(program_name)s_%(process_num)02d
-command=php /path/to/your/laravel/artisan websocket:init
+command=php /path/to/your/laravel/artisan reverb:start
 autostart=true
 autorestart=true
 user=username
 numprocs=1
 redirect_stderr=true
-stdout_logfile=/path/to/your/laravel/storage/logs/laravel-websockets.log
+stdout_logfile=/path/to/your/laravel/storage/logs/laravel-reverb.log
 ```
 
 ### 4️⃣ Update Supervisor
@@ -77,27 +77,18 @@ sudo supervisorctl reread
 sudo supervisorctl update
 ```
 
-### 5️⃣ Start WebSocket Service
-```bash
-sudo supervisorctl start laravel-websockets
-```
-
-### 6️⃣ Check Status
+### 5️⃣ Check Status
 ```bash
 sudo supervisorctl status
 ```
 
 **✅ Expected Output:**
 ```
-laravel-websockets   RUNNING   pid 12345, uptime 0:03:21
+laravel-reverb   RUNNING   pid 12345, uptime 0:03:21
 ```
-
-## 🎉 Final Result
-
-**🔗 Your Socket URL:** `ws://YOUR-SERVER-IP:8090`
 
 ## 📝 Important Notes
 - Replace `/path/to/your/laravel/` with your actual Laravel project path
 - Replace `username` with your server username
-- Ensure port 8090 is open in your firewall
-- Test the WebSocket connection after setup
+
+> ⚠️ **Important:** Ensure port `9090` is open in your firewall.

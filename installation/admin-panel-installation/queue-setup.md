@@ -119,7 +119,7 @@ autorestart=true
 stopasgroup=true
 killasgroup=true
 user=www-data
-numprocs=2
+numprocs=1
 redirect_stderr=true
 stdout_logfile=/path/to/your/project/storage/logs/worker.log
 stopwaitsecs=3600
@@ -134,12 +134,7 @@ sudo supervisorctl reread
 sudo supervisorctl update
 ```
 
-### 5️⃣ Start WebSocket Service
-```bash
-sudo supervisorctl start laravel-worker
-```
-
-### 6️⃣ Check Status
+### 5️⃣ Check Status
 ```bash
 sudo supervisorctl status
 ```
