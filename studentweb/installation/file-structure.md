@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# File Structure
+# 📁 File Structure
 
 Understanding the Student Web Portal project structure helps you navigate and modify the application effectively.
 

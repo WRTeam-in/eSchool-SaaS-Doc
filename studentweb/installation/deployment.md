@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Deployment Guide
+# 🚀 Deployment Guide
 
 This guide covers deploying the Student Web Portal to production environments.
 
