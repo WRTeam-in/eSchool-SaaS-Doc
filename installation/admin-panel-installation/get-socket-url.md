@@ -87,6 +87,10 @@ sudo supervisorctl status
 laravel-reverb   RUNNING   pid 12345, uptime 0:03:21
 ```
 
+## 🎉 Final Result
+
+**🔗 Your Socket URL:** `ws://YOUR-DOMAIN:9090/app/{REVERB_APP_KEY}`
+
 ## 📝 Important Notes
 - Replace `/path/to/your/laravel/` with your actual Laravel project path
 - Replace `username` with your server username
