@@ -111,18 +111,21 @@ Add the following content to the configuration file:
 
 
 ```ini
-[program:laravel-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=php /path/to/your/project/artisan queue:work
-autostart=true
+[program:laravel-queue]
+command=php artisan queue:work
+directory=/path/to/your/project
 autorestart=true
-stopasgroup=true
-killasgroup=true
-user=www-data
+startsecs=3
+startretries=3
+stdout_logfile=/path/to/your/project/storage/logs/queue-out.log
+stderr_logfile=/path/to/your/project/storage/logs/queue.err.log
+stdout_logfile_maxbytes=2MB
+stderr_logfile_maxbytes=2MB
+user=www
+priority=999
 numprocs=1
-redirect_stderr=true
-stdout_logfile=/path/to/your/project/storage/logs/worker.log
-stopwaitsecs=3600
+stopsignal=QUIT
+process_name=%(program_name)s_%(process_num)02d
 ```
 
 ### 4️⃣ Update Supervisor

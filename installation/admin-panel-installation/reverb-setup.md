@@ -58,14 +58,20 @@ Add the following content to the configuration file:
 
 ```ini
 [program:laravel-reverb]
-process_name=%(program_name)s_%(process_num)02d
-command=php /path/to/your/laravel/artisan reverb:start
-autostart=true
+command=php artisan reverb:start
+directory=/path/to/your/project
 autorestart=true
-user=username
+startsecs=3
+startretries=3
+stdout_logfile=/path/to/your/project/storage/logs/reverb-out.log
+stderr_logfile=/path/to/your/project/storage/logs/reverb.err.log
+stdout_logfile_maxbytes=2MB
+stderr_logfile_maxbytes=2MB
+user=www
+priority=999
 numprocs=1
-redirect_stderr=true
-stdout_logfile=/path/to/your/laravel/storage/logs/laravel-reverb.log
+stopsignal=QUIT
+process_name=%(program_name)s_%(process_num)02d
 ```
 
 ### 4️⃣ Update Supervisor
