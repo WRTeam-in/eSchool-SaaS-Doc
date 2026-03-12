@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# 🌐 Language Translation Guide
+# Language Translation Guide
 
 This guide explains how the dynamic language translation system works in the eSchool SaaS Web Project and provides a step-by-step process for adding new languages.
 

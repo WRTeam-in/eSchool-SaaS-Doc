@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 🔥 Firebase Setup
+# Firebase Setup
 
 The Student Web Portal uses Firebase Cloud Messaging (FCM) to deliver push notifications to students for assignments, exams, and school updates.
 
