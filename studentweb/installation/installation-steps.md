@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Installation Steps
+#  Installation Steps
 
 This guide will walk you through the process of installing and setting up the Student Web Portal for production deployment.
 
