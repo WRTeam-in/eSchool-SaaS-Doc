@@ -95,7 +95,7 @@ Log in to aaPanel using the provided URL and credentials, then install:
 
 ![e-School SaaS](../../static/images/installation/admin/php-disabled-function.png)
 
-> ⚠️ **Important:** Go to PHP Disabled Functions and remove `symlink`, `exec` and `shell_exec` from the list.
+> ⚠️ **Important:** Go to PHP Disabled Functions and remove `symlink`, `exec`, `shell_exec`, `proc_open` from the list.
 
 Restart PHP services after making these changes.
 
