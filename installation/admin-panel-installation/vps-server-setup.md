@@ -91,6 +91,8 @@ Log in to aaPanel using the provided URL and credentials, then install:
 | upload_max_filesize | 50M |
 | max_file_uploads | 50 |
 
+#### Enable PHP functions: {#enable-php-functions}
+
 ![e-School SaaS](../../static/images/installation/admin/24.png)
 
 ![e-School SaaS](../../static/images/installation/admin/php-disabled-function.png)

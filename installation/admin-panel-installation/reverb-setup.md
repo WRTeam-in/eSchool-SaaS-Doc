@@ -19,7 +19,7 @@ If you are using **aapanel control panel**, you can directly install supervisor 
 
 ![Install Supervisor from App Store](../../static/images/installation/supervisor.png)
 
-#### ⚙️ Configure Laravel Reverb Service
+#### ⚙️ Configure Laravel Reverb Service {#configure-laravel-reverb-service}
 After installing supervisor, configure your Laravel Reverb service:
 
 ![Configure Laravel Reverb Service](../../static/images/installation/admin/laravel-reverb.png)
@@ -48,7 +48,7 @@ sudo apt-get update
 sudo apt-get install supervisor
 ```
 
-### 2️⃣ Create Configuration File
+### 2️⃣ Create Configuration File {#create-configuration-file}
 ```bash
 sudo nano /etc/supervisor/conf.d/laravel-reverb.conf
 ```

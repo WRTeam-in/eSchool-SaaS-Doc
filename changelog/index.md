@@ -5,6 +5,25 @@ title: Changelog
 
 # Changelog
 
+## Version 1.9.1 (12 March 2026)
+
+- **[ADDED]** Enhanced Installation & System Health: Improved the Setup Wizard with automated server configuration checks. Added a System Health in the Super Admin panel to verify environment requirements and settings post-installation.
+- **[ADDED]** WebSocket Migration (Laravel Reverb): Replaced the previous WebSocket implementation with Laravel Reverb to resolve high CPU usage issues. This affects real-time chat in both the Mobile App and Student Web Portal.
+- **[ADDED]** Staff Leave Management: School Admins can now manually create and manage leave entries for staff members.
+- **[ADDED]** School Custom Fields: Restored missing custom fields within the School Admin dashboard, now added in "General Settings" for better data capturing.
+- **[IMPROVEMENT]** Login Page Redesign: Modernized the authentication interface for a better user first impression.
+- **[IMPROVEMENT]** Payment Gateway UI: Updated the payment page with a new Tab bar Menu for cleaner navigation between different payment methods.
+- **[IMPROVEMENT]** Other improvements
+
+<!-- I need to mention some server configuration and addition requirements here for perticular this version -->
+:::info[IMPORTANT NOTE]
+- **Enable PHP Functions**: Ensure required PHP functions are enabled. [Click Here](../installation/admin-panel-installation/vps-server-setup#enable-php-functions)
+- **Update Queue Configuration**: If you install supervisor from terminal, update your configuration. [Click Here](../installation/admin-panel-installation/queue-setup#create-configuration-file)
+- **Migrate to Reverb**: Remove the old WebSocket configuration and create a new one for Reverb. [Click Here](../installation/admin-panel-installation/reverb-setup#create-configuration-file)
+- **aaPanel Users**: If using aaPanel, remove the old WebSocket service and configure Reverb. [Click Here](../installation/admin-panel-installation/reverb-setup#configure-laravel-reverb-service)
+- **Restart Services**: Restart Supervisor and PHP services after configuration.
+:::
+
 ## Version 1.9.0 (18 Feb 2026)
 
 - **[Added]** Student Web Portal

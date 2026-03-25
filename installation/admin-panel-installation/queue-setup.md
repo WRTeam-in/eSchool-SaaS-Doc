@@ -101,7 +101,7 @@ sudo apt-get update
 sudo apt-get install supervisor
 ```
 
-### 2️⃣ Create Configuration File
+### 2️⃣ Create Configuration File {#create-configuration-file}
 ```bash
 sudo nano /etc/supervisor/conf.d/laravel-worker.conf
 ```
