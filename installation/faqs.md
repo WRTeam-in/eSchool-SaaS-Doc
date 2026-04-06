@@ -105,6 +105,8 @@ Different user types have different default login credentials in the system:
 📹 **[Video Tutorial Available:](https://drive.google.com/file/d/1wD7iixqXpHM0K3VKLO1EpF8y2CTRzLkk/view?usp=sharing)**
 A detailed video tutorial is available below the update section to guide you visually through the process.
 
+
+
 #### 📱 **App Code Update**
 
 There are two methods available for updating your App Code:
@@ -133,6 +135,29 @@ This method is faster and preferred by technical users who are familiar with Flu
    - Replace the App Icon and other branding assets you used in the previous version.
 3. After completing these steps, build and run the new app code. It will function the same as your previous version but with the latest updates applied.
 
+#### 🌐 **Student Web Update**
+
+**Step-by-Step Guide:**
+
+1. **Extract the New Source Code**
+   - Extract the updated Student Web ZIP file that you received.
+
+2. **Replace Project Files**
+   - Open your existing project folder.
+   - Copy all files from the new source code and replace them in your existing project folder.
+   - **Note:** Do not delete your `.env` file as it contains your configuration.
+
+3. **Install Dependencies**
+   - Open the terminal in your project root.
+   - Run the command: `npm install` (to update any new dependencies).
+
+4. **Build the Project**
+   - Run the command: `npm run build`
+   - This will generate a new `build` folder with optimized files.
+
+5. **Upload to Server**
+   - Delete the old files from your server's student web directory.
+   - Upload the contents of the new `build` folder to your server.
 </details>
 
 <details>
