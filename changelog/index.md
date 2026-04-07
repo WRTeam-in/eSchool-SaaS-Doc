@@ -5,6 +5,17 @@ title: Changelog
 
 # Changelog
 
+## Version 1.9.2 (07 April 2026)
+
+- **[ADDED]** Syllabus Pattern
+- **[ADDED]** Student & teacher transportation attendance report
+- **[IMPROVEMENT]** Session year–wise data filtering in panel (without changing default session)
+- **[IMPROVEMENT]** Demo school access restrictions
+- **[IMPROVEMENT]** Security enhancements (screen recording & screenshot protection in online exams and fee payments)
+- **[IMPROVEMENT]** UI/UX updates (Class Subjects, Student/Teacher Reports, Route Vehicle Reports, Assignment submission modal, Promote students)
+- **[IMPROVEMENT]** Offline exam marks with draft and publish options
+- **[IMPROVEMENT]** Other improvements
+
 ## Version 1.9.1 (12 March 2026)
 
 - **[ADDED]** Enhanced Installation & System Health: Improved the Setup Wizard with automated server configuration checks. Added a System Health in the Super Admin panel to verify environment requirements and settings post-installation.

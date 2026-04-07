@@ -76,7 +76,7 @@ Different user types have different default login credentials in the system:
 </details>
 
 <details>
-<summary><strong>4. How to Update the System (Admin Panel and App Code)?</strong></summary>
+<summary><strong>4. How to Update the System (Admin Panel, App Code and Student Web)?</strong></summary>
 
 #### 🔄 **Admin Panel Update**
 
