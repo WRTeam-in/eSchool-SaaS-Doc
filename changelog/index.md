@@ -5,7 +5,7 @@ title: Changelog
 
 # Changelog
 
-## Version 1.9.3 (Coming Soon)
+## Version 1.9.3 (15 May 2026)
 
 - **[ADDED]** Introduced Academy Setup Wizard for streamlined onboarding and configuration.
 - **[ADDED]** Implemented real-time school installation progress tracking with a detailed modal view.
