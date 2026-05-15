@@ -22,7 +22,84 @@ This section addresses common questions and issues you might encounter during th
 ## 🚨 Installation & Setup Issues
 
 <details>
-<summary><strong>1. Why is the school not being created and showing an "Error Occurred" message?</strong></summary>
+<summary><strong>1. Why am I getting issues while updating from v1.9.2 to v1.9.3?</strong></summary>
+
+From version v1.9.3, the system update process has been improved and now depends on background services such as Laravel Queue and Laravel Reverb.
+
+Because of this change, the first update attempt may sometimes fail if these services are not properly running. In most cases, simply retrying the update after verifying the required services resolves the issue.
+
+📹 **[Watch Video Tutorial: Why Queue and Reverb are required for System Update](../static/video/System-update.mp4)**
+
+
+**What should I check before updating?**
+
+Before starting the update process, make sure the following services are running properly:
+- Laravel Queue Worker
+- Laravel Reverb Server
+
+If these services are not active, the update process may stop, fail, or remain incomplete.
+
+**⚠️ Important: Enable Maintenance Mode**
+
+Before starting any system update, it is highly recommended to enable **Maintenance Mode**.
+- **Why is it important?** Updating the system involves replacing core files and running database migrations. If users are actively using the system during this time, it can lead to data corruption, unexpected errors, or incomplete updates.
+- **Access Restricted:** When maintenance mode is ON, only the **Super Admin** can access the panel to perform the update. All other users (School Admins, Teachers, Students, etc.) will be restricted from accessing the system until the update is complete and maintenance mode is turned OFF.
+
+
+**Recommended Setup for Production Server**
+
+For live/production environments, it is strongly recommended to run both Queue and Reverb using a process manager such as Supervisor so they continue running in the background automatically.
+
+**Queue Setup Documentation**
+
+👉 [Queue Setup Guide](admin-panel-installation/queue-setup.md)
+
+**Reverb Setup Documentation**
+
+👉 [Reverb Setup Guide](admin-panel-installation/reverb-setup.md)
+
+**How do I run Reverb locally?**
+
+Run the following command in your terminal:
+
+```bash
+php artisan reverb:start
+```
+
+**How do I run Queue Worker locally?**
+
+**For macOS / Ubuntu / Linux**
+```bash
+while true; do php artisan queue:work; done
+```
+
+**For Windows**
+```powershell
+while($true) { php artisan queue:work; echo "Restarting worker..." }
+```
+
+**What should I do if the update fails on the first attempt?**
+
+Verify that:
+1. Reverb server is running
+2. Queue worker is running
+3. Retry the system update again.
+
+In most cases, the update completes successfully on the second attempt once all required background services are active.
+
+**Is Supervisor required?**
+
+For local development, Supervisor is optional.
+
+For production/live servers, Supervisor is highly recommended to ensure:
+- Queue workers restart automatically
+- Reverb stays active after server reboot
+- Background processes remain stable during updates and daily usage
+
+</details>
+
+<details>
+<summary><strong>2. Why is the school not being created and showing an "Error Occurred" message?</strong></summary>
 
 This error typically occurs when the database user does not have permission to create or drop databases, which is required for setting up a new school.
 
@@ -37,7 +114,7 @@ This error typically occurs when the database user does not have permission to c
 </details>
 
 <details>
-<summary><strong>2. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
+<summary><strong>3. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
 
 You can find detailed instructions for setting up the queue in our documentation here:
 ![e-School SaaS](../static/images/superadmin/missing-queue.png)
@@ -47,7 +124,7 @@ You can find detailed instructions for setting up the queue in our documentation
 </details>
 
 <details>
-<summary><strong>3. What are the default login credentials for different Users?</strong></summary>
+<summary><strong>4. What are the default login credentials for different Users?</strong></summary>
 
 Different user types have different default login credentials in the system:
 
@@ -76,7 +153,7 @@ Different user types have different default login credentials in the system:
 </details>
 
 <details>
-<summary><strong>4. How to Update the System (Admin Panel, App Code and Student Web)?</strong></summary>
+<summary><strong>5. How to Update the System (Admin Panel, App Code and Student Web)?</strong></summary>
 
 #### 🔄 **Admin Panel Update**
 
@@ -161,7 +238,7 @@ This method is faster and preferred by technical users who are familiar with Flu
 </details>
 
 <details>
-<summary><strong>5. Why are database root user credentials required for this system?</strong></summary>
+<summary><strong>6. Why are database root user credentials required for this system?</strong></summary>
 
 This system is a SaaS platform, where each school has its own separate database. The root database user has the necessary permissions to create and drop databases. These permissions are required when a new school is added, as the system needs to:
 
@@ -176,7 +253,7 @@ If you do not want to use the root account, you can provide a database user with
 </details>
 
 <details>
-<summary><strong>6. How many payment gateways are available in the system?</strong></summary>
+<summary><strong>7. How many payment gateways are available in the system?</strong></summary>
 
 Currently, we support **four payment gateways** in the system:
 
@@ -193,10 +270,11 @@ Currently, we support **four payment gateways** in the system:
 
 
 
+
 ## 🌐 Domain & SSL Configuration
 
 <details>
-<summary><strong>7. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
+<summary><strong>8. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
 
@@ -211,7 +289,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 </details>
 
 <details>
-<summary><strong>8. How do I create a wildcard SSL certificate?</strong></summary>
+<summary><strong>9. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
 
@@ -227,7 +305,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 ## 💳 Subscription & Package Management
 
 <details>
-<summary><strong>9. What happens if the Super Admin updates an existing subscription package?</strong></summary>
+<summary><strong>10. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
 
@@ -245,7 +323,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 </details>
 
 <details>
-<summary><strong>10. How is the addon validity calculated?</strong></summary>
+<summary><strong>11. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
 
@@ -264,7 +342,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 </details>
 
 <details>
-<summary><strong>11. Where can I find the School Code?</strong></summary>
+<summary><strong>12. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
 
@@ -293,7 +371,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 ## 🏫 School admin panel
 
 <details>
-<summary><strong>12. How do Classes and Sections work in the system?</strong></summary>
+<summary><strong>13. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
 
@@ -324,7 +402,7 @@ Let's take an example:
 ## 📱 Mobile application
 
 <details>
-<summary><strong>13. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+<summary><strong>14. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
 
@@ -347,7 +425,7 @@ Using school_code with an underscore causes the backend to reject the request du
 </details>
 
 <details>
-<summary><strong>14. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
+<summary><strong>15. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
 
 To set up Firebase using the Firebase CLI for eSchool SaaS:
 
@@ -374,7 +452,7 @@ To set up Firebase using the Firebase CLI for eSchool SaaS:
 </details>
 
 <details>
-<summary><strong>15. How can I control whether default login credentials are displayed on the Student App and Staff App login screens?</strong></summary>
+<summary><strong>16. How can I control whether default login credentials are displayed on the Student App and Staff App login screens?</strong></summary>
 
 The eSchool SaaS mobile applications provide a convenient feature that allows you to control the visibility of default login credentials on the login screens. This can be helpful for demonstration purposes or to guide users during initial login, but you may want to hide them in production for security reasons.
 
@@ -477,7 +555,7 @@ For production environments, it is strongly recommended to set both variables to
 ## 🌐 Student Web Portal
 
 <details>
-<summary><strong>16. Does the Student Web Portal work on Shared Hosting?</strong></summary>
+<summary><strong>17. Does the Student Web Portal work on Shared Hosting?</strong></summary>
 
 **Yes — the Student Web Portal is fully compatible with Shared Hosting.**
 

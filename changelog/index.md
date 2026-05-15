@@ -5,6 +5,31 @@ title: Changelog
 
 # Changelog
 
+## Version 1.9.3 (Coming Soon)
+
+- **[ADDED]** Introduced Academy Setup Wizard for streamlined onboarding and configuration.
+- **[ADDED]** Implemented real-time school installation progress tracking with a detailed modal view.
+- **[ADDED]** Added Staff Report in School admin for improved workforce insights.
+- **[ADDED]** Added Student Diary within student reports for better activity tracking.
+- **[ADDED]** Introduced Staff Task Management for organizing and tracking internal tasks.
+- **[ADDED]** Added Transportation Log History for better monitoring of transport logs.
+- **[ADDED]** Implemented queue-based processing for school migrations and seeders to improve performance and reliability.
+- **[IMPROVEMENT]** Revamped System Update Page with a more intuitive layout and better user flow.
+- **[IMPROVEMENT]** Enhanced Subscription Pages (Super Admin & School Admin) with improved usability and visual clarity.
+- **[IMPROVEMENT]** Improved Certificate Module with full customization capabilities for school admin.
+- **[IMPROVEMENT]** Refined Staff Salary Structure Page for better readability and management.
+- **[IMPROVEMENT]** Enhanced Student Diary Modal for a smoother user experience.
+- **[IMPROVEMENT]** Applied overall UI/UX improvements across the system for consistency and ease of use.
+- **[IMPROVEMENT]** General performance optimizations and minor bug fixes.
+- **[IMPROVEMENT]** Updated font awesome 7.2.
+- **[IMPROVEMENT]** Improved super admin dashboard.
+- **[IMPROVEMENT]** Improved auto adjust sidebar menu visibility.
+- **[IMPROVEMENT]** Improved system stability.
+
+:::info[IMPORTANT NOTE]
+- **Reverb Configuration**: Please configure Reverb with **WSS (Secure WebSocket)** on your server to enable real-time school installation progress tracking and system updates. [Click Here](../installation/admin-panel-installation/reverb-setup/#6%EF%B8%8F⃣-env-file-configuration)
+:::
+
 ## Version 1.9.2 (07 April 2026)
 
 - **[ADDED]** Syllabus Pattern

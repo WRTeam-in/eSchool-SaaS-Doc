@@ -18,6 +18,7 @@ Before installing e-School SaaS, you need to properly configure your VPS server.
 | **Bandwidth** | 1TB monthly | - |
 | **PHP Version** | 8.3.0+ | 8.3+ |
 | **Laravel Version** | 10.0 | Latest |
+| **PHP Memory Limit** | 256MB | 512MB |
 
 ### ⚙️ Technical Requirements
 
@@ -26,8 +27,8 @@ Before installing e-School SaaS, you need to properly configure your VPS server.
 - **Database Access:** Root user or necessary permissions for multi-tenancy
 - **File Upload Limits:**
   - Max Upload Size: 50MB+
-  - Max Execution Time: 5000 seconds
-  - Max Input Time: 5000 seconds
+  - Max Execution Time: 600 seconds
+  - Max Input Time: 600 seconds
 - **WebSocket Server:** Required for real-time chat functionality
 - **Port Configuration:** Properly configured firewall for WebSocket communication
 
@@ -161,50 +162,14 @@ sudo cat /root/.my.cnf
 
 ![e-School SaaS](../../static/images/installation/admin/33.png)
 
-### 🔟 Set Up WebSocket
+### 🔟 Set Queue for School Creation
 
-#### Install Supervisor:
-```bash
-sudo apt update
-sudo apt install supervisor
-```
+ #### [Click Here for configuration](queue-setup.md)
+---
 
-#### Create WebSocket Configuration:
-```bash
-sudo nano /etc/supervisor/conf.d/websocket.conf
-```
+### 1️⃣️1️⃣️ How to setup Laravel reverb
 
-Add the following content (replace `/your_root_folder_path/` with your actual path):
-
-```ini
-[program:websocket]
-process_name=websocket
-command=/usr/bin/php /your_root_folder_path/artisan websocket:init
-autostart=true
-autorestart=true
-user=www-data
-redirect_stderr=true
-stdout_logfile=/your_root_folder_path/storage/logs/websocket.log
-stderr_logfile=/your_root_folder_path/storage/logs/websocket.log
-```
-
-#### Update Supervisor:
-```bash
-sudo supervisorctl reread
-sudo supervisorctl update
-sudo supervisorctl status
-```
-
-> 🔒 **Security Note:** Enable port 8090 in your firewall for WebSocket communication.
-
-Your WebSocket URL will be:
-```
-ws://your_server_ip:8090
-```
-
-### 1️⃣1️⃣ Set Queue for School Creation
-
-<small>[Click Here](queue-setup.md)</small>
+#### [Click Here for configuration](reverb-setup.md)
 ---
 
 > 🎉 **Congratulations!** Your server is now ready for the e-School SaaS installation. Proceed to the next section to install the application.

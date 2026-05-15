@@ -1,0 +1,8 @@
+{
+    "label": "Packages & Subscription",
+    "position": 5,
+    "link": {
+        "type": "generated-index",
+        "description": "Manage packages, addons, and subscriptions in the e-School SaaS Super Admin Panel"
+    }
+}

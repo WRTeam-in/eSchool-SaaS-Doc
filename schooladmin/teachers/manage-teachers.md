@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Manage Teachers
@@ -15,3 +15,5 @@ sidebar_position: 1
 - Teachers can login using the given email and password. The mobile number of the teacher will be the default password.
 
 - Admins can manage teacher salaries by adding allowances or deductions, ensuring accurate payroll adjustments for each staff member. 
+
+- School admin can set salary-structure for the teachers/staff. Click here to know more about [salary-structure](./salary-structure.md).

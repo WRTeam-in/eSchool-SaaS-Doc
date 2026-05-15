@@ -30,6 +30,30 @@ The school creation process in e-School SaaS involves several time-consuming ope
 
 ## 🔧 Setup Instructions
 
+### 💻 Local Setup (Development)
+
+For local development, you can run the queue worker directly in your terminal. Run these commands within the system root directory:
+
+**For Mac & Ubuntu OS:**
+```bash
+while true; do php artisan queue:work; done
+```
+
+**For Windows PC:**
+```powershell
+while($true) { php artisan queue:work; echo "Restarting worker..." }
+```
+
+:::tip[Why use a loop instead of just `php artisan queue:work`?]
+Yes, the original `php artisan queue:work` command works correctly. However, when you update your system in a local environment, some job files may be modified, requiring a queue restart to apply the changes.
+
+Since local PCs typically don't have **Supervisor** configured to automatically restart the queue worker, the process would stop and not start again on its own. Using the `while` loop ensures the worker starts automatically whenever it stops or is restarted, which is especially useful during system updates on a local PC.
+
+**Important:** On production servers, you must use **Supervisor** instead of these manual loops for reliability.
+:::
+
+---
+
 ### 🎯 Option 1: aapanel Control Panel (Recommended)
 
 If you are using **aapanel control panel**, you can directly install supervisor from the app store and configure Laravel queue from there. This is our **recommended option** for aapanel users.

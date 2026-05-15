@@ -4,11 +4,7 @@ sidebar_position: 1
 sidebar_label: Staff Attendance
 ---
 
-# 📋 Staff Attendance ✨ NEW FEATURE
-
-:::info NEW FEATURE
-This is a newly added feature in the latest version of eSchool SaaS. It provides a comprehensive staff attendance management system with leave integration, automatic absence tracking, and payroll synchronization.
-:::
+# Staff Attendance
 
 The Staff Attendance feature allows School Admins to record and manage daily attendance of staff members in a clear and structured manner. This powerful feature integrates seamlessly with the leave management and payroll systems, ensuring accurate record-keeping, consistent salary calculations, and streamlined administrative processes.
 

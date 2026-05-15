@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ![e-School SaaS](../../static/images/schooladmin/list-fees-paid.png)
 
-![e-School SaaS](../../static/images/schooladmin/pay-compulsory-fee.png)
+<!-- ![e-School SaaS](../../static/images/schooladmin/pay-compulsory-fee.png) -->
 
 ![e-School SaaS](../../static/images/schooladmin/pay-compulsory-fee-installment.png)
 

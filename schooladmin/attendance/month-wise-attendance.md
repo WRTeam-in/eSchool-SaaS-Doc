@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Month Wise Student Attendance
+# Month Wise Attendance
 
 ![e-School SaaS](../../static/images/schooladmin/month-wise-student-attendance.png)
 

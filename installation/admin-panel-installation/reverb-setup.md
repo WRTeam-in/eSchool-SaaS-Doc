@@ -93,9 +93,67 @@ sudo supervisorctl status
 laravel-reverb   RUNNING   pid 12345, uptime 0:03:21
 ```
 
+### 6️⃣ .env file configuration
+```ini
+BROADCAST_DRIVER=reverb
+REVERB_APP_ID=your-app-id
+REVERB_APP_KEY=your-app-key
+REVERB_APP_SECRET=your-app-secret
+REVERB_HOST=127.0.0.1
+REVERB_PORT=9090
+REVERB_SCHEME=http
+VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
+VITE_REVERB_HOST="${REVERB_HOST}"
+VITE_REVERB_PORT="${REVERB_PORT}"
+VITE_REVERB_SCHEME="${REVERB_SCHEME}"
+```
+
+<!-- apache configuration -->
+### 7️⃣ Apache Configuration
+```ini
+ProxyPreserveHost On
+
+ProxyPass "/app/" "ws://127.0.0.1:9090/app/"
+ProxyPassReverse "/app/" "ws://127.0.0.1:9090/app/"
+
+RequestHeader set X-Forwarded-Proto "https"
+RequestHeader set X-Forwarded-Port "443"
+```
+
+
+
+<!-- nginx configuaration -->
+### 8️⃣ Nginx Configuration
+```ini
+location /app/ {
+    proxy_pass http://127.0.0.1:9090/app/;
+
+    # WebSocket Support
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+
+    # Preserve Host
+    proxy_set_header Host $host;
+
+    # Forwarding Headers (X-Forwarded-Proto and Port)
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Forwarded-Port 443;
+
+    # Buffering must be off for WebSockets to work reliably
+    proxy_buffering off;
+}
+```
+
+
+
 ## 🎉 Final Result
 
 **🔗 Your Socket URL:** `ws://YOUR-DOMAIN:9090/app/{REVERB_APP_KEY}`
+
+**🔗 Your Secure Socket URL:** `wss://YOUR-DOMAIN/app/{REVERB_APP_KEY}`
 
 ## 📝 Important Notes
 - Replace `/path/to/your/laravel/` with your actual Laravel project path

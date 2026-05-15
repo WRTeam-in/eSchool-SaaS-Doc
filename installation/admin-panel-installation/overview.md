@@ -24,7 +24,7 @@ This guide covers everything you need to set up the e-School SaaS admin panel, i
 
 Before you begin, ensure you have:
 
-- ✅ A VPS server (Ubuntu 20.04+ recommended)
+- ✅ A VPS server (Ubuntu 20.04+ LTS recommended)
 - ✅ Root or sudo access to the server
 - ✅ Domain name (for SSL and custom domains)
 - ✅ Basic knowledge of Linux commands

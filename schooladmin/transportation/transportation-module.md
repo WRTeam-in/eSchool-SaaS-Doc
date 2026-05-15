@@ -4,11 +4,7 @@ sidebar_position: 1
 sidebar_label: Transportation Module
 ---
 
-# 🚌 Transportation Module ✨ NEW FEATURE
-
-:::info NEW FEATURE
-This is a newly added feature in the latest version of eSchool SaaS. It provides a comprehensive transportation management system for vehicles, routes, drivers, and student transportation requests.
-:::
+# 🚌 Transportation Module
 
 The Transportation Module is a comprehensive system designed to streamline and manage all aspects of school transportation. This powerful feature enables schools to efficiently manage vehicles, routes, pickup points, drivers, transportation requests, and expenses—all from a centralized platform.
 

@@ -70,15 +70,6 @@ const config = {
         sidebarItemsGenerator: async () => [],
       },
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "newfeatures",
-        path: "newfeatures",
-        routeBasePath: "newfeatures",
-        sidebarPath: require.resolve("./newfeaturesSidebar.js"),
-      },
-    ],
     // Student Web Portal - Commented out until launch
     [
       "@docusaurus/plugin-content-docs",
@@ -146,13 +137,6 @@ const config = {
             sidebarId: "studentwebSidebar",
             position: "left",
             label: "Student Web",
-          },
-          {
-            docsPluginId: "newfeatures",
-            type: "docSidebar",
-            sidebarId: "newfeaturesSidebar",
-            position: "left",
-            label: "New Features",
           },
           {
             docsPluginId: "superadmin",
@@ -224,14 +208,12 @@ const config = {
           "installation",
           "superadmin",
           "schooladmin",
-          "newfeatures",
           "studentweb",
         ],
         docsDir: [
           "installation",
           "superadmin",
           "schooladmin",
-          "newfeatures",
           "studentweb",
         ],
         docsPluginIdForPreferredVersion: "installation",
