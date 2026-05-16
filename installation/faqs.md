@@ -28,7 +28,15 @@ From version v1.9.3, the system update process has been improved and now depends
 
 Because of this change, the first update attempt may sometimes fail if these services are not properly running. In most cases, simply retrying the update after verifying the required services resolves the issue.
 
-📹 **[Watch Video Tutorial: Why Queue and Reverb are required for System Update](../static/video/System-update.mp4)**
+📹 **Watch Video Tutorial: Why Queue and Reverb are required for System Update**
+
+<video controls width="100%" style={{borderRadius: '12px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', marginTop: '16px', marginBottom: '16px'}}>
+  <source src="/eSchool-SaaS-Doc/video/System-update.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+👉 **[Download / Open Video in New Tab](/eSchool-SaaS-Doc/video/System-update.mp4)**
+
 
 
 **What should I check before updating?**
