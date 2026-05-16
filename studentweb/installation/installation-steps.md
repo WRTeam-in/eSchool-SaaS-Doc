@@ -76,10 +76,10 @@ npm --version
 
 ### Step 4: Configure Environment Variables
 
-The Student Web Portal uses environment variables to configure API connections and branding details. These variables are stored in a `.env.local` file in the project root.
+The Student Web Portal uses environment variables to configure API connections and branding details. These variables are stored in a `.env` file in the project root.
 
-1. In VS Code, locate the `.env.local` file in the root folder.
-2. If it doesn't exist, create a new file named `.env.local`.
+1. In VS Code, locate the `.env` file in the root folder.
+2. If it doesn't exist, create a new file named `.env`.
 3. Open the file for editing and configure your **Admin Panel URL**:
 
 ![Admin URL Setup](./images/admin-url.png)
@@ -104,6 +104,46 @@ NEXT_PUBLIC_EMAIL=info@yourschool.com
 - Contact information changes will be reflected immediately in the portal.
 - All variables must be prefixed with `NEXT_PUBLIC_`.
 
+### Step 5: Configure Reverb URL
+
+Add the Reverb WebSocket URL to enable real-time features (chat, live notifications).
+
+1. Open `.env` in VS Code
+2. Add the Reverb URL:
+
+![Add Reverb URL in .env file](./images/reverburl.png)
+
+```env
+# Reverb URL (for real-time features)
+NEXT_PUBLIC_REVERB_URL=wss://your-admin-domain.com/app/your-reverb-app-key
+```
+
+**How to get the Reverb URL:**
+
+The Reverb URL follows this format:
+
+```
+wss://YOUR-ADMIN-DOMAIN/app/{REVERB_APP_KEY}
+```
+
+
+
+**Example:**
+
+If your admin domain is `school.example.com` and `REVERB_APP_KEY=abc123xyz`, your Reverb URL is:
+
+```
+wss://school.example.com/app/abc123xyz
+```
+
+**Important Notes:**
+
+- Use `wss://` (secure WebSocket) for production HTTPS domains
+- Use `ws://` only for non-HTTPS / local setups
+- Reverb must be running on the Admin Panel server — see the **[Laravel Reverb Setup Guide](/installation/admin-panel-installation/reverb-setup)** for server configuration
+
+---
+
 ### Step 6: Open Firebase Console
 
 Open Firebase Console to set up push notifications.
@@ -127,11 +167,11 @@ Refer to the **[Firebase Setup](./firebase-setup.md)** section for detailed, ste
 
 ### Step 8: Add Firebase Details to Environment File
 
-Add all Firebase configuration details to the `.env.local` file. This is crucial for enabling push notifications.
+Add all Firebase configuration details to the `.env` file. This is crucial for enabling push notifications.
 
 For a detailed setup guide, refer to the **[Firebase Setup](./firebase-setup.md)** section.
 
-1. Locate your **VAPID Key** in the Firebase Console and add it to `.env.local`:
+1. Locate your **VAPID Key** in the Firebase Console and add it to `.env`:
 
 ![Firebase VAPID Key](./images/vapid.png)
 
@@ -158,9 +198,9 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your-measurement-id
 1. **Firebase Configuration Keys**: Go to Firebase Console → Project Settings → General → Your apps → Web app.
 2. **VAPID Key**: Go to Firebase Console → Project Settings → Cloud Messaging → Web Push certificates.
 
-**Complete `.env.local` File Structure:**
+**Complete `.env` File Structure:**
 
-Your final `.env.local` file should look like this:
+Your final `.env` file should look like this:
 
 ```env
 # Admin Panel API URL
@@ -170,6 +210,9 @@ NEXT_PUBLIC_STUDENT_API_URL=https://your-admin-panel.com
 NEXT_PUBLIC_ADDRESS=123 Learning Avenue, Greenfield District
 NEXT_PUBLIC_PHONE=+91 12345 67890
 NEXT_PUBLIC_EMAIL=info@yourschool.com
+
+# Reverb URL (for real-time features)
+NEXT_PUBLIC_REVERB_URL=wss://your-admin-domain.com/app/your-reverb-app-key
 
 # Vapid key
 NEXT_PUBLIC_FIREBASE_VAPID_KEY=your-vapid-key
@@ -226,7 +269,7 @@ const firebaseConfig = {
 
 **Important Notes:**
 
-- The values in `firebase-messaging-sw.js` **must match** the values in your `.env.local` file
+- The values in `firebase-messaging-sw.js` **must match** the values in your `.env` file
 - This file handles background push notifications when the browser is open but the app is not active
 - Do not use `NEXT_PUBLIC_` prefix in this file (it's a service worker, not environment variables)
 - Use regular JavaScript object format without quotes around keys
@@ -361,7 +404,7 @@ After completing the installation, verify that everything is working correctly:
 
 **Solution**:
 
-1. Check that `.env.local` file has all required variables
+1. Check that `.env` file has all required variables
 2. Ensure all environment variables start with `NEXT_PUBLIC_`
 3. Verify Firebase configuration is correct
 4. Check for any syntax errors in the terminal output
@@ -377,7 +420,7 @@ After completing the installation, verify that everything is working correctly:
 
 **Solution**:
 
-1. Verify `.env.local` file is in the **root directory** of the project
+1. Verify `.env` file is in the **root directory** of the project
 2. Check that all variable names start with `NEXT_PUBLIC_`
 3. Remove any quotes around values (unless they contain spaces)
 4. Make sure there are no spaces before or after the `=` sign
@@ -415,7 +458,7 @@ NEXT_PUBLIC_FIREBASE_API_KEY = XXXXXXXXXXXXXXXXXXXXXX
 
 1. Check browser console for errors (F12 → Console tab)
 2. Verify all files from build folder were uploaded correctly
-3. Check `NEXT_PUBLIC_STUDENT_API_URL` in `.env.local` is accessible from the internet
+3. Check `NEXT_PUBLIC_STUDENT_API_URL` in `.env` is accessible from the internet
 4. Ensure CORS is configured on Admin Panel for your web domain
 5. Clear browser cache and reload
 
@@ -425,7 +468,7 @@ NEXT_PUBLIC_FIREBASE_API_KEY = XXXXXXXXXXXXXXXXXXXXXX
 
 **Solution**:
 
-1. Verify `NEXT_PUBLIC_STUDENT_API_URL` in `.env.local` is correct
+1. Verify `NEXT_PUBLIC_STUDENT_API_URL` in `.env` is correct
 2. Ensure Admin Panel API is running and accessible
 3. Check CORS settings on Admin Panel allow your Student Web domain
 4. Test API URL directly in browser to confirm it's reachable
@@ -443,11 +486,11 @@ If the API is working, you should see a JSON response.
 
 **Solution**:
 
-1. **Verify `.env.local` configuration**: Check all Firebase variables are correct
+1. **Verify `.env` configuration**: Check all Firebase variables are correct
 2. **Check service worker file**: Ensure `firebase-messaging-sw.js` exists in the `public` folder
-3. **Verify Firebase config matches**: The values in `firebase-messaging-sw.js` must exactly match `.env.local` (without `NEXT_PUBLIC_` prefix)
+3. **Verify Firebase config matches**: The values in `firebase-messaging-sw.js` must exactly match `.env` (without `NEXT_PUBLIC_` prefix)
 4. **Enable FCM**: Go to Firebase Console → Project Settings → Cloud Messaging → Enable Firebase Cloud Messaging API
-5. **VAPID Key**: Verify VAPID key is correctly configured in `.env.local`
+5. **VAPID Key**: Verify VAPID key is correctly configured in `.env`
 6. **HTTPS Required**: Firebase notifications only work on HTTPS domains (not HTTP or localhost)
 7. **Browser Permissions**: Check that notification permissions are granted in browser settings
 8. **Test Notification**: Send a test notification from Firebase Console → Cloud Messaging → Send test message
@@ -463,7 +506,7 @@ If the API is working, you should see a JSON response.
 
 **Common Service Worker Issues:**
 
-- **Config Mismatch**: Firebase config in `firebase-messaging-sw.js` doesn't match `.env.local`
+- **Config Mismatch**: Firebase config in `firebase-messaging-sw.js` doesn't match `.env`
 - **Syntax Error**: Check for typos in the firebaseConfig object
 - **File Not Found**: Service worker file must be in `public` folder and copied to build folder
 - **CORS Error**: Make sure the service worker is served from the same origin as your app
@@ -472,7 +515,7 @@ If the API is working, you should see a JSON response.
 
 ### Security
 
-- **Never commit `.env.local`** file to version control (it's in `.gitignore`)
+- **Never commit `.env`** file to version control (it's in `.gitignore`)
 - Keep your Firebase keys and API URLs secure
 - Use HTTPS for production deployment
 
@@ -488,7 +531,7 @@ When you receive updates to the Student Web Portal:
 
 1. Extract the new ZIP file
 2. Replace old files with new ones
-3. Check if `.env.local` needs any new variables
+3. Check if `.env` needs any new variables
 4. Run `npm install` (in case of new dependencies)
 5. Run `npm run build`
 6. Upload the new build to your server
@@ -498,6 +541,6 @@ When you receive updates to the Student Web Portal:
 After successful installation:
 
 1. **Configure Branding**: Customize logo, colors, and theme
-2. **Backup**: Keep a backup of your `.env.local` file
+2. **Backup**: Keep a backup of your `.env` file
 
 For deployment configurations and advanced setups, proceed to the [Deployment Guide](./deployment.md).

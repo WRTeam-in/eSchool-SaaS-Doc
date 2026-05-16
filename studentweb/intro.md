@@ -39,7 +39,7 @@ This documentation includes:
 
 Before you begin, ensure you have:
 
-### Node.js (version 18 or higher)
+### Node.js (version 20 or higher)
 
 Node.js is required to run the Student Web Portal. Download and install it from the official website:
 
