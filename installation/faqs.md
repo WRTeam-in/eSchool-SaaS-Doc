@@ -35,7 +35,7 @@ Because of this change, the first update attempt may sometimes fail if these ser
   Your browser does not support the video tag.
 </video>
 
-👉 **[Download / Open Video in New Tab](/eSchool-SaaS-Doc/video/System-update.mp4)**
+👉 **[Download / Open Video in New Tab](pathname:///eSchool-SaaS-Doc/video/System-update.mp4)**
 
 
 
