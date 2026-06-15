@@ -5,6 +5,16 @@ title: Changelog
 
 # Changelog
 
+## Version 1.9.4 (15 Jun 2026)
+
+- **[ADDED]** Added assignment report in student reports.
+- **[IMPROVEMENT]** Added real-time preview in ID card settings.
+- **[IMPROVEMENT]** Optimized database import/export with queue jobs.
+- **[IMPROVEMENT]** Enhanced RTL layout support.
+- **[IMPROVEMENT]** Separated shift and stream tags in certificates.
+- **[IMPROVEMENT]** Improved student reports on app and web.
+- **[IMPROVEMENT]** General performance improvements.
+
 ## Version 1.9.3 (15 May 2026)
 
 - **[ADDED]** Introduced Academy Setup Wizard for streamlined onboarding and configuration.

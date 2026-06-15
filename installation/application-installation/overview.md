@@ -20,7 +20,7 @@ Using different versions may cause unexpected compatibility issues.
 ### 🖥️ Required Software
 
 #### Core Requirements
-
+ 
 - **Android Studio**: Version 2025.1.1 (Narwhal)
 - **Flutter**: [View Compatible Versions](#-version-compatibility)
 - **Java**: Version 21
@@ -62,6 +62,10 @@ This table shows the compatibility between different versions of the eSchool Saa
 
 | Product Version | Flutter Version | Kotlin Version | distributionUrl (gradle) | JDK Version |
 |----------------|-----------------|----------------|-------------------------|-------------|
+| 1.9.4 | 3.44.1 | 2.1.0 | 8.14 | 21 |
+| 1.9.3 | 3.41.1 | 2.0.10 | 8.7 | 21 |
+| 1.9.2 | 3.41.1 | 2.0.10 | 8.7 | 21 |
+| 1.9.1 | 3.41.1 | 2.0.10 | 8.7 | 21 |
 | 1.9.0 | 3.41.1 | 2.0.10 | 8.7 | 21 |
 | 1.8.2 | 3.38.5 | 2.0.10 | 8.7 | 21 |
 | 1.8.1 | 3.38.5 | 2.0.10 | 8.7 | 21 |

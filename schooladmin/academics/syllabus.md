@@ -43,6 +43,16 @@ sidebar_position: 8
 * Improves efficiency in managing lessons and topics.
 * Enables scalable and reusable content management across sessions.
 
+---
+
+## Creating a Syllabus
+
+:::info[Semester-wise syllabus creation]
+If a subject is taught across multiple semesters (e.g. Maths in Sem 1 and Sem 2), please create a **separate syllabus for each semester**.
+
+**Example Titles:** `7 English - Math (Sem/Terms 1)` and `7 English - Math (Sem/Terms 2)`
+:::
+
 ![e-School SaaS](../../static/images/schooladmin/manage-syllabus.png)
 
 
