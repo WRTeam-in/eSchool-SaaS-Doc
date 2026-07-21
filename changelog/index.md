@@ -5,6 +5,21 @@ title: Changelog
 
 # Changelog
 
+## Version 1.9.5 (17 Jul 2026)
+
+- **[ADDED]** Fee Relief Module.
+- **[ADDED]** Income Module.
+- **[ADDED]** Income Report.
+- **[ADDED]** Financial Report.
+- **[ADDED]** Online Class Link Integration.
+- **[ADDED]** Bootstrap 5.3.
+- **[IMPROVED]** Added syllabus-wise organization for online exam questions.
+- **[IMPROVED]** Refactored the subscription payment workflow for better performance and maintainability.
+- **[IMPROVED]** Added searchable select menus across the system.
+- **[IMPROVED]** Enhanced the System Settings page with a cleaner and more intuitive UI/UX.
+- **[IMPROVED]** Redesigned the Package Creation form for a better user experience.
+- **[IMPROVED]** Added flexible configuration for demo school restrictions.
+
 ## Version 1.9.4 (15 Jun 2026)
 
 - **[ADDED]** Added assignment report in student reports.
