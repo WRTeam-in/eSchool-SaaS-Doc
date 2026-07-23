@@ -65,3 +65,9 @@ Review your entire configuration in the summary panel. Once verified, click **Co
 :::tip[Pro Tip]
 You can always skip the wizard and configure these settings manually from the respective modules, but using the Wizard is recommended for a consistent and conflict-free setup.
 :::
+
+:::warning[Important Prerequisite]
+Before you can use the **Academy Setup Wizard**, you first need to set up its foundational configuration. You must complete this setup before the wizard becomes fully accessible.
+
+Please navigate to the [Academy Setup Configuration](../../superadmin/settings/academy-setup) page to configure these prerequisite settings.
+:::

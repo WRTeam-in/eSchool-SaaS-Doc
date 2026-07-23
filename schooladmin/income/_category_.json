@@ -1,0 +1,8 @@
+{
+    "label": "Income",
+    "position": 19,
+    "link": {
+        "type": "generated-index",
+        "description": "Income management features for the e-School SaaS School Admin"
+    }
+}

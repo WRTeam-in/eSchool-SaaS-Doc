@@ -74,7 +74,7 @@ const sidebars = {
         {
           type: "category",
           label: "Timetable",
-          items: ["timetable/create-timetable", "timetable/teacher-timetable"],
+          items: ["timetable/create-timetable", "timetable/teacher-timetable", "timetable/online-classes"],
         },
         {
           type: "category",
@@ -168,12 +168,18 @@ const sidebars = {
             "fees/fee-paid",
             "fees/optional-fees-log",
             "fees/fee-transaction-logs",
+            "fees/student-fees-discount",
           ],
         },
         {
           type: "category",
           label: "Expense",
           items: ["expense/manage-expense-category", "expense/manage-expense"],
+        },
+        {
+          type: "category",
+          label: "Income",
+          items: ["income/manage-income-dashboard", "income/manage-income-category", "income/manage-income"],
         },
         {
           type: "category",
@@ -209,6 +215,8 @@ const sidebars = {
         "reports/staff-reports",
         "reports/exam-reports",
         "reports/expense-report",
+        "reports/income-report",
+        "reports/financial-summary-report",
       ],
     },
     {
