@@ -5,6 +5,11 @@ title: Changelog
 
 # Changelog
 
+## Version 1.9.6 (23 Jul 2026)
+
+- **[ADDED]** Language Settings: Super Admin can now manage languages for the Mobile Apps and Student Web Portal. [Click Here](../superadmin/settings/system-settings/language-settings)
+- **[IMPROVED]** Enhanced system security.
+
 ## Version 1.9.5 (17 Jul 2026)
 
 - **[ADDED]** Fee Relief Module.

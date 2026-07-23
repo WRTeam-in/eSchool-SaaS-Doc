@@ -62,6 +62,8 @@ This table shows the compatibility between different versions of the eSchool Saa
 
 | Product Version | Flutter Version | Kotlin Version | distributionUrl (gradle) | JDK Version |
 |----------------|-----------------|----------------|-------------------------|-------------|
+| 1.9.6 | 3.44.7 | 2.1.0 | 8.14 | 21 |
+| 1.9.5 | 3.44.1 | 2.1.0 | 8.14 | 21 |
 | 1.9.4 | 3.44.1 | 2.1.0 | 8.14 | 21 |
 | 1.9.3 | 3.41.1 | 2.0.10 | 8.7 | 21 |
 | 1.9.2 | 3.41.1 | 2.0.10 | 8.7 | 21 |
