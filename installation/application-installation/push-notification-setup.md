@@ -15,7 +15,7 @@ This setup involves registering your app with Firebase Cloud Messaging (FCM), co
 
 ## 📖 Follow the Complete Notification Setup Guide
 
-👉 **[Push Notification Setup Guide](https://wrteam-in.github.io/common_app_doc/GeneralSettings/notifications)**
+👉 **[Push Notification Setup Guide](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/notifications)**
 
 This guide provides platform-specific, step-by-step instructions for the full notification configuration:
 

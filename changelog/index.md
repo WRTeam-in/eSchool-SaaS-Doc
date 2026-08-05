@@ -5,6 +5,15 @@ title: Changelog
 
 # Changelog
 
+## Version 1.10.0 (05 Aug 2026)
+
+- **[ADDED]** WhatsApp Integration
+- **[IMPROVED]** Export all records with server-side pagination in table data export.
+
+:::info[IMPORTANT NOTE]
+- **WhatsApp Configuration**: Before sending WhatsApp messages, ensure Meta WhatsApp Business credentials and required Meta Utility Relay Templates are configured in System Settings. [Click Here](../schooladmin/system-settings/whatsapp) for detailed setup guidelines.
+:::
+
 ## Version 1.9.6 (23 Jul 2026)
 
 - **[ADDED]** Language Settings: Super Admin can now manage languages for the Mobile Apps and Student Web Portal. [Click Here](../superadmin/settings/system-settings/language-settings)

@@ -15,7 +15,7 @@ We have published a **comprehensive, step-by-step environment setup guide** that
 
 ## 📖 Follow the Complete Setup Guide
 
-👉 **[Flutter & Java JDK Environment Setup Guide](https://wrteam-in.github.io/common_app_doc/GeneralSettings/basicsetup)**
+👉 **[Flutter & Java JDK Environment Setup Guide](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/basicsetup)**
 
 This guide covers all the essential setup steps required before working with the eSchool SaaS mobile application:
 
@@ -54,4 +54,4 @@ Assistance for system-level setup — including Flutter installation, Android St
 
 - **Official Flutter Docs**: [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
 - **Android Studio Download**: [https://developer.android.com/studio](https://developer.android.com/studio)
-- **Flutter & JDK Setup Guide**: [https://wrteam-in.github.io/common_app_doc/GeneralSettings/basicsetup](https://wrteam-in.github.io/common_app_doc/GeneralSettings/basicsetup)
+- **Flutter & JDK Setup Guide**: [https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/basicsetup](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/basicsetup)

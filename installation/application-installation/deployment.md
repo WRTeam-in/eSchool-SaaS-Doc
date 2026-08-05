@@ -13,7 +13,7 @@ Each platform has its own developer account requirements, signing configurations
 
 We have a comprehensive, platform-specific deployment guide that walks you through everything — from account setup and signing configurations to store listings, testing tracks, and production release.
 
-👉 **[Complete Deployment Guide](https://wrteam-in.github.io/common_app_doc/GeneralSettings/deployment)**
+👉 **[Complete Deployment Guide](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/deployment)**
 
 ---
 
@@ -21,7 +21,7 @@ We have a comprehensive, platform-specific deployment guide that walks you throu
 
 ### 🤖 Google Play Store
 
-👉 **[Deploy to Google Play Store](https://wrteam-in.github.io/common_app_doc/GeneralSettings/deployment/playstore)**
+👉 **[Deploy to Google Play Store](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/deployment/playstore)**
 
 | Step | What's Covered |
 |------|----------------|
@@ -42,7 +42,7 @@ The `.jks` keystore file and its passwords are **irreplaceable**. If lost, you w
 
 ### 🍎 Apple App Store
 
-👉 **[Deploy to Apple App Store](https://wrteam-in.github.io/common_app_doc/GeneralSettings/deployment/appstore)**
+👉 **[Deploy to Apple App Store](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/deployment/appstore)**
 
 | Step | What's Covered |
 |------|----------------|

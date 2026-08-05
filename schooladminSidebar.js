@@ -240,6 +240,8 @@ const sidebars = {
             { type: "doc", id: "manage-session-years", label: "Session Year" },
             "system-settings/leave-settings",
             "system-settings/additional-user-fields",
+            "system-settings/whatsapp",
+            "system-settings/meta-whatsapp-credentials",
             "system-settings/online-exam-terms-condition",
             "system-settings/email-template",
             "system-settings/payment-settings",

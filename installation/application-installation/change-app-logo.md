@@ -34,7 +34,7 @@ The app icon is the first visual element users see on their device's home screen
 
 We have a dedicated guide that covers the complete app icon setup process — including automated generation, `pubspec.yaml` configuration, adaptive icon setup for Android, and manual replacement steps for both platforms.
 
-👉 **[App Icon Setup Guide](https://wrteam-in.github.io/common_app_doc/GeneralSettings/appicon)**
+👉 **[App Icon Setup Guide](https://www.marketplace.wrteam.in/docs/flutter-common-doc/GeneralSettings/appicon)**
 
 ### What's Covered in the Guide
 
