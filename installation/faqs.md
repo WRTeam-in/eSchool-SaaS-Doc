@@ -22,7 +22,20 @@ This section addresses common questions and issues you might encounter during th
 ## 🚨 Installation & Setup Issues
 
 <details>
-<summary><strong>1. Why am I getting issues while updating from v1.9.2 to v1.9.3?</strong></summary>
+<summary><strong>1. What should I do if default school WhatsApp templates do not exist after updating from v1.9.6 to v1.10.0?</strong></summary>
+
+If default school WhatsApp templates do not exist or are missing after updating from version **v1.9.6 to v1.10.0**, this issue is related to application cache.
+
+**Solution:**
+- Please update again using the same **v1.10.0** update file.
+- Re-running the update forces the school seeder to run, which creates the default WhatsApp templates properly.
+
+![WhatsApp Integration Templates](../static/images/schooladmin/whatsapp-templates.png)
+
+</details>
+
+<details>
+<summary><strong>2. Why am I getting issues while updating from v1.9.2 to v1.9.3?</strong></summary>
 
 From version v1.9.3, the system update process has been improved and now depends on background services such as Laravel Queue and Laravel Reverb.
 
@@ -107,7 +120,7 @@ For production/live servers, Supervisor is highly recommended to ensure:
 </details>
 
 <details>
-<summary><strong>2. Why is the school not being created and showing an "Error Occurred" message?</strong></summary>
+<summary><strong>3. Why is the school not being created and showing an "Error Occurred" message?</strong></summary>
 
 This error typically occurs when the database user does not have permission to create or drop databases, which is required for setting up a new school.
 
@@ -122,7 +135,7 @@ This error typically occurs when the database user does not have permission to c
 </details>
 
 <details>
-<summary><strong>3. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
+<summary><strong>4. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
 
 You can find detailed instructions for setting up the queue in our documentation here:
 ![e-School SaaS](../static/images/superadmin/missing-queue.png)
@@ -132,7 +145,7 @@ You can find detailed instructions for setting up the queue in our documentation
 </details>
 
 <details>
-<summary><strong>4. What are the default login credentials for different Users?</strong></summary>
+<summary><strong>5. What are the default login credentials for different Users?</strong></summary>
 
 Different user types have different default login credentials in the system:
 
@@ -161,7 +174,7 @@ Different user types have different default login credentials in the system:
 </details>
 
 <details>
-<summary><strong>5. How to Update the System (Admin Panel, App Code and Student Web)?</strong></summary>
+<summary><strong>6. How to Update the System (Admin Panel, App Code and Student Web)?</strong></summary>
 
 #### 🔄 **Admin Panel Update**
 
@@ -246,7 +259,7 @@ This method is faster and preferred by technical users who are familiar with Flu
 </details>
 
 <details>
-<summary><strong>6. Why are database root user credentials required for this system?</strong></summary>
+<summary><strong>7. Why are database root user credentials required for this system?</strong></summary>
 
 This system is a SaaS platform, where each school has its own separate database. The root database user has the necessary permissions to create and drop databases. These permissions are required when a new school is added, as the system needs to:
 
@@ -261,7 +274,7 @@ If you do not want to use the root account, you can provide a database user with
 </details>
 
 <details>
-<summary><strong>7. How many payment gateways are available in the system?</strong></summary>
+<summary><strong>8. How many payment gateways are available in the system?</strong></summary>
 
 Currently, we support **four payment gateways** in the system:
 
@@ -276,13 +289,10 @@ Currently, we support **four payment gateways** in the system:
 </details>
 
 
-
-
-
 ## 🌐 Domain & SSL Configuration
 
 <details>
-<summary><strong>8. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
+<summary><strong>1. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
 
@@ -297,7 +307,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 </details>
 
 <details>
-<summary><strong>9. How do I create a wildcard SSL certificate?</strong></summary>
+<summary><strong>2. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
 
@@ -313,7 +323,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 ## 💳 Subscription & Package Management
 
 <details>
-<summary><strong>10. What happens if the Super Admin updates an existing subscription package?</strong></summary>
+<summary><strong>1. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
 
@@ -331,7 +341,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 </details>
 
 <details>
-<summary><strong>11. How is the addon validity calculated?</strong></summary>
+<summary><strong>2. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
 
@@ -350,7 +360,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 </details>
 
 <details>
-<summary><strong>12. Where can I find the School Code?</strong></summary>
+<summary><strong>3. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
 
@@ -379,7 +389,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 ## 🏫 School admin panel
 
 <details>
-<summary><strong>13. How do Classes and Sections work in the system?</strong></summary>
+<summary><strong>1. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
 
@@ -410,7 +420,7 @@ Let's take an example:
 ## 📱 Mobile application
 
 <details>
-<summary><strong>14. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
+<summary><strong>1. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
 
@@ -433,7 +443,7 @@ Using school_code with an underscore causes the backend to reject the request du
 </details>
 
 <details>
-<summary><strong>15. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
+<summary><strong>2. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
 
 To set up Firebase using the Firebase CLI for eSchool SaaS:
 
@@ -460,7 +470,7 @@ To set up Firebase using the Firebase CLI for eSchool SaaS:
 </details>
 
 <details>
-<summary><strong>16. How can I control whether default login credentials are displayed on the Student App and Staff App login screens?</strong></summary>
+<summary><strong>3. How can I control whether default login credentials are displayed on the Student App and Staff App login screens?</strong></summary>
 
 The eSchool SaaS mobile applications provide a convenient feature that allows you to control the visibility of default login credentials on the login screens. This can be helpful for demonstration purposes or to guide users during initial login, but you may want to hide them in production for security reasons.
 
@@ -563,7 +573,7 @@ For production environments, it is strongly recommended to set both variables to
 ## 🌐 Student Web Portal
 
 <details>
-<summary><strong>17. Does the Student Web Portal work on Shared Hosting?</strong></summary>
+<summary><strong>1. Does the Student Web Portal work on Shared Hosting?</strong></summary>
 
 **Yes — the Student Web Portal is fully compatible with Shared Hosting.**
 
