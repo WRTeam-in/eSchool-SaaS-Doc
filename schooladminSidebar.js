@@ -81,9 +81,10 @@ const sidebars = {
           label: "Attendance",
           items: [
             "attendance/student-attendance",
-            "attendance/month-wise-attendance",
+            "attendance/month-wise-attendance"
           ],
         },
+        "attendance/student-leave",
         "holiday-list",
       ],
     },
@@ -152,6 +153,10 @@ const sidebars = {
           items: ["staff-leave/staff-leave", "staff-leave/leave-report"],
         },
         "staff-attendance/staff-attendance",
+        "staff-attendance/todays-attendance",
+        "staff-attendance/attendance-register",
+        "staff-attendance/attendance-reports",
+        "staff-attendance/qr-attendance-settings",
         "tasks"
       ],
     },

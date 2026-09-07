@@ -806,6 +806,279 @@ A: Once submitted, the admin reviews the request. Approval time depends on schoo
 
 ---
 
+## 📍 Bus Live Tracking
+
+The driver app sends the bus GPS position while a trip is running; the school admin sees every running bus on a map, and a student / parent sees only their own bus with its ETA. **No GPS row is ever written to the database** — the latest position of each running trip lives in the Laravel cache and expires on its own.
+
+### 1. How It Works
+
+```
+Driver app                     Laravel                       Viewers
+──────────                     ───────                       ───────
+Start trip  ─────────────────► trip status = inprogress
+                                     │
+GPS every 15–30 s ───────────► POST transportation/trip/location
+                                     │
+                                     ▼
+                          Cache: latest position only
+                          key  transportation:school:{school}:trip:{trip}:location
+                          TTL  180 seconds
+                                     │
+                                     ├──► GET transportation/live-tracking        (admin map)
+                                     ├──► GET transportation/live-tracking/my-bus (student / parent)
+                                     └──► GET transportation/live-tracking/session (WebView page)
+                                     │
+End trip ────────────────────► status = completed + Cache::forget()
+```
+
+**Key Design Points:**
+- **One position per trip:** Each GPS update overwrites the previous one. There is no history and no `gps_locations` table.
+- **Tracking is tied to a trip, not to a bus:** The trip record is the existing `route_vehicle_histories` row (model `RouteVehicleHistory`) with `status = inprogress | completed` and `type = pickup | drop`.
+- **Nothing is cleaned up by cron:** The cache TTL removes a stale position; ending the trip removes it immediately.
+- **No queue:** A GPS update is validate → authorize → `Cache::put` → respond.
+
+---
+
+### 2. The Cache
+
+| Component | Details |
+|---|---|
+| **Store** | Dedicated `transportation` cache store (`config/cache.php`), file driver, `storage/framework/cache/transportation` |
+| **Key** | `transportation:school:{school_id}:trip:{trip_id}:location` |
+| **TTL** | 180 seconds (`TrackingService::TTL_SECONDS`) |
+| **Value** | `trip_id`, `bus_id`, `driver_id`, `latitude`, `longitude`, `updated_at` (ISO-8601 with offset) |
+
+The school id is baked into the key because every school has its own database but all schools share one cache store — this provides isolation between tenants.
+
+The dedicated store also ensures that transportation positions are not wiped when the application's normal cache is cleared.
+
+#### Tracking Status
+
+Derived from the age of `updated_at` in `TrackingService::getTrackingStatus()`:
+
+| Status | Age | Meaning |
+|---|---|---|
+| `live` | ≤ 90 s | Fresh position — draw the bus |
+| `delayed` | 90–180 s | Position exists but is going stale — keep the pin, warn the user |
+| `offline` | no entry, or older than the TTL | Nothing to show; `location` comes back as `null` |
+
+A running trip with `"location": null` and `"tracking_status": "offline"` is **normal**, not an error — it indicates that the driver has not sent a fix yet, closed the app, lost signal, or turned GPS off.
+
+---
+
+### 3. Prerequisites
+
+| # | Requirement |
+|---|---|
+| 1 | Transportation module set up: routes, vehicles, pickup points, a route–vehicle assignment with a driver (and optionally a helper) |
+| 2 | The passenger has an **active transport plan** — a `transportation_payments` row with `route_vehicle_id` set and `expiry_date` in the future |
+| 3 | The driver / helper is logged into the staff app and has started the trip |
+| 4 | Admin viewers hold the **`RouteVehicle-list`** permission |
+| 5 | The `student_web_url` system setting (or `LIVE_TRACKING_WEB_URL` in `.env`) is set, for the WebView handoff |
+| 6 | Every app request carries `Authorization: Bearer <token>` and the `school-code` header (the `APISwitchDatabase` middleware selects the school database) |
+
+Nothing has to be enabled per school beyond the transportation module itself — tracking activates as soon as a trip is running and the driver's app is sending positions.
+
+---
+
+### 4. Trip Lifecycle
+
+Trips are started and ended by the driver endpoint:
+
+```http
+POST /api/driver-helpr/trip/start-end
+{ "shift_id": 3, "pickup_drop": "pickup", "start_end": "start" }
+```
+
+- Only a user with the **Driver** or **Helper** role can initiate trips.
+- Starting creates a `route_vehicle_histories` row with `status = inprogress`, `actual_start_time = now`, and returns the `trip_id`.
+- A drop trip cannot be started before that day's pickup trip is completed.
+- Ending sets `actual_end_time`, `status = completed`, then immediately invokes `TrackingService::removeLocation()` and `TrackingLinkService::revokeTripLinks()` — the bus leaves the map at once instead of lingering for the TTL, and every WebView link minted for that trip stops working.
+
+**Related Driver Endpoints:**
+- `GET /api/driver-helpr/get-trips`
+- `GET /api/driver-helpr/dashboard`
+- `GET /api/driver-helpr/get-vehicle-details`
+
+---
+
+### 5. API Reference
+
+All tracking endpoints are registered under the `APISwitchDatabase` group in routes, except the session endpoint which sits outside it.
+
+#### 5.1 Update Location — Driver App
+
+```http
+POST /api/transportation/trip/location
+Authorization: Bearer <driver token>
+school-code: <school code>
+
+{ "trip_id": 5001, "latitude": 23.2576, "longitude": 69.7655 }
+```
+
+| Field | Rule |
+|---|---|
+| `trip_id` | required, integer |
+| `latitude` | required, numeric, −90..90 |
+| `longitude` | required, numeric, −180..180 |
+| `accuracy` | optional, numeric ≥ 0 (accepted, currently not stored) |
+
+**Authorization Sequence:**
+Caller must hold Driver/Helper role $\rightarrow$ School must resolve $\rightarrow$ Trip must be `inprogress` and have caller as `driver_id` or `helper_id`.
+
+```json
+{ "error": false, "message": "Location updated successfully.", "data": null, "code": 200 }
+```
+
+Frequency: Send every **15–30 seconds**.
+
+#### 5.2 Current Trip — Driver App
+
+```http
+GET /api/transportation/trip/current
+```
+
+Returns the running trip of the logged-in driver/helper plus its last known position. Returns `{"trip": null, "location": null, "tracking_status": "offline"}` when nothing is running.
+
+#### 5.3 Admin Live Map
+
+```http
+GET /api/transportation/live-tracking?route_id=&vehicle_id=&shift_id=&type=pickup|drop
+```
+
+Requires `RouteVehicle-list` permission. Returns every `inprogress` trip for the school database:
+
+```json
+{
+    "trip_id": 5001, "trip_type": "pickup", "trip_status": "inprogress",
+    "date": "2026-08-19", "started_at": "07:35:00",
+    "bus_id": 10, "bus_name": "Bus A", "bus_number": "GJ-12-AB-1234",
+    "driver_id": 25, "driver_name": "John Doe",
+    "route_id": 5, "route_name": "Route A",
+    "tracking_status": "live",
+    "location": {
+        "latitude": 23.2576, "longitude": 69.7655,
+        "updated_at": "2026-08-19T11:45:00+05:30",
+        "tracking_status": "live"
+    }
+}
+```
+
+#### 5.4 My Bus — Student / Parent / Staff
+
+```http
+GET /api/transportation/live-tracking/my-bus        # any logged-in passenger
+GET /api/student/transportation/live-tracking       # student app
+GET /api/parent/transportation/live-tracking?child_id=12   # parent app
+```
+
+Guardian **must** send `child_id` corresponding to their child.
+
+**Resolution Chain:**
+Active `transportation_payments` $\rightarrow$ `route_vehicle` (status 1) $\rightarrow$ `inprogress` trip on that route + vehicle $\rightarrow$ cached position.
+
+```json
+{
+    "bus":    { "id": 10, "name": "Bus A", "vehicle_number": "GJ-12-AB-1234" },
+    "driver": { "id": 25, "name": "John Doe" },
+    "route":  { "id": 5, "name": "Route A" },
+    "trip":   { "id": 5001, "type": "pickup", "status": "inprogress", "started_at": "07:35:00" },
+    "location": { "latitude": 23.2576, "longitude": 69.7655, "updated_at": "…", "tracking_status": "live" },
+    "tracking_status": "live"
+}
+```
+
+---
+
+### 6. WebView Handoff — Web Live Tracking
+
+The student / parent mobile app opens live tracking in a WebView using short-lived signed tokens without requiring web login credentials.
+
+```
+App taps "Live Tracking"
+  → POST transportation/live-tracking/link         (app token + school-code)
+  → https://<student-web>/live-tracking#tk=<token>
+  → WebView opens the url
+  → GET transportation/live-tracking/session       (X-Tracking-Token only)
+  → repeat every poll_interval_sec until expires_at
+```
+
+#### The Token
+
+| Property | Details |
+|---|---|
+| **Signature** | HMAC-SHA256, key derived from `APP_KEY` plus purpose |
+| **Lifetime** | Trip end + 30 minutes, capped at 2 hours (`AFTER_TRIP_MINUTES = 30`, `TTL_MINUTES = 120`) |
+| **Cache Record** | `transportation:tracking-link:{token_id}`, TTL = expiry |
+| **Reuse** | Reuses existing link while 10+ minutes remain (`MIN_REUSE_SECONDS = 600`) |
+| **Revocation** | When trip ends, user logs out, or record expires |
+| **Rate Limits** | 20 links per user/hour, 120 polls per token/hour |
+
+#### 6.1 Create the Link
+
+```http
+POST /api/transportation/live-tracking/link
+Authorization: Bearer <student / parent token>
+school-code: <school code>
+```
+
+Also available as:
+- `POST /api/student/transportation/live-tracking/link`
+- `POST /api/parent/transportation/live-tracking/link`
+
+| Field | Description |
+|---|---|
+| `user_id` | required unless `child_id` is sent |
+| `child_id` | optional (parent app usage) |
+| `trip_id` | optional (pin to specific trip) |
+
+#### 6.2 Redeem the Link (Session Endpoint)
+
+```http
+GET /api/transportation/live-tracking/session
+X-Tracking-Token: <token>
+```
+
+| HTTP Status | Body | When | Page State |
+|---|---|---|---|
+| 200 | `tracking_status: "live"` | Trip running, fresh fix | Map + ETA |
+| 200 | `tracking_status: "offline"`, `location: null` | Trip running, no fresh fix | "Waiting for bus location" |
+| 200 | `tracking_status: "no_trip"`, `trip: null` | Plan active, bus not started | "Bus hasn't started" |
+| 401 | `error: true` | Missing / malformed / forged token | "Open live tracking again from app" |
+| 410 | `error: true` | Expired or revoked | Stop polling |
+| 429 | `error: true` | Polling too fast | Back off, retain last pin |
+
+---
+
+### 7. Code Architecture & Security Model
+
+#### Security Rules:
+- **Role Enforcement:** Only Driver / Helper can post GPS positions.
+- **Trip Ownership:** Driver can only update their own `inprogress` trip.
+- **Coordinate Boundaries:** Validates latitudes between $-90$ and $90$, longitudes between $-180$ and $180$.
+- **Tenant Isolation:** Per-school DB resolution + `school_id` incorporated in cache keys.
+- **Passenger Authorization:** Guardians can only track verified linked students.
+- **Signed Tokens:** HMAC-SHA256 signed tracking links with cache validation prevent tampering.
+
+---
+
+### 8. Operations & Troubleshooting
+
+| Symptom | Cause / Fix |
+|---|---|
+| "No active trip found" on GPS ping | The trip is not `inprogress`, or the driver/helper is not assigned to it. |
+| "You are not authorized to update this trip" | User does not hold the Driver or Helper role. |
+| Bus shows offline while driving | No GPS update in the last 180 seconds (backgrounding, GPS permissions, network loss). |
+| Bus still on map after trip | Ending the trip clears the cache immediately; otherwise cache expires within 180s. |
+| Student sees null values | No active transport plan, route-vehicle is inactive, or no trip is running. |
+| Parent gets "Please select a child" | Ensure `child_id` parameter is sent. |
+| Admin map empty | No active `inprogress` trips or missing `RouteVehicle-list` permission. |
+| "Live tracking page is not configured" | `student_web_url` setting or `LIVE_TRACKING_WEB_URL` environment variable is not configured. |
+| WebView 401 error | Token altered or `X-Tracking-Token` header was not passed. |
+| WebView 410 error | Trip ended, user logged out, or link expired. |
+
+---
+
 ## 🔧 Settings
 
 To configure Transportation Module settings, navigate to **System Settings > Transportation Settings** where you can:
@@ -814,15 +1087,6 @@ To configure Transportation Module settings, navigate to **System Settings > Tra
 - Configure expense categories
 - Manage transportation permissions
 - Set up payment gateways for transportation fees
-
----
-
-## 📞 Support
-
-For additional assistance with the Transportation Module, please contact:
-- **Email**: support@eschool.com
-- **Documentation**: Refer to the main eSchool documentation
-- **Technical Support**: Contact your system administrator
 
 ---
 

@@ -5,6 +5,16 @@ title: Changelog
 
 # Changelog
 
+## Version 1.11.0 (07 Sep 2026)
+
+- **[ADDED]** Staff QR code attendance. [Click Here](../schooladmin/staff-attendance/qr-attendance-settings)
+- **[ADDED]** Manual fees payment. [Click Here](../schooladmin/fees/fee-paid)
+- **[ADDED]** Student leave management.
+- **[ADDED]** Live bus tracking. [Click Here](../schooladmin/transportation/transportation-module)
+- **[ADDED]** School plan expiring email with custom template.
+- **[IMPROVED]** Cheque payment flow. [Click Here](../schooladmin/fees/fee-paid)
+- **[IMPROVED]** Online exam page UX.
+
 ## Version 1.10.0 (05 Aug 2026)
 
 - **[ADDED]** WhatsApp Integration
