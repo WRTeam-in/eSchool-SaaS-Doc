@@ -118,7 +118,7 @@ Nothing touches attendance at this point — a pending leave has no effect on th
 
 The form asks for class section → student → from/to date (`d-m-Y`) → reason.
 
-Server side ([`store`](app/Http/Controllers/StudentLeaveController.php#L167)):
+Server side (`store` in `app/Http/Controllers/StudentLeaveController.php:167`):
 
 - A teacher may only add a leave for a student in one of their own class sections.
 - Dates must sit inside the session year, `to_date` ≥ `from_date`, and must not overlap an existing non-rejected leave for that student.
@@ -137,7 +137,7 @@ The controller accepts an optional `files[]` upload (jpg/jpeg/png/pdf/doc/docx, 
 
 **Manage Leave** lists every leave for the current session year with filters for class section and status, and a search over reason, note, dates, student name and applicant name. A teacher only ever sees the leaves of students in their own class sections.
 
-The edit action opens a modal carrying from/to date, reason, status (Pending / Approved / Rejected) and a rejection-reason box that appears when Rejected is picked. It posts to `student-leave.update-status` ([`updateStatus`](app/Http/Controllers/StudentLeaveController.php#L323), needs `student-leave-approve`).
+The edit action opens a modal carrying from/to date, reason, status (Pending / Approved / Rejected) and a rejection-reason box that appears when Rejected is picked. It posts to `student-leave.update-status` (`updateStatus` in `app/Http/Controllers/StudentLeaveController.php:323`, needs `student-leave-approve`).
 
 What it enforces:
 
@@ -161,7 +161,7 @@ Note that neither staff endpoint restricts the caller to their own class section
 
 ### Deleting
 
-The delete action ([`destroy`](app/Http/Controllers/StudentLeaveController.php#L502), needs `student-leave-approve`) removes the attachments, the daily detail rows and the leave itself. **Attendance is only cleaned up when the leave is entirely in the future** (`from_date > today`); deleting a past or in-progress approved leave leaves its `type = 2` attendance rows behind, which then have to be corrected from the attendance screen.
+The delete action (`destroy` in `app/Http/Controllers/StudentLeaveController.php:502`, needs `student-leave-approve`) removes the attachments, the daily detail rows and the leave itself. **Attendance is only cleaned up when the leave is entirely in the future** (`from_date > today`); deleting a past or in-progress approved leave leaves its `type = 2` attendance rows behind, which then have to be corrected from the attendance screen.
 
 ---
 
@@ -244,7 +244,7 @@ Both groups need `Authorization: Bearer {token}` and the `school-code` header, a
 | `holidays` | Public holidays used to skip days in the parent flow |
 | `class_teachers` | Drives both the teacher's visibility scope and the permission toggle |
 
-`added_by` and `note` were added to `leaves` in [version_1_11_0.php](database/migrations/schools/2026_08_13_160000_version_1_11_0.php#L265), which also de-duplicated `attendances` and added the unique daily-record index the leave sync depends on.
+`added_by` and `note` were added to `leaves` in `database/migrations/schools/2026_08_13_160000_version_1_11_0.php:265`, which also de-duplicated `attendances` and added the unique daily-record index the leave sync depends on.
 
 The same `leaves` table also stores **staff** leave. Every student-leave query filters with `whereHas('user', fn($q) => $q->has('student'))` so the two never mix; the staff API additionally refuses a non-student record with "This is not a student leave record."
 
