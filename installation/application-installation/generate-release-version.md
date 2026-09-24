@@ -5,6 +5,10 @@ sidebar_label: 🏗️ Generate Release Version
 
 # 🏗️ Generate Release Version
 
+:::tip Building apps for several schools?
+The [Multi-School APK add-on](./multi-school-apk/overview.md) builds a separately branded and signed app for each school from this same project.
+:::
+
 ## Create and add Key Store file for Android:
 
 1. To generate a keystore file, run the following command:
