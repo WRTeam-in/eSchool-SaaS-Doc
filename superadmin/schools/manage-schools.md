@@ -4,6 +4,10 @@ sidebar_position: 1
 
 # Manage Schools
 
+:::tip Prefer to watch?
+The [Manage schools video tutorial](/tutorials/super-admin/manage-schools/) follows one school from start to finish: create it, manage it (Manage admin, Edit, Inactive/Active, Delete and Restore), assign a plan, open its website, sign in as the school admin and complete the Academy Setup Wizard.
+:::
+
 ## School Management
 
 ### 1. School Creation
@@ -46,13 +50,18 @@ The School Admin can access their admin panel using:
 * Registered email
 * Password (phone number by default)
 
-### 5. School Management by Super Admin
+### 5. Plan and first sign-in
+* A new school starts **without a plan**, so its website and features are switched off. Assign one from **Packages & subscription** › **Subscription** › **View report** › **Assign plan**.
+* **Edit school** shows the school's **Default domain** URL. Open it and choose **Login** › **Login with staff** to sign in as the school admin.
+* On the first sign-in, the school admin completes the [Academy Setup Wizard](../../../schooladmin/academy-setup-wizard/).
+
+### 6. School Management by Super Admin
 The Super Admin has full control over schools, including:
 * Updating school details
 * Activating or deactivating a school
 * Deleting a school
 
-### 6. Activation / Deactivation Behavior
+### 7. Activation / Deactivation Behavior
 If a school is deactivated:
 * Students and staff will not be able to log in.
 * Access to the system is completely restricted for that school.

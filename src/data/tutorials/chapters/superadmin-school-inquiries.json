@@ -1,0 +1,37 @@
+{
+  "duration": 189.5,
+  "chapters": [
+    {
+      "t": 5.5,
+      "label": "The School inquiry setting"
+    },
+    {
+      "t": 30.7,
+      "label": "Start trial (inquiry ON)"
+    },
+    {
+      "t": 69.6,
+      "label": "Review inquiries"
+    },
+    {
+      "t": 96,
+      "label": "Approve an inquiry"
+    },
+    {
+      "t": 117.3,
+      "label": "Reject an inquiry"
+    },
+    {
+      "t": 135.2,
+      "label": "Turn School inquiry off"
+    },
+    {
+      "t": 150.1,
+      "label": "Start trial (inquiry OFF)"
+    },
+    {
+      "t": 169.5,
+      "label": "School created directly"
+    }
+  ]
+}

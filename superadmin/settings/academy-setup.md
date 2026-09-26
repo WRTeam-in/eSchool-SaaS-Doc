@@ -18,6 +18,10 @@ Once configured, this data is published to all schools and used as a base for th
 
 ---
 
+:::note
+The wizard only offers what you add here. With no mediums, sections, streams, classes or subjects, those wizard steps have nothing to choose from.
+:::
+
 ### Master Data Management
 Super Admin can:
 * Create, update, and delete academic master records.

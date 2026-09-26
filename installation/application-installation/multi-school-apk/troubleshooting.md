@@ -42,7 +42,7 @@ The messages name the command for your system: `.\build.cmd` on Windows, `./buil
 
 | Message | Cause | Fix |
 |---------|-------|-----|
-| `Python 3.8 or later is needed to run the School Builder` | Python isn't installed, or isn't on the PATH. | Install Python from [python.org](https://www.python.org/downloads/), tick **Add python.exe to PATH**, then open a **new** terminal. |
+| `The School Builder needs Python 3.8 or later, and it isn't set up on this computer` | Python isn't installed, isn't on the PATH, or is older than 3.8. The message says which: for example `Found Python 3.7.4, which is too old`. | Install Python from [python.org](https://www.python.org/downloads/), tick **Add python.exe to PATH**, then open a **new** terminal. If the message says `python` is only the Microsoft Store shortcut, install from python.org anyway. If Windows still opens the Store, turn off **python.exe** in **Settings → Apps → Advanced app settings → App execution aliases**. |
 | `The term 'build.cmd' is not recognized` | PowerShell doesn't run commands from the current folder by name. | Type `.\build.cmd` instead of `build.cmd`. |
 | `Terminate batch job (Y/N)?` | You pressed `Ctrl + C` to stop the builder. | Press `Y`. The project has already been restored. |
 | **Choose file…** does nothing | The Open dialog opened behind the browser window. | Check the taskbar for the dialog, or drag the file onto the box instead. |
@@ -51,7 +51,7 @@ The messages name the command for your system: `.\build.cmd` on Windows, `./buil
 
 | Message | Cause | Fix |
 |---------|-------|-----|
-| `python3 not found on PATH` | Python 3 is not installed. | Run `xcode-select --install`. |
+| `The School Builder needs Python 3.8 or later, and it isn't set up on this Mac` | Python isn't installed, or `python3` is only Apple's placeholder that asks to install the developer tools. | Run `xcode-select --install`, click **Install** in the window that opens, then open a new terminal. With Homebrew, `brew install python` works too. |
 | `permission denied: ./build.sh` | The script lost its "executable" permission during copying. | Run `chmod +x build.sh addon/build.sh`. |
 
 ---

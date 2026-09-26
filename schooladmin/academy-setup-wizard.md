@@ -8,6 +8,10 @@ The **Academy Setup Wizard** is a streamlined onboarding tool designed to help s
 
 ---
 
+:::tip Watch it step by step
+The [Manage schools video tutorial](/tutorials/super-admin/manage-schools/?t=293) signs in to a new school and completes the whole wizard with sample data (from 4:52).
+:::
+
 ## 📽️ Setup Walkthrough
 
 Watch the video below for a complete demonstration of the Academy Setup process:

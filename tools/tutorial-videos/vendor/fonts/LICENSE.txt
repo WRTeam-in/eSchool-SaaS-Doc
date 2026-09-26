@@ -1,0 +1,2 @@
+Plus Jakarta Sans (latin subset) by Tokotype, licensed under the SIL Open Font License 1.1.
+https://github.com/tokotype/PlusJakartaSans

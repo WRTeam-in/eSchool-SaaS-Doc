@@ -1,0 +1,45 @@
+{
+  "duration": 128.51,
+  "chapters": [
+    {
+      "t": 5.5,
+      "label": "Overview"
+    },
+    {
+      "t": 12.8,
+      "label": "Summary cards"
+    },
+    {
+      "t": 37.1,
+      "label": "Transaction chart"
+    },
+    {
+      "t": 56.4,
+      "label": "Trending packages"
+    },
+    {
+      "t": 64.3,
+      "label": "Expiring soon"
+    },
+    {
+      "t": 76.1,
+      "label": "Recent schools"
+    },
+    {
+      "t": 83,
+      "label": "Addon usage"
+    },
+    {
+      "t": 88,
+      "label": "Navigation"
+    },
+    {
+      "t": 101.4,
+      "label": "Theme and language"
+    },
+    {
+      "t": 110.9,
+      "label": "Profile menu"
+    }
+  ]
+}

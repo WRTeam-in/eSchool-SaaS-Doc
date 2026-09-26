@@ -1,0 +1,15 @@
+{
+  "duration": 100.8,
+  "chapters": [
+    { "t": 0, "label": "The problem" },
+    { "t": 9.6, "label": "Meet eSchool SaaS" },
+    { "t": 16.8, "label": "One connected ecosystem" },
+    { "t": 26.4, "label": "Super Admin panel" },
+    { "t": 38.4, "label": "Academics" },
+    { "t": 48, "label": "Finance and operations" },
+    { "t": 57.6, "label": "Mobile apps" },
+    { "t": 69.6, "label": "School website" },
+    { "t": 79.2, "label": "Why eSchool SaaS" },
+    { "t": 91.2, "label": "Get started" }
+  ]
+}

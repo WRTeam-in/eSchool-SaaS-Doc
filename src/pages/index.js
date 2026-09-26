@@ -262,7 +262,7 @@ function HomepageFeatures() {
           </div>
         </div>
 
-        {/* Second row with 2 cards */}
+        {/* Second row: feature guides and video tutorials */}
         <div className={clsx("row margin-top--lg", styles.centeredRow)}>
           <div className="col col--4">
             <div className="card margin-bottom--lg">
@@ -332,6 +332,39 @@ function HomepageFeatures() {
                   to="/schooladmin/intro"
                 >
                   View School Admin Features
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col col--4">
+            <div className="card margin-bottom--lg">
+              <div className="card__header">
+                <div className={styles.cardIcon}>
+                  {/* Video tutorials icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                  >
+                    <path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z" />
+                  </svg>
+                </div>
+                <h3>Video Tutorials</h3>
+              </div>
+              <div className="card__body">
+                <p>
+                  Watch step-by-step videos that show how each eSchool SaaS
+                  feature works, with on-screen subtitles.
+                </p>
+              </div>
+              <div className="card__footer">
+                <Link
+                  className="button button--outline button--primary"
+                  to="/tutorials/"
+                >
+                  Watch Tutorials
                 </Link>
               </div>
             </div>
