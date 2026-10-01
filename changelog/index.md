@@ -5,6 +5,18 @@ title: Changelog
 
 # Changelog
 
+## Version 1.12.0 (01 Oct 2026)
+
+- **[ADDED]** External storage S3/R2. [Click Here](../superadmin/settings/system-settings/external-storage)
+- **[ADDED]** Dark mode.
+- **[ADDED]** Add-on manager. [Click Here](../superadmin/addons/addon-manager)
+- **[UPDATED]** Laravel version update v10 to v13.
+- **[IMPROVED]** Retry school create option if failed.
+
+### Add-on plugin
+
+- **[ADDED]** Separate school wise APK. [Click Here](../superadmin/available-addons/school-mobile-app)
+
 ## Version 1.11.0 (07 Sep 2026)
 
 - **[ADDED]** Staff QR code attendance. [Click Here](../schooladmin/staff-attendance/qr-attendance-settings)
