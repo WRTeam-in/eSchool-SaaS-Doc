@@ -54,6 +54,10 @@ The `.jks` keystore file and its passwords are **irreplaceable**. If lost, you w
 | **6. Archive & Submit** | Archive via `Product → Archive` in Xcode, sign with Apple Developer account, submit for review |
 | **7. Post-Release** | Monitor feedback, track crashes, plan iterative updates |
 
+:::info The iOS version is set separately
+From v1.12.0, the iOS version does not come from `pubspec.yaml`. Set `SCHOOL_MARKETING_VERSION` (the version, such as `1.2.0`) and `SCHOOL_PROJECT_VERSION` (the build number) in both `ios/Flutter/Debug.xcconfig` and `ios/Flutter/Release.xcconfig`. The Android version still comes from `pubspec.yaml`.
+:::
+
 :::warning Mac is Required for iOS Deployment
 Building and submitting an iOS app requires a **Mac computer with Xcode installed**. This step cannot be performed on Windows or Linux.
 :::
@@ -65,7 +69,7 @@ Building and submitting an iOS app requires a **Mac computer with Xcode installe
 Before submitting to either store, verify the following:
 
 - [ ] App builds cleanly with no errors — run `flutter build appbundle` / `flutter build ipa`
-- [ ] Version name and version code are correctly set in `pubspec.yaml`
+- [ ] Version name and version code are correctly set: `pubspec.yaml` for Android, the two `ios/Flutter/*.xcconfig` files for iOS
 - [ ] Package name / Bundle ID matches Firebase configuration
 - [ ] App icon is correctly set for all required sizes on both platforms
 - [ ] Push notifications are tested and working

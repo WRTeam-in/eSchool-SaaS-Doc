@@ -476,17 +476,20 @@ The eSchool SaaS mobile applications provide a convenient feature that allows yo
 
 **Location of Configuration:**
 
-The configuration is located in the `constants.dart` file of your Flutter application code.
+The configuration is in `lib/app/schoolBuildConfig.dart`, in each app's Flutter code.
 
 **Available Configuration Variables:**
 
-There are two separate boolean variables that control default credential visibility for each app:
+Each app has its own copy of the same setting, `showDemoCredentials`. Change its `defaultValue`:
 
 ### 📱 **For Student App:**
 
-```dart
-showDefaultCredentialInStudentApp = true;  // Shows default credentials
-showDefaultCredentialInStudentApp = false; // Hides default credentials
+```dart title="lib/app/schoolBuildConfig.dart"
+static const bool showDemoCredentials = bool.fromEnvironment(
+  'SCHOOL_SHOW_DEMO_CREDENTIALS',
+  // highlight-next-line
+  defaultValue: true, // true shows default credentials, false hides them
+);
 ```
 
 **When set to `true`:**
@@ -504,9 +507,12 @@ showDefaultCredentialInStudentApp = false; // Hides default credentials
 
 ### 👥 **For Staff/Teacher App:**
 
-```dart
-showDefaultCredentialInTeacherApp = true;  // Shows default credentials
-showDefaultCredentialInTeacherApp = false; // Hides default credentials
+```dart title="lib/app/schoolBuildConfig.dart"
+static const bool showDemoCredentials = bool.fromEnvironment(
+  'SCHOOL_SHOW_DEMO_CREDENTIALS',
+  // highlight-next-line
+  defaultValue: true, // true shows default credentials, false hides them
+);
 ```
 
 **When set to `true`:**
@@ -527,12 +533,12 @@ showDefaultCredentialInTeacherApp = false; // Hides default credentials
 1. **Open the Flutter Project:**
    - Navigate to your Student App or Staff App source code
 
-2. **Locate the constants.dart file:**
-   - The file is typically located in the `lib/utils/` or `lib/constants/` directory
+2. **Open the configuration file:**
+   - `lib/app/schoolBuildConfig.dart`
 
 3. **Find the Configuration Variables:**
-   - For Student App: Look for `showDefaultCredentialInStudentApp`
-   - For Staff App: Look for `showDefaultCredentialInTeacherApp`
+   - In both apps, look for `showDemoCredentials`
+   - Change only its `defaultValue`; keep `'SCHOOL_SHOW_DEMO_CREDENTIALS'` as it is
 
 4. **Set the Value:**
    - Set to `true` if you want to display default credentials
@@ -559,6 +565,7 @@ showDefaultCredentialInTeacherApp = false; // Hides default credentials
 ### 📝 **Important Notes:**
 
 - These settings are independent for each app (Student and Staff)
+- With the Multi-School APK add-on, each school has its own **Show demo credentials** switch in the builder, which is off unless you turn it on
 - The default credentials shown are examples only and do not provide actual access
 - Users must still enter their valid credentials to log in
 - This feature only controls the visibility of example text on the login screen

@@ -32,20 +32,6 @@ Ensure your package name **matches exactly** across Android, iOS, and Firebase. 
 
 ---
 
-## 🔸 Special Case: Kotlin Reserved Keywords
-
-If any segment of your package name is a **Kotlin reserved keyword** (e.g., `in`, `is`, `as`, `when`, `object`, `class`), you must wrap that segment in backticks (`` ` ``) in your Kotlin source files.
-
-**Example** — for a package like `in.co.mydomain.myapp`:
-
-```kotlin
-package `in`.co.mydomain.myapp
-```
-
-This is a Kotlin language requirement and does not affect your Android manifest or Gradle config — only the `package` declaration at the top of `.kt` source files.
-
----
-
 ## 🔄 Steps to Change Package Name
 
 ### 1️⃣ Prepare the Project
@@ -66,30 +52,99 @@ This is a Kotlin language requirement and does not affect your Android manifest 
 
 ---
 
-### 2️⃣ Change the Android Package Name
+### 2️⃣ Run the Rename Command (Recommended)
 
-Run the following command in your terminal from the project root:
+From v1.12.0, both apps include a rename command that sets the Android package name and the iOS bundle identifier in one step. `flutter pub get` in the previous step downloads it.
 
-```bash
-flutter pub run change_app_package_name:main your.new.package.name
-```
+1. Run this command from the project root, with your own package name:
 
-Replace `your.new.package.name` with your actual package name (e.g., `com.yourcompany.eschool`).
+   ```bash
+   dart run change_app_package_name:main com.yourcompany.eschool
+   ```
 
-![Change Package Name Android](../../static/images/installation/app/changePackageName_1.png)
+2. Check the output. It lists each file it changed, with the old and the new value:
 
-This command automatically updates the package name across all required Android files including `AndroidManifest.xml`, Gradle config files, and Kotlin source directories.
+   ```text
+   📦 Changing package name to com.yourcompany.eschool
+      Android + iOS
+
+   🤖 Android · School Builder layout
+      📝 android/app/build.gradle
+         applicationId: com.wrteam.saas.school → com.yourcompany.eschool
+
+   🍎 iOS · School Builder layout
+      📝 ios/Flutter/Debug.xcconfig
+         SCHOOL_BUNDLE_ID: com.wrteam.eschool.saas → com.yourcompany.eschool
+      📝 ios/Flutter/Release.xcconfig
+         SCHOOL_BUNDLE_ID: com.wrteam.eschool.saas → com.yourcompany.eschool
+
+   ✅ Package name updated.
+   ```
+
+3. Repeat in the other app. The **Student/Parent** app and the **Staff** app are separate projects, and each needs its own package name.
+
+The command also accepts these options:
+
+| Option | What it does |
+|--------|--------------|
+| `--dry-run` | Shows what would change without writing anything. Use it to check before you rename. |
+| `--android` | Changes only the Android package name. |
+| `--ios` | Changes only the iOS bundle identifier. |
+| `--plain` | Prints plain text, without emoji or colour. |
+
+Both platforms are checked before either is written. If one of them cannot be renamed, the command says why, changes nothing and stops.
+
+:::warning Keep the command that comes with the code
+In `pubspec.yaml`, `change_app_package_name` points to a version made for this project (v1.6.1). Do not replace it with `change_app_package_name` from pub.dev. On this project, the pub.dev version (1.5.0):
+
+- **Android:** stops with `applicationId not found` and changes nothing.
+- **iOS:** overwrites the bundle ID setting in `ios/Runner.xcodeproj/project.pbxproj`, which cuts the link to `SCHOOL_BUNDLE_ID`.
+
+If you already ran the pub.dev version, run the command above. It puts the link in `project.pbxproj` back.
+:::
+
+If the command changed both platforms, skip to [After Changing the Package Name](#-after-changing-the-package-name). The next two steps make the same changes by hand.
 
 ---
 
-### 3️⃣ Change the iOS Bundle Identifier
+### 3️⃣ Or Change the Android Package Name by Hand
 
-1. Open the **`ios`** folder of the project in **Xcode**
-2. In the left panel, select **Runner**
-3. Go to **Targets → Runner → General → Identity**
-4. Update the **Bundle Identifier** field with your new package name
+1. Open `android/app/build.gradle`.
+2. Find the line that starts with `def schoolApplicationId`.
+3. Replace the **second** value with your package name:
 
-![Change Package Name iOS](../../static/images/installation/app/changePackageName_2.png)
+```groovy title="android/app/build.gradle"
+// highlight-next-line
+def schoolApplicationId = schoolProperties.getProperty('applicationId', 'com.yourcompany.eschool')
+```
+
+![build.gradle: the Android package ID](../../static/images/installation/app/changePackageName_1.png)
+
+:::note Leave the other names as they are
+`namespace` in the same file, `package=` in `AndroidManifest.xml` and the Kotlin folder under `android/app/src/main/kotlin/` are names used inside the code. The Play Store and Firebase only read the package ID you set above. The rename command leaves them as they are too.
+:::
+
+---
+
+### 4️⃣ Or Change the iOS Bundle Identifier by Hand
+
+1. Open `ios/Flutter/Debug.xcconfig` and set `SCHOOL_BUNDLE_ID`:
+
+   ```properties title="ios/Flutter/Debug.xcconfig"
+   SCHOOL_BUNDLE_ID = com.yourcompany.eschool
+   ```
+
+2. Open `ios/Flutter/Release.xcconfig` and make the **same** change. Debug builds read the first file and release builds read the second.
+
+![Debug.xcconfig: the iOS bundle ID](../../static/images/installation/app/changePackageName_2.png)
+
+:::caution Do not type it into Xcode
+In Xcode, **Targets → Runner → General → Bundle Identifier** now reads its value from `SCHOOL_BUNDLE_ID`. Typing a bundle ID into that field cuts the link, and the [Multi-School APK add-on](multi-school-apk/overview.md) can no longer give each school its own ID.
+:::
+
+:::tip Using the School Builder?
+With the [Multi-School APK add-on](multi-school-apk/overview.md), edit the **Default School** in the builder, enter the Android package ID and the iOS bundle ID, and click **Save to project**. The builder writes these files for you.
+:::
 
 ---
 
@@ -98,8 +153,8 @@ This command automatically updates the package name across all required Android 
 Once both platforms are updated, complete the following checklist before running the app:
 
 - [ ] **Clean the build** — run `flutter clean` followed by `flutter pub get`
-- [ ] **Update Firebase** — regenerate and replace `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) with files tied to the new package name. See 👉 [Integrate with Firebase](./integrate-with-firebase.md)
-- [ ] **Verify iOS** — confirm the Bundle Identifier in Xcode matches your new package name exactly
+- [ ] **Update Firebase** — regenerate and replace `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) with files tied to the new package name. When these files are still for the old name, the rename command prints the `flutterfire configure` command to run. See 👉 [Integrate with Firebase](./integrate-with-firebase.md)
+- [ ] **Verify iOS** — confirm `SCHOOL_BUNDLE_ID` is the same in `Debug.xcconfig` and `Release.xcconfig`
 - [ ] **Test on both platforms** — run the app on an Android emulator and an iOS simulator to confirm everything works
 
 :::warning Firebase Mismatch
