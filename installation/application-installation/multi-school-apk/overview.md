@@ -18,6 +18,26 @@ Multi-School APK is sold separately. The standard app code does **not** include 
 
 ---
 
+## ⚠️ Set Up the Add-on in the Super Admin Panel First {#setup-order}
+
+The add-on has two parts, and they must be set up in this order:
+
+| Order | Where | What you do |
+|-------|-------|-------------|
+| **1** | **Super Admin panel** | Purchase the add-on, add its files to the Super Admin panel and finish its setup there. |
+| **2** | **Mobile app project** | Install the add-on in the app code and build each school's app, as this section explains. |
+
+1. **Purchase the add-on** and add the add-on files to the **Super Admin** panel.
+2. **Complete the add-on setup in the Super Admin panel.** Every step is explained in the [School Mobile App Add-on guide](/superadmin/available-addons/school-mobile-app). Follow that guide for the detailed steps.
+3. **Check that the setup finished successfully**: the add-on is **Active** and **School Mobile App** appears in the Super Admin sidebar.
+4. **Only then start the mobile app setup**, beginning with [Install the Add-on](install-addon.md).
+
+:::warning Follow this order
+Do not start the mobile app setup before the Super Admin setup is complete. A school's own app can only log in once the add-on is installed and active in the Super Admin panel, so building the app first leads to setup and login errors that are hard to trace.
+:::
+
+---
+
 ## 🎬 Walkthrough Video
 
 A 35-second tour: open the builder, choose a school's App type, build its APK and download it. The builder looks and works the same on Windows.

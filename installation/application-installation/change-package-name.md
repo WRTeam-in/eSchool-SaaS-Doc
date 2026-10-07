@@ -71,6 +71,12 @@ From v1.12.0, both apps include a rename command that sets the Android package n
    🤖 Android · School Builder layout
       📝 android/app/build.gradle
          applicationId: com.wrteam.saas.school → com.yourcompany.eschool
+         namespace: com.wrteam.saas.school → com.yourcompany.eschool
+      📝 android/app/src/main/AndroidManifest.xml
+         package: com.wrteam.saas.school → com.yourcompany.eschool
+      📝 android/app/src/main/kotlin/com/wrteam/saas/school/MainActivity.kt
+         package: com.wrteam.saas.school → com.yourcompany.eschool
+         moved to: android/app/src/main/kotlin/com/wrteam/saas/school → android/app/src/main/kotlin/com/yourcompany/eschool
 
    🍎 iOS · School Builder layout
       📝 ios/Flutter/Debug.xcconfig
@@ -80,6 +86,8 @@ From v1.12.0, both apps include a rename command that sets the Android package n
 
    ✅ Package name updated.
    ```
+
+   On Android the command renames the code too: `namespace`, the `package` of each manifest, and the package and folder of `MainActivity`. No file keeps the old name except the Firebase files, which you regenerate below.
 
 3. Repeat in the other app. The **Student/Parent** app and the **Staff** app are separate projects, and each needs its own package name.
 
@@ -94,8 +102,12 @@ The command also accepts these options:
 
 Both platforms are checked before either is written. If one of them cannot be renamed, the command says why, changes nothing and stops.
 
+:::info Names with reserved words
+Avoid a name with a word Java reserves, such as `new`, `package`, `default`, `class` or `int`. Android does not accept such a name for the code. For a name like `com.new.package.name`, the command renames only the application ID, which is the name the stores and Firebase use, keeps the code's package as it was, and says so. The app still builds.
+:::
+
 :::warning Keep the command that comes with the code
-In `pubspec.yaml`, `change_app_package_name` points to a version made for this project (v1.6.1). Do not replace it with `change_app_package_name` from pub.dev. On this project, the pub.dev version (1.5.0):
+In `pubspec.yaml`, `change_app_package_name` points to a version made for this project (v1.7.0). Do not replace it with `change_app_package_name` from pub.dev. On this project, the pub.dev version (1.5.0):
 
 - **Android:** stops with `applicationId not found` and changes nothing.
 - **iOS:** overwrites the bundle ID setting in `ios/Runner.xcodeproj/project.pbxproj`, which cuts the link to `SCHOOL_BUNDLE_ID`.
@@ -120,8 +132,8 @@ def schoolApplicationId = schoolProperties.getProperty('applicationId', 'com.you
 
 ![build.gradle: the Android package ID](../../static/images/installation/app/changePackageName_1.png)
 
-:::note Leave the other names as they are
-`namespace` in the same file, `package=` in `AndroidManifest.xml` and the Kotlin folder under `android/app/src/main/kotlin/` are names used inside the code. The Play Store and Firebase only read the package ID you set above. The rename command leaves them as they are too.
+:::note The other names are optional by hand
+`namespace` in the same file, `package=` in `AndroidManifest.xml` and the Kotlin folder under `android/app/src/main/kotlin/` are names used inside the code. The Play Store and Firebase only read the package ID you set above, so the app works with them left as they are. The rename command changes them as well, so that nothing shows the old name; by hand, it is safest to leave them.
 :::
 
 ---
