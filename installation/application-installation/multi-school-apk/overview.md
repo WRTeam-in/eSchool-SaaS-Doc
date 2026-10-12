@@ -144,7 +144,7 @@ e-school-saas/                 ← your app project root
 | **A Windows PC or a Mac** | **Android** (APK, AAB): Windows 10/11 or macOS. **iOS** (IPA): a Mac with Xcode. |
 | **Flutter and the Android SDK** | The same Flutter version as the main app (see the [version compatibility table](../overview.md#-version-compatibility)), with `flutter doctor` showing no Android errors. |
 | **Python 3.8 or later** | **Windows:** install it from [python.org](https://www.python.org/downloads/) and tick **Add python.exe to PATH** in the installer. **Mac:** included with the Xcode Command Line Tools (`xcode-select --install`). No extra packages are needed. |
-| **A Firebase project for each school** | With an Android app (and an iOS app if you build for iOS). |
+| **A Firebase project** | Your default project or the school's own, with the school's Android app (and its iOS app if you build for iOS). See [Firebase Setup for a School](./firebase-setup.md). |
 | **An Android signing key** | One keystore per school, or one shared by all schools. |
 
 ---

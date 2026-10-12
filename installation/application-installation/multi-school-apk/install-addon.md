@@ -224,7 +224,7 @@ This blocks a commit while a school's settings are applied to the project, so on
 
 If you see a list of commands, the add-on is installed. If you see **"The School Builder addon is not installed"**, the `addon` folder is not in the project root. Repeat [Step 2](#step-2-copy-the-add-on-into-your-project).
 
-Next: [Add a School](./add-a-school.md).
+Next: [Firebase Setup for a School](./firebase-setup.md), then [Add a School](./add-a-school.md).
 
 ---
 

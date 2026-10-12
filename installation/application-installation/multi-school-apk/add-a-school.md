@@ -24,19 +24,14 @@ Have these details ready for the school:
 | **App icon** | A square PNG, 1024 × 1024 px, with no transparency (iOS requires this). |
 | **In-app logo** | SVG or PNG. It appears on the splash and login screens. |
 | **Splash logo** *(optional)* | A PNG shown on the launch screen while the app opens. |
-| **Firebase files** | `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) from the school's own Firebase project. See the tip below. |
+| **Firebase files** | `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) from the school's Firebase project. See [Firebase Setup for a School](./firebase-setup.md). |
 | **Admin panel URL** | Your eSchool SaaS admin panel address, for example `https://school.yourdomain.com`, with no `/` at the end. |
 | **School code** | In the Super Admin panel, go to **Schools → Manage Schools** and turn on the **Code** column. |
 | **App type** | **General** for the standard app that many schools share, or **school-specific** for an app made for this school only. The app sends it to your backend in the `App-Type` header. The build does not start without it. |
 | **Signing key** | A keystore file and its `key.properties` file. See [Generate Release Version](../generate-release-version.md). One key shared by all schools is fine. |
 
-:::tip Firebase: one project per school
-In the [Firebase console](https://console.firebase.google.com/), create a project for the school, then:
-
-1. **Add app → Android** using the school's **Android package ID**, and download `google-services.json`.
-2. **Add app → iOS** using the school's **iOS bundle ID**, and download `GoogleService-Info.plist`.
-
-Both files must come from the **same** Firebase project. For general Firebase setup, see [Integrate with Firebase](../integrate-with-firebase.md).
+:::tip Firebase: step-by-step guide
+[Firebase Setup for a School](./firebase-setup.md) explains how to create the school's Firebase project, add its Android and iOS apps, and where to find `google-services.json` and `GoogleService-Info.plist`. Both files must come from the **same** Firebase project.
 :::
 
 ---
@@ -103,7 +98,7 @@ Click **Choose file…** to pick a file in your computer's own Open dialog (Wind
 
 ### Firebase
 
-Choose the school's two Firebase files. The builder shows the Firebase project each file belongs to and checks that they match the school's package IDs.
+Choose the school's two Firebase files. [Firebase Setup for a School](./firebase-setup.md) shows where to get them. The builder shows the Firebase project each file belongs to and checks that they match the school's package IDs.
 
 ![Firebase section: google-services.json and GoogleService-Info.plist](../../../static/images/installation/app/multi-school-apk/form-firebase.png)
 

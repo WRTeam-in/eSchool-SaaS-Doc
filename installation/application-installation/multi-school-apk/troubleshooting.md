@@ -31,6 +31,7 @@ The messages name the command for your system: `.\build.cmd` on Windows, `./buil
 | `no app type` | No app type has been chosen for the school. | Edit the school and choose **general** or **school-specific** under **App type** in the **School** section. |
 | `google-services.json has no Android app for '<package ID>'` | The Firebase file belongs to a different app or project. | In the school's Firebase project, add an Android app with **exactly** this package ID, download `google-services.json` again, and choose it in the **Firebase** section. |
 | `… is the Firebase config for '<bundle ID A>', but this school builds '<bundle ID B>'` | The iOS Firebase file belongs to a different app. | Add an iOS app with the school's bundle ID in its Firebase project and choose the new `GoogleService-Info.plist`. |
+| `No matching client found for package name '<package ID>'` (during the Android build) | The school's `google-services.json` doesn't contain its package ID. | Add an Android app with **exactly** this package ID in the school's Firebase project, download `google-services.json` again and choose it in the **Firebase** section. See [Firebase Setup for a School](./firebase-setup.md). |
 | `Firebase project mismatch between platforms` | The Android and iOS files come from different Firebase projects. | Download both files from the **same** Firebase project. |
 | `the key.properties this school names is missing … signing with … instead` | The school's own signing file was moved or deleted, so the default key was used. | Choose the school's `key.properties` and keystore again under **Android signing**. Google Play rejects updates signed with a different key. |
 | `another build already holds this project` | Another build is already running. Only one build can run at a time. | Wait for it to finish, or stop it from the **Queue**. |
@@ -100,7 +101,12 @@ Yes. `flutter run`, `flutter build apk` and building from Xcode work exactly as 
 <details>
 <summary><strong>3. Do I need a separate Firebase project for every school?</strong></summary>
 
-Yes. Each school's app has its own package ID, so it needs its own Firebase project for push notifications. The builder checks that each school's Firebase files match its package IDs before it builds.
+No, it's your choice. Each school's app needs its **own Android and iOS apps registered in Firebase**, with its package ID and bundle ID, but they can be in your default Firebase project or in a project of the school's own.
+
+- **Default project:** add the school's apps to it. The school's admin panel keeps the default notification configuration.
+- **The school's own project:** also enter that project's Project ID and service account file in the school's admin panel, under **Settings → System settings → Notification settings**. Otherwise its notifications don't arrive.
+
+[Firebase Setup for a School](./firebase-setup.md) explains both, step by step.
 
 </details>
 
@@ -160,7 +166,7 @@ Edit the school, increase its **Version** and **Build number**, and build again.
 <details>
 <summary><strong>11. Is it safe to commit the Firebase files to Git?</strong></summary>
 
-Yes. `google-services.json` and `GoogleService-Info.plist` are included in every published app anyway. They identify a Firebase project but don't grant access to it. Signing keys and passwords must never be committed, and the add-on keeps them out of Git automatically.
+Yes. `google-services.json` and `GoogleService-Info.plist` are included in every published app anyway. They identify a Firebase project but don't grant access to it. Signing keys and passwords must never be committed, and the add-on keeps them out of Git automatically. The same goes for the Firebase **service account** file (the private key for the admin panel): it never belongs in the project.
 
 </details>
 
