@@ -16,7 +16,7 @@ Before installing e-School SaaS, you need to properly configure your VPS server.
 | **Storage** | 80GB SSD | Expandable |
 | **CPU** | 2 vCores | 4 vCores |
 | **Bandwidth** | 1TB monthly | - |
-| **PHP Version** | 8.3.0+ | 8.3+ |
+| **PHP Version** | 8.4.0+ | 8.4+ |
 | **Laravel Version** | 13.0 | Latest |
 | **PHP Memory Limit** | 256MB | 512MB |
 

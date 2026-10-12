@@ -5,11 +5,12 @@ title: Changelog
 
 # Changelog
 
-## Version 1.12.0 (01 Oct 2026)
+## Version 1.12.0 (12 Oct 2026)
 
 - **[ADDED]** External storage S3/R2. [Click Here](../superadmin/settings/system-settings/external-storage)
 - **[ADDED]** Dark mode.
 - **[ADDED]** Add-on manager. [Click Here](../superadmin/addons/addon-manager)
+- **[ADDED]** Facebook App Events  [Click Here](../installation/application-installation/facebook-app-events/)
 - **[UPDATED]** Laravel version update v10 to v13.
 - **[IMPROVED]** Retry school create option if failed.
 
