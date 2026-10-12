@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: 📦 Install the Add-on
-description: What you receive when you purchase the Multi-School APK add-on, and how to add it to your eSchool SaaS app project on Windows or macOS.
+description: What you receive when you purchase the Dedicated School Mobile App add-on, and how to add it to your eSchool SaaS app project on Windows or macOS.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,10 +9,10 @@ import TabItem from '@theme/TabItem';
 
 # 📦 Install the Add-on
 
-This page explains what you receive after purchasing the Multi-School APK add-on and how to add it to your eSchool SaaS app project on **Windows** or **macOS**. Installation takes about five minutes.
+This page explains what you receive after purchasing the Dedicated School Mobile App add-on and how to add it to your eSchool SaaS app project on **Windows** or **macOS**. Installation takes about five minutes.
 
 :::warning Finish the Super Admin setup first
-Before you install the add-on in the app project, purchase it, add its files to the **Super Admin** panel and complete its setup there. The [School Mobile App Add-on guide](/superadmin/available-addons/school-mobile-app) explains each step. Start the steps on this page only after that setup has finished successfully. See [the setup order](overview.md#setup-order).
+Before you install the add-on in the app project, purchase it, add its files to the **Super Admin** panel and complete its setup there. The [Dedicated School Mobile App guide for the Super Admin panel](/superadmin/available-addons/school-mobile-app) explains each step. Start the steps on this page only after that setup has finished successfully. See [the setup order](overview.md#setup-order).
 :::
 
 :::tip Choose your system once

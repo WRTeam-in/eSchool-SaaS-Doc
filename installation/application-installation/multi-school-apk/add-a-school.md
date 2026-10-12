@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: 🏫 Add a School
-description: Add a school to the Multi-School APK builder, with its branding, Firebase project, login settings and signing key.
+description: Add a school to the Dedicated School Mobile App builder, with its branding, Firebase project, login settings and signing key.
 ---
 
 import Tabs from '@theme/Tabs';

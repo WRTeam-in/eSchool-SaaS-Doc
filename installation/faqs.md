@@ -565,7 +565,7 @@ static const bool showDemoCredentials = bool.fromEnvironment(
 ### 📝 **Important Notes:**
 
 - These settings are independent for each app (Student and Staff)
-- With the Multi-School APK add-on, each school has its own **Show demo credentials** switch in the builder, which is off unless you turn it on
+- With the Dedicated School Mobile App add-on, each school has its own **Show demo credentials** switch in the builder, which is off unless you turn it on
 - The default credentials shown are examples only and do not provide actual access
 - Users must still enter their valid credentials to log in
 - This feature only controls the visibility of example text on the login screen

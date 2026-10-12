@@ -93,7 +93,7 @@ If the phone still shows the old name, uninstall the app from the device and run
 
 ## 🏫 Changing It From the School Builder
 
-If you use the [Multi-School APK add-on](multi-school-apk/overview.md), you can skip the steps above. Open the builder, edit the **Default School**, type the name in **App name** and click **Save to project**. The builder writes the Android and iOS files for you and backs them up first. See [Add a School](multi-school-apk/add-a-school.md).
+If you use the [Dedicated School Mobile App add-on](multi-school-apk/overview.md), you can skip the steps above. Open the builder, edit the **Default School**, type the name in **App name** and click **Save to project**. The builder writes the Android and iOS files for you and backs them up first. See [Add a School](multi-school-apk/add-a-school.md).
 
 ---
 

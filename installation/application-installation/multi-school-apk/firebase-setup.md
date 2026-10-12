@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2.5
 sidebar_label: 🔥 Firebase Setup for a School
-description: Create a Firebase project for a school, add its Android and iOS apps, download the three Firebase files, and add each one to the Multi-School APK builder or the school's admin panel.
+description: Create a Firebase project for a school, add its Android and iOS apps, download the three Firebase files, and add each one to the Dedicated School Mobile App builder or the school's admin panel.
 ---
 
 # 🔥 Firebase Setup for a School
@@ -18,8 +18,8 @@ You download three files from the school's Firebase project. Two go into the **a
 
 | File | What it is | Where you get it in Firebase | Where it goes |
 |------|------------|------------------------------|---------------|
-| `google-services.json` | The Android app's Firebase settings | **Project settings → General → Your apps →** the Android app | Multi-School APK builder: the school's **Firebase** section, **Android** |
-| `GoogleService-Info.plist` | The iOS app's Firebase settings | **Project settings → General → Your apps →** the iOS app | Multi-School APK builder: the school's **Firebase** section, **iOS** |
+| `google-services.json` | The Android app's Firebase settings | **Project settings → General → Your apps →** the Android app | Dedicated School Mobile App builder: the school's **Firebase** section, **Android** |
+| `GoogleService-Info.plist` | The iOS app's Firebase settings | **Project settings → General → Your apps →** the iOS app | Dedicated School Mobile App builder: the school's **Firebase** section, **iOS** |
 | Service account file, for example `your-project-firebase-adminsdk-xxxxx.json` | The **private key** the admin panel uses to send notifications | **Project settings → Service accounts → Generate new private key** | The school's admin panel: **Settings → System settings → Notification settings** |
 
 You also copy one value, the **Project ID**, from **Project settings → General** into the same admin panel page.
@@ -141,7 +141,7 @@ Check the **Package name** (Android) or **Bundle ID** (iOS) shown for the app. I
 
 ---
 
-## Step 4: Add the Two App Files to the Multi-School APK Builder
+## Step 4: Add the Two App Files to the Dedicated School Mobile App Builder
 
 1. Start the builder: `.\build.cmd` on Windows, `./build.sh` on macOS. See [Install the Add-on](./install-addon.md#step-3-open-the-builder).
 2. In the **Schools** tab, click **Edit** on the school, or **Add school** for a new one.

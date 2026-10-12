@@ -42,7 +42,7 @@ const String baseUrl = String.fromEnvironment(
 
 :::caution Change only the `defaultValue`
 - **No `/` at the end.** `https://school.yourdomain.com` is right; `https://school.yourdomain.com/` breaks every request.
-- **Keep `"SCHOOL_BASE_URL"` and `String.fromEnvironment` as they are.** The [Multi-School APK add-on](multi-school-apk/overview.md) uses them to give each school its own URL.
+- **Keep `"SCHOOL_BASE_URL"` and `String.fromEnvironment` as they are.** The [Dedicated School Mobile App add-on](multi-school-apk/overview.md) uses them to give each school its own URL.
 - **Leave `databaseUrl` alone.** It is built from `baseUrl`.
 :::
 
@@ -92,7 +92,7 @@ Open the second app's project and make the same two changes in its `lib/utils/co
 
 ## 🏫 Building Apps for Several Schools?
 
-With the [Multi-School APK add-on](multi-school-apk/overview.md), each school can have its own admin panel URL, set as **API base URL** in the builder. A school that leaves it empty uses the `defaultValue` you set here.
+With the [Dedicated School Mobile App add-on](multi-school-apk/overview.md), each school can have its own admin panel URL, set as **API base URL** in the builder. A school that leaves it empty uses the `defaultValue` you set here.
 
 ---
 

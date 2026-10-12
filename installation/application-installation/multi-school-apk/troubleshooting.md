@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: 🛠️ Troubleshooting & FAQ
-description: Fixes for common Multi-School APK builder messages, and answers to frequently asked questions.
+description: Fixes for common Dedicated School Mobile App builder messages, and answers to frequently asked questions.
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
 sidebar_label: 📋 Overview
-description: Build a separate, fully branded eSchool SaaS app for every school from one codebase with the Multi-School APK add-on.
+description: Build a separate, fully branded eSchool SaaS app for every school from one codebase with the Dedicated School Mobile App add-on.
 ---
 
-# 🏫 Multi-School APK — Overview
+# 🏫 Dedicated School Mobile App — Overview
 
-The **Multi-School APK** add-on builds a **separate, fully branded app for each of your schools** from the same eSchool SaaS app code. Inside the code, the add-on is called **School Builder**.
+The **Dedicated School Mobile App** add-on builds a **separate, fully branded app for each of your schools** from the same eSchool SaaS app code. Inside the code, the add-on is called **School Builder**.
 
 Each school gets its own app name, package ID, launcher icon, logo, colours, Firebase project and school code. You manage schools from a page in your browser and build each app with one click. There are no duplicate projects and no files to edit by hand.
 
 The add-on works with both mobile apps: the **Student/Parent app** and the **Staff/Teacher app**. It runs on **Windows and macOS**. Android APK and AAB builds work on both, while iOS builds need a Mac.
 
 :::info Paid add-on
-Multi-School APK is sold separately. The standard app code does **not** include the `addon` folder. You receive it when you purchase the add-on.
+The Dedicated School Mobile App add-on is sold separately. The standard app code does **not** include the `addon` folder. You receive it when you purchase the add-on.
 :::
 
 ---
@@ -28,8 +28,8 @@ The add-on has two parts, and they must be set up in this order:
 | **2** | **Mobile app project** | Install the add-on in the app code and build each school's app, as this section explains. |
 
 1. **Purchase the add-on** and add the add-on files to the **Super Admin** panel.
-2. **Complete the add-on setup in the Super Admin panel.** Every step is explained in the [School Mobile App Add-on guide](/superadmin/available-addons/school-mobile-app). Follow that guide for the detailed steps.
-3. **Check that the setup finished successfully**: the add-on is **Active** and **School Mobile App** appears in the Super Admin sidebar.
+2. **Complete the add-on setup in the Super Admin panel.** Every step is explained in the [Dedicated School Mobile App guide for the Super Admin panel](/superadmin/available-addons/school-mobile-app). Follow that guide for the detailed steps.
+3. **Check that the setup finished successfully**: the add-on is **Active** and **Dedicated School Mobile App** appears in the Super Admin sidebar.
 4. **Only then start the mobile app setup**, beginning with [Install the Add-on](install-addon.md).
 
 :::warning Follow this order
@@ -66,7 +66,7 @@ A 35-second tour: open the builder, choose a school's App type, build its APK an
 
 ## ⚙️ How It Works
 
-![How the Multi-School APK add-on works](../../../static/images/installation/app/multi-school-apk/how-it-works.svg)
+![How the Dedicated School Mobile App add-on works](../../../static/images/installation/app/multi-school-apk/how-it-works.svg)
 
 1. **Add each school once** in the builder's **Schools** tab. Its details are saved in `addon/config/schools.json`.
 2. **Click Build.** The builder first checks that the school has everything it needs.
@@ -117,7 +117,7 @@ The add-on is the `addon` folder in your app's project root, the folder that con
 
 ```text
 e-school-saas/                 ← your app project root
-├── addon/                     ← the Multi-School APK add-on
+├── addon/                     ← the Dedicated School Mobile App add-on
 │   ├── build.sh               ← the builder (macOS)
 │   ├── build.cmd              ← the builder (Windows)
 │   ├── tools/                 ← builder scripts and the browser page

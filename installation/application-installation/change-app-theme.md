@@ -54,7 +54,7 @@ A colour is written as `0xff` followed by its six-digit hex code:
 | `#C2185B` | `0xffC2185B` |
 
 :::caution Change only the `defaultValue`
-Keep the names in quotes, such as `'SCHOOL_COLOR_PRIMARY'`, exactly as they are. The [Multi-School APK add-on](multi-school-apk/overview.md) uses them to give each school its own colours.
+Keep the names in quotes, such as `'SCHOOL_COLOR_PRIMARY'`, exactly as they are. The [Dedicated School Mobile App add-on](multi-school-apk/overview.md) uses them to give each school its own colours.
 :::
 
 ### 3️⃣ Run the App Again
@@ -120,7 +120,7 @@ You do not need to recolour any image. The menu icons, their tinted tiles and th
 
 ## 🏫 Building Apps for Several Schools?
 
-With the [Multi-School APK add-on](multi-school-apk/overview.md), each school sets its own colours in the builder and no file is edited. The values in `colors.dart` are the defaults that a school inherits for any colour it leaves empty. See [Add a School](multi-school-apk/add-a-school.md).
+With the [Dedicated School Mobile App add-on](multi-school-apk/overview.md), each school sets its own colours in the builder and no file is edited. The values in `colors.dart` are the defaults that a school inherits for any colour it leaves empty. See [Add a School](multi-school-apk/add-a-school.md).
 
 ---
 

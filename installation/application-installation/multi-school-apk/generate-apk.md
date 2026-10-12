@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: 🚀 Generate the APK
-description: Build a school's APK or AAB on Windows or macOS (and an IPA on a Mac) with the Multi-School APK builder, one school at a time or all schools at once.
+description: Build a school's APK or AAB on Windows or macOS (and an IPA on a Mac) with the Dedicated School Mobile App builder, one school at a time or all schools at once.
 ---
 
 import Tabs from '@theme/Tabs';

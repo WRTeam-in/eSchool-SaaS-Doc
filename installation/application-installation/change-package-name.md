@@ -151,11 +151,11 @@ def schoolApplicationId = schoolProperties.getProperty('applicationId', 'com.you
 ![Debug.xcconfig: the iOS bundle ID](../../static/images/installation/app/changePackageName_2.png)
 
 :::caution Do not type it into Xcode
-In Xcode, **Targets → Runner → General → Bundle Identifier** now reads its value from `SCHOOL_BUNDLE_ID`. Typing a bundle ID into that field cuts the link, and the [Multi-School APK add-on](multi-school-apk/overview.md) can no longer give each school its own ID.
+In Xcode, **Targets → Runner → General → Bundle Identifier** now reads its value from `SCHOOL_BUNDLE_ID`. Typing a bundle ID into that field cuts the link, and the [Dedicated School Mobile App add-on](multi-school-apk/overview.md) can no longer give each school its own ID.
 :::
 
 :::tip Using the School Builder?
-With the [Multi-School APK add-on](multi-school-apk/overview.md), edit the **Default School** in the builder, enter the Android package ID and the iOS bundle ID, and click **Save to project**. The builder writes these files for you.
+With the [Dedicated School Mobile App add-on](multi-school-apk/overview.md), edit the **Default School** in the builder, enter the Android package ID and the iOS bundle ID, and click **Save to project**. The builder writes these files for you.
 :::
 
 ---

@@ -1,25 +1,25 @@
 ---
 sidebar_position: 1
-sidebar_label: "School Mobile App"
+sidebar_label: "Dedicated School Mobile App"
 ---
 
-# School Mobile App Add-on
+# Dedicated School Mobile App Add-on
 
 ### Official Feature & Administration Guide
 
-> **Module Path:** Super Admin Panel &rarr; **School Mobile App** (`/addons/school-mobile-app`)  
+> **Module Path:** Super Admin Panel &rarr; **Dedicated School Mobile App** (`/addons/school-mobile-app`)  
 > **Parent Module:** Add-ons (`/addon-modules`)  
 > **Required Permission:** `sma-school-apps-list` (or `Super Admin` role)  
 > **System Location:** `/Modules/SchoolMobileApp/`
 
-![e-School SaaS School Mobile App](../../static/images/addon/school-mobile-app.png)
+![e-School SaaS Dedicated School Mobile App](../../static/images/addon/school-mobile-app.png)
 
 ---
 
 ## Table of Contents
 
 1. [Overview & Architecture](#1-overview--architecture)
-   - [What is the School Mobile App Add-on?](#what-is-the-school-mobile-app-add-on)
+   - [What is the Dedicated School Mobile App Add-on?](#what-is-the-school-mobile-app-add-on)
    - [Two Distinct Apps Per School](#two-distinct-apps-per-school)
    - [Core Workflow Summary](#core-workflow-summary)
 2. [Prerequisites & System Requirements](#2-prerequisites--system-requirements)
@@ -28,10 +28,10 @@ sidebar_label: "School Mobile App"
    - [What the Installer Sets Up](#what-the-installer-sets-up)
    - [Enabling the Add-on](#enabling-the-add-on)
 4. [Packaging & School Eligibility](#4-packaging--school-eligibility)
-   - [The "School Mobile App" Feature (ID: 100000)](#the-school-mobile-app-feature-id-100000)
+   - [The "Dedicated School Mobile App" Feature (ID: 100000)](#the-school-mobile-app-feature-id-100000)
    - [Enabling Mobile Apps in Subscription Packages](#enabling-mobile-apps-in-subscription-packages)
    - [Eligibility Criteria & Automatic Synchronization](#eligibility-criteria--automatic-synchronization)
-5. [Managing School Mobile Apps](#5-managing-school-mobile-apps)
+5. [Managing Dedicated School Mobile Apps](#5-managing-school-mobile-apps)
    - [Tab 1: Eligible Schools Dashboard](#tab-1-eligible-schools-dashboard)
    - [Tab 2: Master School Apps List](#tab-2-master-school-apps-list)
    - [Managing a School: Statuses, Dates & Store Links](#managing-a-school-statuses-dates--store-links)
@@ -55,16 +55,16 @@ sidebar_label: "School Mobile App"
 
 ## 1. Overview & Architecture {#1-overview--architecture}
 
-### What is the School Mobile App Add-on? {#what-is-the-school-mobile-app-add-on}
+### What is the Dedicated School Mobile App Add-on? {#what-is-the-school-mobile-app-add-on}
 
-The **School Mobile App Add-on** is a premium extension for eSchool SaaS that allows the SaaS owner to provide **custom-branded, white-label mobile applications** to schools.
+The **Dedicated School Mobile App Add-on** is a premium extension for eSchool SaaS that allows the SaaS owner to provide **custom-branded, white-label mobile applications** to schools.
 
 Instead of all schools sharing a single generic mobile app, subscribing schools can have their own individually branded applications published directly on the **Google Play Store (Android)** and **Apple App Store (iOS)** with their school name, logo, splash screen, and colors.
 
 ```text
 +-----------------------------------------------------------------------------------+
 |                            eSchool SaaS Super Admin                               |
-|             Super Admin Panel -> School Mobile App (/addons/school-mobile-app)    |
+|    Super Admin Panel -> Dedicated School Mobile App (/addons/school-mobile-app)   |
 +-----------------------------------------+-----------------------------------------+
                                           |
                 +-------------------------+-------------------------+
@@ -106,7 +106,7 @@ Each eligible school can have up to **two independent apps** across both mobile 
 ### Core Workflow Summary {#core-workflow-summary}
 
 ```text
-[ Super Admin ]   Creates Subscription Package with "School Mobile App" Feature
+[ Super Admin ]   Creates Subscription Package with "Dedicated School Mobile App" Feature
        │
        ▼
 [ School Admin ]  Subscribes to the package / addon
@@ -138,7 +138,7 @@ Before installing and utilizing this add-on, ensure:
 - **eSchool SaaS Core:** Version **v1.12.0** or later.
 - **PHP Version:** PHP **8.2** or higher.
 - **Add-on ZIP File:** Official `SchoolMobileApp.zip` package from WRTeam Marketplace.
-- **Purchase Code:** Valid marketplace purchase code for the School Mobile App add-on.
+- **Purchase Code:** Valid marketplace purchase code for the Dedicated School Mobile App add-on.
 - **Email (SMTP) Setup:** An active SMTP configuration under **Super Admin &rarr; Settings &rarr; Email Configuration** to enable automated email delivery to school administrators.
 
 ---
@@ -165,7 +165,7 @@ When `SchoolMobileApp` installs, it automatically executes its internal setup:
 - **Database Tables:**
   - `sma_school_apps`: Stores app lifecycle statuses, published dates, Android URLs, and iOS URLs.
   - `sma_school_app_activities`: Maintains an immutable audit trail of status updates, link changes, and email dispatches.
-- **System Feature:** Registers the **School Mobile App** feature (Fixed Feature ID: `100000`) in the core `features` table.
+- **System Feature:** Registers the **Dedicated School Mobile App** feature (Fixed Feature ID: `100000`) in the core `features` table.
 - **Default Settings:** Seeds default values for `school_mobile_app_status`, `sma_app_email_subject`, and `sma_app_email_template` into `system_settings`.
 - **System Permissions:** Registers permissions (`sma-school-apps-list`, `sma-school-apps-edit`, `sma-school-apps-notify`, `sma-email-template-edit`, `sma-addon-status`) and grants them to the Super Admin role.
 
@@ -173,9 +173,9 @@ When `SchoolMobileApp` installs, it automatically executes its internal setup:
 
 ### Enabling the Add-on {#enabling-the-add-on}
 
-1. On the **Add-ons** page, find the **School Mobile App** card.
+1. On the **Add-ons** page, find the **Dedicated School Mobile App** card.
 2. Toggle the **Add-on Status** switch to **Active**.
-3. A new menu item titled **School Mobile App** will immediately appear in your Super Admin navigation sidebar.
+3. A new menu item titled **Dedicated School Mobile App** will immediately appear in your Super Admin navigation sidebar.
 
 :::tip Disabling the Add-on
 If the add-on is set to **Inactive**, its administrative routes and menus are hidden, and custom school app logins will be temporarily rejected with `SCHOOL_APP_UNAVAILABLE`. All recorded store links, settings, and activity histories remain safely preserved in the database.
@@ -185,9 +185,9 @@ If the add-on is set to **Inactive**, its administrative routes and menus are hi
 
 ## 4. Packaging & School Eligibility {#4-packaging--school-eligibility}
 
-### The "School Mobile App" Feature (ID: 100000) {#the-school-mobile-app-feature-id-100000}
+### The "Dedicated School Mobile App" Feature (ID: 100000) {#the-school-mobile-app-feature-id-100000}
 
-The installer registers a dedicated feature named **School Mobile App** (Feature ID `100000`). Because it is registered in the main `features` table, it works identically to core platform features:
+The installer registers a feature named **Dedicated School Mobile App** (Feature ID `100000`). Because it is registered in the main `features` table, it works identically to core platform features:
 - It can be included in subscription packages.
 - It can be offered as a standalone Feature Add-on.
 
@@ -199,12 +199,12 @@ To offer branded mobile apps to schools:
 
 1. In the Super Admin Panel, go to **Package & Subscription** &rarr; **Package**.
 2. Click **Create Package** (or edit an existing enterprise/premium package).
-3. Under the **Features** checklist, check the box for **School Mobile App**.
+3. Under the **Features** checklist, check the box for **Dedicated School Mobile App**.
 4. Set your package pricing, billing frequency, and student capacity, then click **Save**.
 
 *Alternatively (Feature Addon):*
 1. Go to **Package & Subscription** &rarr; **Addon**.
-2. Create an addon containing the **School Mobile App** feature so schools can purchase it as an add-on to their existing subscription.
+2. Create an addon containing the **Dedicated School Mobile App** feature so schools can purchase it as an add-on to their existing subscription.
 
 ---
 
@@ -218,9 +218,9 @@ A school is automatically recognized as **Eligible** if:
 
 ---
 
-## 5. Managing School Mobile Apps {#5-managing-school-mobile-apps}
+## 5. Managing Dedicated School Mobile Apps {#5-managing-school-mobile-apps}
 
-Navigate to **Super Admin Panel &rarr; School Mobile App** (`/addons/school-mobile-app`). The interface is divided into three functional tabs:
+Navigate to **Super Admin Panel &rarr; Dedicated School Mobile App** (`/addons/school-mobile-app`). The interface is divided into three functional tabs:
 
 ---
 
@@ -231,7 +231,7 @@ The **Eligible Schools** tab (`/addons/school-mobile-app`) provides an executive
 ![Eligible Schools Dashboard](../../static/images/addon/school-mobile-app.png)
 
 #### Dashboard KPI Cards:
-- **Eligible Schools:** Total number of schools currently subscribed to the School Mobile App feature.
+- **Eligible Schools:** Total number of schools currently subscribed to the Dedicated School Mobile App feature.
 - **Student / Parent Apps Published:** Count of schools with live Student/Parent apps.
 - **Staff / Teacher Apps Published:** Count of schools with live Staff/Teacher apps.
 - **App Emails Sent:** Total number of schools that have been emailed their official download links.
@@ -266,7 +266,7 @@ The **School Apps** tab (`/addons/school-mobile-app/school-apps`) gives your tec
 
 Clicking **Manage** on any school opens its management interface (`/addons/school-mobile-app/schools/{id}`):
 
-![Managing School Mobile Apps](../../static/images/addon/manage-school.png)
+![Managing Dedicated School Mobile Apps](../../static/images/addon/manage-school.png)
 
 ```text
 +-----------------------------------------------------------------------------------+
@@ -419,7 +419,7 @@ X-App-Type: school-specific
 ```
 
 - **`X-App-Type: general` (or omitted):** Handled as the generic shared app. Standard authentication without school plan validation.
-- **`X-App-Type: school-specific`:** Handled as a custom-branded school app. Triggers the School Mobile App login guard.
+- **`X-App-Type: school-specific`:** Handled as a custom-branded school app. Triggers the Dedicated School Mobile App login guard.
 
 ---
 
@@ -488,7 +488,7 @@ The module includes granular permissions for administrative staff:
 | `sma-email-template-edit`| Edit, preview, and reset the global email notification template | Super Admin, Communications Lead |
 | `sma-addon-status` | Toggle the module Active / Inactive switch | Super Admin only |
 
-> **Super Admin Bypass:** Users assigned the `Super Admin` role automatically bypass permission checks and have full administrative authority over all School Mobile App operations.
+> **Super Admin Bypass:** Users assigned the `Super Admin` role automatically bypass permission checks and have full administrative authority over all Dedicated School Mobile App operations.
 
 ---
 
@@ -496,7 +496,7 @@ The module includes granular permissions for administrative staff:
 
 ### Q1: Why is a school not appearing in the "Eligible Schools" list?
 **Answer:** A school only appears in the list if all the following conditions are met:
-1. The school has an active subscription to a package or addon that includes the **School Mobile App** feature (Feature ID `100000`).
+1. The school has an active subscription to a package or addon that includes the **Dedicated School Mobile App** feature (Feature ID `100000`).
 2. The subscription `start_date` and `end_date` cover the current date.
 3. The school does not have an overdue postpaid subscription invoice (`hasOverdueBill`).
 
@@ -522,9 +522,9 @@ The module includes granular permissions for administrative staff:
 ---
 
 ### Q5: Can our mobile developers test the apps before setting the status to "Published"?
-**Answer:** Yes. The backend API login guard (`X-App-Type: school-specific`) only verifies that the school is subscribed to an active plan containing the School Mobile App feature. It deliberately does not require the app status to be "Published", allowing developers to build, test, and perform QA testing using `Pending` or `In Progress` statuses.
+**Answer:** Yes. The backend API login guard (`X-App-Type: school-specific`) only verifies that the school is subscribed to an active plan containing the Dedicated School Mobile App feature. It deliberately does not require the app status to be "Published", allowing developers to build, test, and perform QA testing using `Pending` or `In Progress` statuses.
 
 ---
 
 ### Q6: Where can I check why an email failed to send?
-**Answer:** Open the school's page under **School Mobile App &rarr; School Apps &rarr; Manage**. On the right side, the **Activity** feed displays `App email failed` along with the exact error message returned by your mail server (e.g. *Connection refused* or *Authentication failed*). Ensure your SMTP credentials under **Settings &rarr; Email Configuration** are correct.
+**Answer:** Open the school's page under **Dedicated School Mobile App &rarr; School Apps &rarr; Manage**. On the right side, the **Activity** feed displays `App email failed` along with the exact error message returned by your mail server (e.g. *Connection refused* or *Authentication failed*). Ensure your SMTP credentials under **Settings &rarr; Email Configuration** are correct.
