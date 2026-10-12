@@ -1,0 +1,8 @@
+{
+    "label": "Available Addons",
+    "position": 11,
+    "link": {
+        "type": "generated-index",
+        "description": "Available add-ons and extensions for the e-School SaaS platform"
+    }
+}

@@ -24,9 +24,11 @@ The eSchool app uses Google Fonts for flexible and beautiful typography. You can
 
 ### Step 2: Update Font Configuration
 
-Navigate to the font configuration file and update the font family:
+The font files are bundled with the app, in the `google_fonts/` folder at the root of the project.
 
-**File Location:** `assets/google_fonts/`
+1. On Google Fonts, click **Get font → Download all** for your font family and unzip it.
+2. Copy its `.ttf` files and its licence file (`OFL.txt`) into `google_fonts/`.
+3. Delete the `Poppins-*.ttf` files you no longer use.
 
 ![Font Configuration Example](../../static/images/installation/app/change_Font.png)
 
@@ -38,7 +40,23 @@ Navigate to the font configuration file and update the font family:
 ![Pubspec Configuration](../../static/images/installation/app/change_Font1.png)
 
 
-### Step 4: Verify Font in pubspec.yaml
+### Step 4: Set the Font in the App Theme
+
+Open `lib/app/app.dart`, find `GoogleFonts.poppinsTextTheme` and replace `poppins` with your font's name, starting with a lowercase letter:
+
+```dart title="lib/app/app.dart"
+textTheme:
+    // highlight-next-line
+    GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
+```
+
+| Font on Google Fonts | Write it as |
+|----------------------|-------------|
+| Roboto | `GoogleFonts.robotoTextTheme` |
+| Open Sans | `GoogleFonts.openSansTextTheme` |
+| Nunito | `GoogleFonts.nunitoTextTheme` |
+
+### Step 5: Verify Font in pubspec.yaml
 
 The app is pre-configured to use Google Fonts. Ensure the `google_fonts` package is listed in your `pubspec.yaml`:
 
@@ -65,19 +83,16 @@ flutter pub get
 flutter run
 ```
 
-The new font will be automatically downloaded and applied throughout the app.
+The new font is applied throughout the app.
 
 ---
 
 ## ✨ How It Works
 
 The app uses the **`google_fonts`** package, which:
-- Automatically downloads fonts from Google Fonts on-demand
-- Caches fonts locally for offline use
+- Uses the font files in `google_fonts/` when they match the font you set, so the app works offline from the first launch
+- Downloads a font from Google Fonts on first use only when its files are not bundled, then caches it
 - Applies the font across all text widgets in the app
-- Requires no manual font file downloads or asset management
-
-You simply specify the font family name, and the package handles everything else!
 
 ---
 
@@ -97,8 +112,7 @@ Here are some recommended fonts for educational apps:
 ## 📝 Important Notes
 
 - **Font Name Accuracy**: Ensure the font family name matches exactly as shown on Google Fonts (case-sensitive)
-- **Internet Required**: The first time the app runs with a new font, it needs internet to download it
-- **Caching**: Once downloaded, fonts are cached and work offline
+- **Bundle the files**: With the `.ttf` files in `google_fonts/`, the font works without internet. Without them, the first run needs internet to download it
 - **Compatibility**: All Google Fonts are optimized for mobile devices
 - **Testing**: Always test your chosen font on different screen sizes and devices
 

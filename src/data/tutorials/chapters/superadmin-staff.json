@@ -1,0 +1,25 @@
+{
+  "duration": 113.3,
+  "chapters": [
+    {
+      "t": 5.5,
+      "label": "Open Staff"
+    },
+    {
+      "t": 16.7,
+      "label": "Add a staff member"
+    },
+    {
+      "t": 28.7,
+      "label": "Mobile number and email"
+    },
+    {
+      "t": 46.9,
+      "label": "Photo, date of birth and schools"
+    },
+    {
+      "t": 74.5,
+      "label": "Sign in as the staff member"
+    }
+  ]
+}

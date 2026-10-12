@@ -70,6 +70,15 @@ const config = {
         sidebarItemsGenerator: async () => [],
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "tutorials",
+        path: "tutorials",
+        routeBasePath: "tutorials",
+        sidebarPath: require.resolve("./tutorialsSidebar.js"),
+      },
+    ],
     // Student Web Portal - Commented out until launch
     [
       "@docusaurus/plugin-content-docs",
@@ -153,6 +162,13 @@ const config = {
             label: "School Admin",
           },
           {
+            docsPluginId: "tutorials",
+            type: "docSidebar",
+            sidebarId: "tutorialsSidebar",
+            position: "left",
+            label: "Tutorials",
+          },
+          {
             type: "doc",
             docsPluginId: "installation",
             docId: "faqs",
@@ -209,12 +225,14 @@ const config = {
           "superadmin",
           "schooladmin",
           "studentweb",
+          "tutorials",
         ],
         docsDir: [
           "installation",
           "superadmin",
           "schooladmin",
           "studentweb",
+          "tutorials",
         ],
         docsPluginIdForPreferredVersion: "installation",
       },

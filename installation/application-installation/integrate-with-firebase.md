@@ -51,7 +51,7 @@ The short demo below shows the two essential commands you need to get started wi
 
 ![Firebase CLI Demo](../../static/images/installation/app/firebaseCLi.gif)
 
-## Step 1: Install FlutterFire CLI
+## Step 2: Install FlutterFire CLI
 
 ```bash
 dart pub global activate flutterfire_cli
@@ -59,15 +59,25 @@ dart pub global activate flutterfire_cli
 
 ---
 
-## Step 2: Configure your Flutter project
+## Step 3: Configure your Flutter project
 
-Run the configuration command from your Flutter project directory. Replace the project ID if yours is different. The GIF above shows how the prompts look and what gets generated.
-
+Run the configuration command from your Flutter project directory, with your own Firebase project ID, Android package ID and iOS bundle ID. The GIF above shows how the prompts look and what gets generated.
 
 ```bash
-flutterfire configure --project=eschoolsaas-a0856
+flutterfire configure --project=your-firebase-project-id --android-package-name=com.yourcompany.eschool --ios-bundle-id=com.yourcompany.eschool
 ```
 
+| Option | What to enter |
+|--------|---------------|
+| `--project` | Your Firebase project ID, shown in **Project settings** in the Firebase console. |
+| `--android-package-name` | The Android package ID you set in [Change Package Name](./change-package-name.md). |
+| `--ios-bundle-id` | The iOS bundle ID you set on the same page. |
+
+:::caution Always pass the package ID and the bundle ID
+From v1.12.0, FlutterFire cannot read these two IDs from the project on its own. Without the options above, it registers the app's **original** package ID with Firebase, and your renamed app then fails to start Firebase or receive notifications.
+:::
+
+Run the command in **both** apps, each with its own package ID and bundle ID.
 
 ---
 

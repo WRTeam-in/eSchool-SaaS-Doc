@@ -1,0 +1,25 @@
+{
+  "duration": 105.9,
+  "chapters": [
+    {
+      "t": 5.5,
+      "label": "Open Role & permission"
+    },
+    {
+      "t": 18.5,
+      "label": "Create a role"
+    },
+    {
+      "t": 55.3,
+      "label": "View a role"
+    },
+    {
+      "t": 67.1,
+      "label": "Edit a role"
+    },
+    {
+      "t": 84.5,
+      "label": "Delete a role"
+    }
+  ]
+}

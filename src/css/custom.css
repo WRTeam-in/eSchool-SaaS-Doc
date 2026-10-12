@@ -43,3 +43,10 @@
   font-weight: 600;
   border-radius: 8px;
 }
+
+/* The navbar has many top-level links; tighter spacing on desktop keeps the site title from being cut off. */
+@media (min-width: 997px) {
+  .navbar {
+    --ifm-navbar-item-padding-horizontal: 0.5rem;
+  }
+}

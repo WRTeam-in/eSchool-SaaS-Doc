@@ -22,9 +22,26 @@ The splash screens in both apps display the logo. To customize them, navigate to
 ### Location of Assets
 General images location: `assets/images/`
 
-In this folder, you will find two logo files: appLogo.svg and appLogo.png. Create your branded logo and replace both of these files with your own versions, keeping the same filenames and formats (SVG and PNG). Do not change the filenames or paths—simply replace the images. By doing this, the splash screen logo will be updated in both apps (Staff App and Student/Parent App).
+Replace these files with your own logo, keeping the same file name and format. Do not rename or move them.
 
-Optional illustrations like `noInternet.svg`, `fileNotFound.svg`, etc., can also be customized for full visual branding.
+| App | File | Where it is shown |
+|-----|------|-------------------|
+| **Student/Parent** | `assets/images/appLogo.svg` | Splash screen and onboarding screens |
+| **Staff/Teacher** | `assets/images/appLogo.svg` | Onboarding screen |
+| **Staff/Teacher** | `assets/images/splash_logo.png` | Splash screen |
+
+#### Illustrations
+
+The pictures on the empty, error and maintenance screens are in `assets/illustrations/` in both apps:
+
+| File | Screen |
+|------|--------|
+| `no_data.svg` | A list with nothing to show |
+| `no_internet.svg` | No internet connection |
+| `something_went_wrong.svg` | Any other error |
+| `maintenance.svg` | The app is under maintenance |
+
+You do not need to recolour them: they are painted in your primary colour when the app runs. See [Change App Theme](change-app-theme.md). If you replace one with your own artwork, draw the parts that should follow the theme in `#22577A` and keep the file name.
 
 ![Logo replacement reference](../../static/images/installation/app/changeicon_1.png)
 

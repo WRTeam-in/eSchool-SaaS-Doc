@@ -1,0 +1,89 @@
+{
+  "duration": 414.66,
+  "chapters": [
+    {
+      "t": 5.5,
+      "label": "Open Manage schools"
+    },
+    {
+      "t": 18.4,
+      "label": "School details"
+    },
+    {
+      "t": 46,
+      "label": "Board and school code"
+    },
+    {
+      "t": 52.5,
+      "label": "Domain"
+    },
+    {
+      "t": 65.1,
+      "label": "Create the school"
+    },
+    {
+      "t": 77.2,
+      "label": "Setup progress"
+    },
+    {
+      "t": 97.1,
+      "label": "Your schools list"
+    },
+    {
+      "t": 115.8,
+      "label": "Manage admin"
+    },
+    {
+      "t": 136.6,
+      "label": "Admin account options"
+    },
+    {
+      "t": 157.8,
+      "label": "Edit school"
+    },
+    {
+      "t": 173.4,
+      "label": "Deactivate and activate"
+    },
+    {
+      "t": 194.8,
+      "label": "Delete and restore"
+    },
+    {
+      "t": 226.1,
+      "label": "Assign a plan"
+    },
+    {
+      "t": 258.5,
+      "label": "Open the school’s website"
+    },
+    {
+      "t": 275.5,
+      "label": "Sign in as the school admin"
+    },
+    {
+      "t": 292.7,
+      "label": "Academy Setup Wizard"
+    },
+    {
+      "t": 299.7,
+      "label": "Wizard: Academy year"
+    },
+    {
+      "t": 321.7,
+      "label": "Wizard: Mediums, sections and shifts"
+    },
+    {
+      "t": 335.5,
+      "label": "Wizard: Streams, classes and subjects"
+    },
+    {
+      "t": 352.3,
+      "label": "Wizard: Mapping"
+    },
+    {
+      "t": 390.3,
+      "label": "Wizard: Finish"
+    }
+  ]
+}

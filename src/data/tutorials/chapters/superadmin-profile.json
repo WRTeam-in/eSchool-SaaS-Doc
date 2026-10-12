@@ -1,0 +1,41 @@
+{
+  "duration": 112.19,
+  "chapters": [
+    {
+      "t": 5.5,
+      "label": "Open your profile"
+    },
+    {
+      "t": 15.2,
+      "label": "Your details"
+    },
+    {
+      "t": 27.3,
+      "label": "Mobile number"
+    },
+    {
+      "t": 38.7,
+      "label": "Date of birth"
+    },
+    {
+      "t": 45.1,
+      "label": "Profile photo"
+    },
+    {
+      "t": 51.6,
+      "label": "Address"
+    },
+    {
+      "t": 58.8,
+      "label": "Two factor verification"
+    },
+    {
+      "t": 67.4,
+      "label": "Save your changes"
+    },
+    {
+      "t": 80.5,
+      "label": "Change password"
+    }
+  ]
+}
