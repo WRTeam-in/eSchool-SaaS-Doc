@@ -36,11 +36,6 @@ Before deployment, ensure:
 5. Vercel will auto-detect Next.js. Click **Deploy**.
 6. Your site will be live in minutes!
 
-### Option 2: Deploy on VPS Server
-
-#### Web Automatic Deployment
-
-Upload your web code to your server, open the terminal, navigate to your web code directory, and run the **./install.sh** command.
 
 #### Web Manually Deployment
 

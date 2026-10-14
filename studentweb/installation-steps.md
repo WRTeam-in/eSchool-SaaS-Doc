@@ -333,33 +333,6 @@ This command will:
 - "Compiled successfully" message
 - A new `build` folder created in the project root
 
-### Step 11: Upload to Server
-
-Upload the build folder contents to your web hosting server.
-
-1. **Locate the build folder** in your project directory
-2. **Create a ZIP file** of the contents **inside** the build folder (not the folder itself)
-3. **Upload to your server:**
-   - Login to your hosting control panel (cPanel/Plesk)
-   - Navigate to File Manager
-   - Go to your domain/subdomain directory (e.g., `public_html/student`)
-   - Upload the ZIP file
-   - Extract the ZIP file in that directory
-4. **Verify files** are in the correct location
-
-**Important:** Upload only the **contents inside** the build folder, not the build folder itself.
-
-**File Structure on Server:**
-
-```
-public_html/student/
-├── _next/
-├── assets/
-├── index.html
-├── favicon.ico
-└── [other build files]
-```
-
 ## Verification
 
 After completing the installation, verify that everything is working correctly:
