@@ -74,7 +74,16 @@ const sidebars = {
         {
           type: "category",
           label: "Timetable",
-          items: ["timetable/create-timetable", "timetable/teacher-timetable", "timetable/online-classes"],
+          items: [
+            "timetable/create-timetable",
+            "timetable/auto-generate",
+            "timetable/timetable-setup",
+            "timetable/subject-rules",
+            "timetable/teacher-availability",
+            "timetable/generation-history",
+            "timetable/teacher-timetable",
+            "timetable/online-classes",
+          ],
         },
         {
           type: "category",
@@ -115,6 +124,18 @@ const sidebars = {
             "online-exam/manage-online-exam",
             "online-exam/manage-questions",
             "online-exam/add-bulk-questions",
+          ],
+        },
+        {
+          type: "category",
+          label: "Result Assessments",
+          items: [
+            "result-assessment/overview",
+            "result-assessment/assessments",
+            "result-assessment/consolidated-results",
+            "result-assessment/remark-templates",
+            "result-assessment/co-scholastic-achievements",
+            "result-assessment/student-remarks",
           ],
         },
       ],
@@ -219,6 +240,7 @@ const sidebars = {
         "reports/teacher-reports",
         "reports/staff-reports",
         "reports/exam-reports",
+        "reports/report-cards",
         "reports/expense-report",
         "reports/income-report",
         "reports/financial-summary-report",
@@ -262,6 +284,7 @@ const sidebars = {
           type: "category",
           label: "Web Settings",
           items: [
+            "web-settings/website-templates",
             "web-settings/content",
             "web-settings/faqs",
           ],
