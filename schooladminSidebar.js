@@ -253,6 +253,7 @@ const sidebars = {
         { type: "doc", id: "subscription/subscription", label: "Subscription" },
         { type: "doc", id: "subscription/plans", label: "Plans" },
         { type: "doc", id: "subscription/addons", label: "Addons" },
+        { type: "doc", id: "subscription/manual-payment", label: "Manual Payment" },
       ],
     },
     {
