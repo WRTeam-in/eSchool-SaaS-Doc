@@ -70,7 +70,7 @@ Log in to aaPanel using the provided URL and credentials, then install:
 
 - 🌐 Web server (Nginx or Apache recommended)
 - 🗄️ MySQL
-- 🐘 PHP 8.3
+- 🐘 PHP 8.4+
 - 📊 phpMyAdmin
 
 ![e-School SaaS](../../static/images/installation/admin/22.png)

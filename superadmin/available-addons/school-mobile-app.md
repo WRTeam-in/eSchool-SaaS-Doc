@@ -136,7 +136,7 @@ Each eligible school can have up to **two independent apps** across both mobile 
 Before installing and utilizing this add-on, ensure:
 
 - **eSchool SaaS Core:** Version **v1.12.0** or later.
-- **PHP Version:** PHP **8.2** or higher.
+- **PHP Version:** PHP **8.4** or higher.
 - **Add-on ZIP File:** Official `SchoolMobileApp.zip` package from WRTeam Marketplace.
 - **Purchase Code:** Valid marketplace purchase code for the School Mobile App add-on.
 - **Email (SMTP) Setup:** An active SMTP configuration under **Super Admin &rarr; Settings &rarr; Email Configuration** to enable automated email delivery to school administrators.
