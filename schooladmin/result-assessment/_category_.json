@@ -1,0 +1,8 @@
+{
+    "label": "Result Assessments",
+    "position": 4,
+    "link": {
+        "type": "generated-index",
+        "description": "Weighted result assessments, consolidated results, teacher remarks, and report cards for e-School SaaS"
+    }
+}

@@ -16,7 +16,7 @@ The first screen you'll see when starting the installation process.
 ![e-School SaaS](../../static/images/installation/admin/1.png)
 
 ### 2️⃣ Server Requirements Check
-⚠️ **Important:** If PHP version is lower than 8.0 or any extension is missing, it will be highlighted in red. Ensure your server meets all requirements before proceeding.
+⚠️ **Important:** If PHP version is lower than 8.4 or any extension is missing, it will be highlighted in red. Ensure your server meets all requirements before proceeding.
 
 ![e-School SaaS](../../static/images/installation/admin/2.png)
 

@@ -5,6 +5,19 @@ title: Changelog
 
 # Changelog
 
+## Version 1.13.0 (02 Nov 2026)
+
+- **[ADDED]** Result assessment. [Click Here](../schooladmin/result-assessment/overview)
+- **[ADDED]** Automatic class timetable generation. [Click Here](../schooladmin/timetable/auto-generate)
+- **[ADDED]** School website templates. [Click Here](../schooladmin/web-settings/website-templates)
+- **[ADDED]** Offline exam cloning.
+- **[ADDED]** Blog management for super admin. [Click Here](../superadmin/blog-management)
+- **[ADDED]** School subscription country wise tax. [Click Here](../superadmin/settings/system-settings/tax-settings)
+- **[ADDED]** Feature video section. [Click Here](../superadmin/settings/web-settings/feature-videos)
+- **[IMPROVED]** PDF RTL & multilingual support.
+- **[IMPROVED]** Manual school subscription payments. [Click Here](../schooladmin/subscription/manual-payment)
+- **[IMPROVED]** Staff leave management. [Click Here](../schooladmin/staff-leave)
+
 ## Version 1.12.0 (12 Oct 2026)
 
 - **[ADDED]** External storage S3/R2. [Click Here](../superadmin/settings/system-settings/external-storage)
