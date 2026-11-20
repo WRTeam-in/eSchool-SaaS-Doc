@@ -1,0 +1,120 @@
+/* Keep a deep-linked <details> clear of the sticky navbar when scrolled to */
+.anchored {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1.5rem);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Flex container for the summary bar so question is on left and button is on the right */
+.anchored > summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding-right: 0.75rem !important;
+  min-height: 2.75rem;
+}
+
+/* Question title text expands to fill left side */
+.anchored > summary > strong,
+.anchored > summary > *:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+/* Share / Copy link button on the right side - hidden by default */
+.copyLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-card-background-color, rgba(255, 255, 255, 0.06));
+  color: var(--ifm-color-emphasis-800);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--ifm-transition-fast) ease,
+              visibility var(--ifm-transition-fast) ease,
+              background-color var(--ifm-transition-fast) ease,
+              border-color var(--ifm-transition-fast) ease,
+              color var(--ifm-transition-fast) ease;
+  user-select: none;
+}
+
+/* Display the Share button only on hover of the FAQ, or on focus / copied state */
+.anchored:hover .copyLink,
+.anchored > summary:hover .copyLink,
+.copyLink:focus-visible,
+.copyLinkCopied {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.copyLink:hover,
+.copyLink:focus-visible {
+  color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-contrast-background, rgba(0, 163, 196, 0.15));
+}
+
+.copyLinkCopied {
+  background: rgba(37, 194, 160, 0.2) !important;
+  border-color: #25c2a0 !important;
+  color: #25c2a0 !important;
+}
+
+.copiedText {
+  font-weight: var(--ifm-font-weight-semibold);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Subtle pulse highlight when targeted by URL hash */
+.anchoredTarget {
+  animation: faqTargetPulse 2.5s ease-out 1;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+@keyframes faqTargetPulse {
+  0% {
+    box-shadow: 0 0 0 3px var(--ifm-color-primary);
+  }
+  70% {
+    box-shadow: 0 0 0 3px var(--ifm-color-primary);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Touch devices without hover capability */
+@media (hover: none) {
+  .copyLink {
+    opacity: 0.75;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .anchored > summary {
+    gap: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .copyLink {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.7rem;
+  }
+}
