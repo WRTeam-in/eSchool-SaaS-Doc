@@ -50,3 +50,8 @@
     --ifm-navbar-item-padding-horizontal: 0.5rem;
   }
 }
+
+
+.details_lb9f>summary::before {
+  top: unset !important;
+}

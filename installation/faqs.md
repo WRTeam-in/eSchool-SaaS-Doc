@@ -21,7 +21,7 @@ This section addresses common questions and issues you might encounter during th
 
 ## 🚨 Installation & Setup Issues
 
-<details>
+<details id="faq-whatsapp-templates-missing-after-update">
 <summary><strong>1. What should I do if default school WhatsApp templates do not exist after updating from v1.9.6 to v1.10.0?</strong></summary>
 
 If default school WhatsApp templates do not exist or are missing after updating from version **v1.9.6 to v1.10.0**, this issue is related to application cache.
@@ -34,7 +34,7 @@ If default school WhatsApp templates do not exist or are missing after updating 
 
 </details>
 
-<details>
+<details id="faq-update-issues-v1-9-2-to-v1-9-3">
 <summary><strong>2. Why am I getting issues while updating from v1.9.2 to v1.9.3?</strong></summary>
 
 From version v1.9.3, the system update process has been improved and now depends on background services such as Laravel Queue and Laravel Reverb.
@@ -119,7 +119,7 @@ For production/live servers, Supervisor is highly recommended to ensure:
 
 </details>
 
-<details>
+<details id="faq-school-not-created-error-occurred">
 <summary><strong>3. Why is the school not being created and showing an "Error Occurred" message?</strong></summary>
 
 This error typically occurs when the database user does not have permission to create or drop databases, which is required for setting up a new school.
@@ -134,7 +134,7 @@ This error typically occurs when the database user does not have permission to c
 
 </details>
 
-<details>
+<details id="faq-school-not-created-loading-screen">
 <summary><strong>4. If a school is not being created and it keeps showing the loading screen, how can we set up Laravel Queue to fix this?</strong></summary>
 
 You can find detailed instructions for setting up the queue in our documentation here:
@@ -144,7 +144,7 @@ You can find detailed instructions for setting up the queue in our documentation
 
 </details>
 
-<details>
+<details id="faq-default-login-credentials">
 <summary><strong>5. What are the default login credentials for different Users?</strong></summary>
 
 Different user types have different default login credentials in the system:
@@ -173,7 +173,7 @@ Different user types have different default login credentials in the system:
 
 </details>
 
-<details>
+<details id="faq-how-to-update-the-system">
 <summary><strong>6. How to Update the System (Admin Panel, App Code and Student Web)?</strong></summary>
 
 #### 🔄 **Admin Panel Update**
@@ -258,7 +258,7 @@ This method is faster and preferred by technical users who are familiar with Flu
    - Upload the contents of the new `build` folder to your server.
 </details>
 
-<details>
+<details id="faq-why-database-root-credentials-required">
 <summary><strong>7. Why are database root user credentials required for this system?</strong></summary>
 
 This system is a SaaS platform, where each school has its own separate database. The root database user has the necessary permissions to create and drop databases. These permissions are required when a new school is added, as the system needs to:
@@ -273,7 +273,7 @@ If you do not want to use the root account, you can provide a database user with
 
 </details>
 
-<details>
+<details id="faq-available-payment-gateways">
 <summary><strong>8. How many payment gateways are available in the system?</strong></summary>
 
 Currently, we support **four payment gateways** in the system:
@@ -288,10 +288,160 @@ Currently, we support **four payment gateways** in the system:
 
 </details>
 
+<details id="faq-pdf-viewer-setup-troubleshooting">
+<summary><strong>9. PDF Viewer Setup & Troubleshooting (v1.13.0 or later versions only)</strong></summary>
+
+> **Note:** This feature and setup guide applies to **v1.13.0 or later versions only**.
+
+#### 📄 **Overview**
+
+This system uses the [DirectoryTree Screenshot](https://packagist.org/packages/directorytree/screenshot) Laravel package to generate and render PDFs.
+
+The package supports multilingual PDF generation, including:
+- **RTL (Right-to-Left) languages**, such as Arabic and Urdu.
+- **LTR (Left-to-Right) languages**, such as English.
+- **Unicode fonts and multilingual content**.
+- **Browser-based PDF rendering** using Chrome.
+
+⚠️ **Important:** The package must be configured correctly, and all required Chrome system dependencies must be installed on the server.
+
+---
+
+#### 🔹 **Step 1: Install the PDF Rendering Dependencies**
+
+The Screenshot package is already included in the project. First, navigate to your Laravel project directory and execute the following command:
+
+```bash
+php artisan screenshot:install
+```
+
+This command installs the required browser components for PDF rendering.
+
+---
+
+#### 🔹 **Step 2: Install Required System Libraries (Ubuntu/Debian)**
+
+If you encounter errors while installing or running the Screenshot package, install the required system dependencies.
+
+1. **Update the package repositories:**
+   ```bash
+   sudo apt update
+   ```
+
+2. **Install the required libraries:**
+   ```bash
+   sudo apt install -y libatk1.0-0t64 libatk-bridge2.0-0t64 libatspi2.0-0t64 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 libnss3 libnspr4 libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libgtk-3-0t64 libdrm2 libglib2.0-0t64 libfontconfig1 fonts-liberation fonts-noto-color-emoji
+   ```
+
+> **Note:** The package names above target compatible Ubuntu/Debian releases that provide the `t64` packages. For other distributions or older Ubuntu versions, package names may differ.
+
+---
+
+#### 🔹 **Step 3: Install the Screenshot Package Browser**
+
+After installing the system dependencies, execute:
+
+```bash
+php artisan screenshot:install
+```
+
+---
+
+#### 🔹 **Step 4: Fix Chrome Sandbox / AppArmor Issues**
+
+On some Ubuntu servers, Chrome may fail to start because of AppArmor restrictions on unprivileged user namespaces.
+
+If you encounter an error similar to:
+```text
+No usable sandbox!
+```
+
+1. **Check the current AppArmor restriction setting:**
+   ```bash
+   sysctl kernel.apparmor_restrict_unprivileged_userns
+   ```
+
+2. **If the restriction is enabled (`= 1`), temporarily disable it:**
+   ```bash
+   sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+   ```
+
+3. **Apply the system configuration:**
+   ```bash
+   sudo sysctl --system
+   ```
+
+🔒 **Security Note:** Disabling this restriction reduces an AppArmor security protection for unprivileged user namespaces. Apply this change only after evaluating the server's security requirements. Prefer configuring a dedicated Chrome execution environment or an appropriate AppArmor policy when possible.
+
+---
+
+#### 🔹 **Step 5: Set Permissions for Private Storage**
+
+After completing the setup, assign permission `777` to the `private` folder located at `storage/app/private` so the system has the required write permissions to store and manage generated PDF files:
+
+```bash
+chmod -R 777 storage/app/private
+```
+
+---
+
+#### 🔹 **Step 6: Clear Laravel Cache**
+
+After completing the installation and configuration, clear the Laravel application cache:
+
+```bash
+php artisan optimize:clear
+```
+
+---
+
+#### 🔹 **Step 7: Verify PDF Generation**
+
+Finally:
+- Restart the relevant PHP-FPM service if required.
+- Restart queue workers or Horizon if PDF generation is performed through queued jobs.
+- Open the application.
+- Generate a sample PDF.
+- Verify that English, multilingual, RTL, and LTR content render correctly.
+
+---
+
+#### 📋 **Complete Command Reference**
+
+For convenience, the following commands are listed in execution order. Execute these commands from your Laravel project directory:
+
+```bash
+# 1. Update package repositories
+sudo apt update
+
+# 2. Install required system libraries
+sudo apt install -y libatk1.0-0t64 libatk-bridge2.0-0t64 libatspi2.0-0t64 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 libnss3 libnspr4 libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libgtk-3-0t64 libdrm2 libglib2.0-0t64 libfontconfig1 fonts-liberation fonts-noto-color-emoji
+
+# 3. Install browser components
+php artisan screenshot:install
+
+# 4. Check AppArmor restriction (conditional)
+sysctl kernel.apparmor_restrict_unprivileged_userns
+
+# 5. Disable restriction if enabled (= 1)
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+sudo sysctl --system
+
+# 6. Assign permission 777 to storage/app/private
+chmod -R 777 storage/app/private
+
+# 7. Clear Laravel cache
+php artisan optimize:clear
+```
+
+⚠️ **Important:** The AppArmor command is conditional. Run it only if the server reports the relevant sandbox restriction. Do not disable the restriction unnecessarily.
+
+</details>
+
 
 ## 🌐 Domain & SSL Configuration
 
-<details>
+<details id="faq-setup-wildcard-domain">
 <summary><strong>1. How do I set up a wildcard domain (e.g., *.yourdomain.com)?</strong></summary>
 
 Setting up a wildcard domain involves creating a DNS record and configuring it properly in your hosting panel.
@@ -306,7 +456,7 @@ Setting up a wildcard domain involves creating a DNS record and configuring it p
 
 </details>
 
-<details>
+<details id="faq-create-wildcard-ssl-certificate">
 <summary><strong>2. How do I create a wildcard SSL certificate?</strong></summary>
 
 Wildcard SSL setup depends on your hosting provider and the type of SSL certificate you need.
@@ -322,7 +472,7 @@ Wildcard SSL setup depends on your hosting provider and the type of SSL certific
 
 ## 💳 Subscription & Package Management
 
-<details>
+<details id="faq-update-existing-subscription-package">
 <summary><strong>1. What happens if the Super Admin updates an existing subscription package?</strong></summary>
 
 The behavior depends on the "Instant Effect" setting when updating the package:
@@ -340,7 +490,7 @@ The behavior depends on the "Instant Effect" setting when updating the package:
 
 </details>
 
-<details>
+<details id="faq-addon-validity-calculation">
 <summary><strong>2. How is the addon validity calculated?</strong></summary>
 
 Addon validity is always tied to the school's current subscription plan expiry date.
@@ -359,7 +509,7 @@ Addon validity is always tied to the school's current subscription plan expiry d
 
 </details>
 
-<details>
+<details id="faq-find-school-code">
 <summary><strong>3. Where can I find the School Code?</strong></summary>
 
 The School Code is a unique identifier assigned to each school. You can find it from both the Super Admin Panel and the School Admin Panel:
@@ -388,7 +538,7 @@ The School Code is a unique identifier assigned to each school. You can find it 
 
 ## 🏫 School admin panel
 
-<details>
+<details id="faq-classes-and-sections">
 <summary><strong>1. How do Classes and Sections work in the system?</strong></summary>
 
 In our system, "Classes" (also known as "Grades" in some countries) represent the academic levels students are enrolled in — for example, Grade 1 through Grade 12.
@@ -419,7 +569,7 @@ Let's take an example:
 
 ## 📱 Mobile application
 
-<details>
+<details id="faq-app-something-went-wrong-after-login">
 <summary><strong>1. Why does the app show "Something went wrong. Please try again later" after login?</strong></summary>
 
 ![e-School SaaS](../static/images/installation/app-img-1.png)
@@ -442,7 +592,7 @@ Using school_code with an underscore causes the backend to reject the request du
 
 </details>
 
-<details>
+<details id="faq-firebase-cli-setup">
 <summary><strong>2. How do I set up Firebase using the Firebase CLI for eSchool SaaS?</strong></summary>
 
 To set up Firebase using the Firebase CLI for eSchool SaaS:
@@ -469,7 +619,7 @@ To set up Firebase using the Firebase CLI for eSchool SaaS:
 
 </details>
 
-<details>
+<details id="faq-show-hide-default-login-credentials-in-app">
 <summary><strong>3. How can I control whether default login credentials are displayed on the Student App and Staff App login screens?</strong></summary>
 
 The eSchool SaaS mobile applications provide a convenient feature that allows you to control the visibility of default login credentials on the login screens. This can be helpful for demonstration purposes or to guide users during initial login, but you may want to hide them in production for security reasons.
@@ -579,7 +729,7 @@ For production environments, it is strongly recommended to set both variables to
 
 ## 🌐 Student Web Portal
 
-<details>
+<details id="faq-student-web-portal-shared-hosting">
 <summary><strong>1. Does the Student Web Portal work on Shared Hosting?</strong></summary>
 
 **Yes — the Student Web Portal is fully compatible with Shared Hosting.**
